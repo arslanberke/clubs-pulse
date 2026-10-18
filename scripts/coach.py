@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "site" / "data.json"
 OUT = ROOT / "site" / "coach.json"
 MODELS = [m for m in [os.environ.get("GEMINI_MODEL"), "gemini-2.5-flash", "gemini-flash-latest", "gemini-2.0-flash"] if m]
-VERSION = 1
+VERSION = 2
 
 ARCH = {"1": "Shot Stopper", "2": "Sweeper Keeper", "3": "Progressor", "4": "Boss", "5": "Disruptor",
         "6": "Marauder", "7": "Recycler", "8": "Maestro", "9": "Creator", "10": "Spark",
@@ -201,6 +201,8 @@ Kurallar:
 - Sadece yukarıdaki sayılara dayan, veri uydurma. Sayı verirken buradakileri kullan.
 - Tavsiyeler maçta uygulanabilir somut kararlar olsun (pas, pozisyon, şut, savunma davranışı). Tuş kombinasyonu ya da oyunda olmayan özellik uydurma.
 - Örnek az ise (10 maçtan az) bunu bir kez kısaca belirt.
+- Sayıları en fazla 1 ondalıkla yaz (7.3 gibi), yüzdeleri tam sayı yaz (%72 gibi).
+- "Dün" deme, "son gece" de.
 - Hakaret yok, hafif takılma serbest.
 
 JSON döndür:
@@ -217,7 +219,7 @@ SCHEMA = {"type": "OBJECT", "properties": {
 
 
 def lines(rows):
-    return "\n".join(f"- {r['l']}: {r['me']} (kıyas {r['av']}, diff {r['diff']:+d}%)" for r in rows) or "- veri yok"
+    return "\n".join(f"- {r['l']}: {r['me']:.1f} (kıyas {r['av']:.1f}, diff {r['diff']:+d}%)" for r in rows) or "- veri yok"
 
 
 def prompt(f):
