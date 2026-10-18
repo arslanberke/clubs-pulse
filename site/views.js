@@ -43,7 +43,7 @@ function head(){const o=D.club.overall,ms=[...D.matches].sort((a,b)=>b.ts-a.ts);
  const w=+o.wins,dr=+o.ties,l=+o.losses,gp=+o.gamesPlayed||1;let st=0,sr=ms[0]?res(ms[0]):"";for(const m of ms){if(res(m)==sr)st++;else break}
  const fN=S.formN||10;const form=ms.slice(0,fN);
  const tabs=[["club","Genel"],["matches","Maçlar"],["night","Gece raporu"],["players","Oyuncular"],["cmp","Karşılaştır"],["fun","Eğlence"]];
- return `<div class="top"><div class="wrap tb"><div class="logo">Clubs <b>Pulse</b></div><div class="thm">Tasarım ${[["pct","1"],["fcc","2"],["clean","3"],["board","4"]].map(([k,l])=>`<button class="${THEME==k?"on":""}" onclick="setTheme('${k}')">${l}</button>`).join("")}${THEME=="clean"?`<span class="modes">${[["light","Aydınlık"],["navy","Lacivert"],["forest","Yeşil"],["plum","Mor"]].map(([k,l])=>`<button class="mb mb-${k} ${MODE3==k?"on":""}" onclick="setMode3('${k}')"><i></i>${l}</button>`).join("")}</span>`:""}${THEME=="board"?`<button class="mode" onclick="setMode()">${MODE=="light"?"☾ Karanlık":"☀ Aydınlık"}</button>`:""}</div></div></div>
+ return `<div class="top"><div class="wrap tb"><div class="logo">Clubs <b>Pulse</b></div><div class="thm">${[["forest","Koyu"],["light","Açık"]].map(([k,l])=>`<button class="mb mb-${k} ${MODE3==k?"on":""}" onclick="setMode3('${k}')"><i></i>${l}</button>`).join("")}</div></div></div>
  <div class="wrap"><div class="card hero"><img class="crest" src="crest.png"><div class="hi"><h1>${D.club.name}</h1>
  <div class="chips"><span class="chip div">${o.bestDivision}. küme</span><span class="chip">SR ${o.skillRating}</span><span class="wdl"><b class="cW">${w}G</b> <b class="cD">${dr}B</b> <b class="cL">${l}M</b></span></div></div>
  <div class="tiles"><div class="tile"><b class="${w/gp>=.5?"cW":"cL"}">%${fmt(w/gp*100,0)}</b><span>Galibiyet</span></div><div class="tile"><b class="${o.goals-o.goalsAgainst>=0?"cW":"cL"}">${o.goals-o.goalsAgainst>0?"+":""}${o.goals-o.goalsAgainst}</b><span>Averaj</span></div>
@@ -151,9 +151,9 @@ function club(){const ms=matches().sort((a,b)=>b.ts-a.ts);S.mode="avg";const top
  return filters(false)+`<div class="g2">${nightC}<div class="card"><h3>Takım puanları <small class="muted">son ${ms.length} maç</small></h3>${scoresBlock(ms)}</div></div>
  <div class="card"><div class="ch"><h3>Liderler</h3><span class="muted sm">maç başı · son ${ms.length} maç</span></div><div class="lds">${lead("rating","Ort. puan")}${lead("goals","Gol")}${lead("assists","Asist")}${SIMPLE()?"":lead("sa","2. asist")+lead("int","Interception")+lead("pass","Pas isabeti","%")}</div></div>
  <div class="ch sh"><h3>Son maçlar</h3><span class="lnk" onclick="S.tab='matches';r()">Tümü →</span></div><div class="g2">${ms.slice(0,4).map(mcard).join("")}</div>`}
-let THEME=localStorage.getItem("cp-theme")||"pct";
+let THEME="clean";
 let MODE=localStorage.getItem("cp-mode")||"dark";
-let MODE3=localStorage.getItem("cp-mode3")||"light";
+let MODE3=localStorage.getItem("cp-mode3");if(!["forest","light"].includes(MODE3))MODE3="forest";
 window.setMode3=k=>{MODE3=k;localStorage.setItem("cp-mode3",k);r()};
 window.setMode=()=>{MODE=MODE=="light"?"dark":"light";localStorage.setItem("cp-mode",MODE);r()};
 window.setTheme=t=>{THEME=t;localStorage.setItem("cp-theme",t);r()};
