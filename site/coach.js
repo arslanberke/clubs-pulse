@@ -1,5 +1,5 @@
 let COACH=null;
-fetch("coach.json",{cache:"no-cache"}).then(x=>x.ok?x.json():null).then(c=>{COACH=c;if(D&&c)r()}).catch(()=>{});
+fetch("coach.json",{cache:"no-cache"}).then(x=>x.ok?x.json():null).then(c=>{const go=()=>{COACH=c;if(D&&c)r()};document.readyState=="loading"?addEventListener("DOMContentLoaded",go):go()}).catch(()=>{});
 const esc=s=>String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function coachCard(n){const c=COACH&&COACH.players[n];if(!c)return "";
  const li=(a,cls,ic)=>a.map(x=>`<li class="${cls}"><i>${ic}</i><span>${esc(x)}</span></li>`).join("");
