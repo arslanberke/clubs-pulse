@@ -267,6 +267,9 @@ def main():
         players[n] = {**tips, "source": source, "model": MODEL if source == "ai" else None, "hash": f["hash"],
                       "n": f["n"], "arch": f["arch"], "pos": f["pos"], "nightStart": f["night"]["start"] if f["night"] else None,
                       "updated": int(time.time())}
+    if prev.get("v") == VERSION and prev.get("players") == players:
+        print("coach: no changes")
+        return
     OUT.write_text(json.dumps({"v": VERSION, "updated": int(time.time()), "players": players}, ensure_ascii=False, indent=1) + "\n")
     print(f"coach: {len(players)} players, " + ", ".join(f"{n}={p['source']}" for n, p in players.items()))
 
