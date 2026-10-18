@@ -1,103 +1,110 @@
 {
  "v": 1,
- "updated": 1792336547,
+ "updated": 1792336924,
+ "aiError": null,
  "players": {
   "Eghnzvrl": {
-   "summary": "En büyük eksiğin pozisyon dışı: Magician'lara göre %11 geride.",
+   "summary": "Genel tabloda pas ve bitiricilikte akranlarının çok önündesin ancak 5 maçlık dar örneklemde şut sayın 2.2'ye çıkmasına rağmen gol ortalaman 0.4'e kadar geriledi.",
    "dont": [
-    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 13.4, Magician ortalaması 12.1)"
+    "Maç başına 13.41 kez pozisyon dışına çıkarak forvet hattının yerleşimini bozma.",
+    "Son dönemde şut isabetin %63.64 seviyesine inmişken hazırlıksız ve zorlama şutlar çekme.",
+    "Maç başı 5.18 kez aldığın pas tercihi uyarısını azaltmak için daha garanti açılara oyna."
    ],
    "do": [
-    "Mevkinde kal, rakip top kaybedince boşlukta hazır ol."
+    "Pozisyon disiplinini koruyup ceza sahası içinde doğru bitirici anı bekle.",
+    "Son 5 maçta maç başı 0.6'ya yükselen asist katkını sürdürerek boş arkadaşını ödüllendir."
    ],
    "keep": [
-    "Hava topu güçlü yanın (Magician'lardan %60 iyi), böyle devam.",
-    "2. asist güçlü yanın (Magician'lardan %41 iyi), böyle devam."
+    "Yüzde 80.06 pas isabetin ve 3.53 gibi düşük top kaybı ortalamanla hücumda topu mükemmel saklıyorsun.",
+    "Genel ortalamandaki yüzde 70.97 şut isabetini ve 0.47'lik asist gücünü aynen koru."
    ],
-   "night": "10 maçta ortalama 7.5 puan (normalde 7.8), 6 gol 4 asist. Gol normalinden kötüydü (0.6, normalde 1.0).",
-   "source": "rules",
-   "model": null,
+   "night": "Dün geceki 10 maçta top kaybını 3.1'e düşürüp pozisyonunu daha iyi korusan da maç başı 0.6 golle kendi standardının gerisinde kaldın.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "1f6f0e81b907",
    "n": 17,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792272385,
-   "updated": 1792336547
+   "updated": 1792336876
   },
   "guppercan": {
-   "summary": "En büyük eksiğin 2. asist: Magician'lara göre %54 geride.",
+   "summary": "Hücumda fazlasıyla inisiyatif alıp çok şut deniyorsun ancak düşük bitiricilik ve son maçlardaki pozisyon kayıpları skor üretmeni engelliyor.",
    "dont": [
-    "Son pası hep kendin atmaya çalışma. (2. asist: maç başı 0.2, Magician ortalaması 0.4)",
-    "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.5, Magician ortalaması 1.0)"
+    "Her bulduğun açıdan acele şut çekme, maç başına 3.05 şut atıp yüzde 59.02 isabette kalıyorsun.",
+    "Son 5 maçta maç başı 16.8 seviyesine fırlayan pozisyon dışı kalma hatasını bırakıp forvetteki yerini koru.",
+    "Gereksiz çalımlarla topu riske atma, maç başı 5.2 top kaybı senin arketipin için fazla."
    ],
    "do": [
-    "Asisti yapacak arkadaşa ver, ön pası hazırla.",
-    "Kaleciyle karşı karşıyayken plase vur.",
-    "Rakip yaklaşınca tek-iki dokunuşla en yakın arkadaşına ver, çalımı boş alana sakla."
+    "Ceza sahası çevresinde daha temiz pas açıları arayarak yüzde 72.09 olan pas isabetini yukarı çek.",
+    "Şut çekmeden önce ceza sahasında daha net ve açısı uygun anları bekle.",
+    "Hava toplarındaki bariz üstünlüğünü ceza sahası içine atılan yüksek ortalarda avantaja çevir."
    ],
    "keep": [
-    "Hava topu güçlü yanın (Magician'lardan %130 iyi), böyle devam.",
-    "Şut güçlü yanın (Magician'lardan %49 iyi), böyle devam."
+    "Maç başı 1.7 hava topu kazanarak diğer Magician oyuncularına kıyasla yüzde 130 daha iyisin, havadan harikasın.",
+    "Topla hücumu hareketlendirme isteğin yüksek, maç başı 20.5 dribbling ile savunmayı zorlamaya devam et."
    ],
-   "night": "10 maçta ortalama 6.8 puan (normalde 7.6), 3 gol 4 asist. 2. asist normalinden kötüydü (0.0, normalde 0.4).",
-   "source": "rules",
-   "model": null,
+   "night": "Dün geceki 10 maçta ortalama puanın 6.82'ye ve şut isabetin yüzde 52'ye gerileyerek kendi normallerinin altında kaldı.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "39d1c09dbe05",
    "n": 20,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792272385,
-   "updated": 1792336547
+   "updated": 1792336893
   },
   "nycelia": {
-   "summary": "En büyük eksiğin ofsayta düşen pas: Creator'ların 3.4 katı.",
+   "summary": "Henüz 9 maçlık ufak bir verimiz olsa da son dönemde hücumda vites artırdığın ancak savunma müdahalelerinde gereksiz riskler aldığın görülüyor.",
    "dont": [
-    "Arkadaş çizgiyi beklemeden ara pas atma. (Ofsayta düşen pas: maç başı 0.7, Creator ortalaması 0.2)",
-    "Her topa dalarak girme. (Kaybedilen tackle: maç başı 4.9, Creator ortalaması 1.7)"
+    "Gereksiz hamlelerle maç başı 4.89 kaybedilen tackle ve 2.56 tehlikeli müdahale sınırında dolaşmaktan vazgeç.",
+    "Hücumda aceleci davranıp forvetleri maç başına 0.67 kez ofsayta düşürecek zamanlaması bozuk paslar deneme.",
+    "Topu ayağında gereğinden fazla tutup maç başı 5.44 top kaybı seviyesine çıkma."
    ],
    "do": [
-    "Ara pası arkadaşın koşuya çıkarken at.",
-    "Önünü kapat, rakip topu açınca müdahale et.",
-    "Kademeli savunma yap, faul vermeden yolu kapat."
+    "Son 5 maçta 11.6 ortalamaya çıkardığın ara pas denemeleriyle savunma arkasını zorlamaya devam et.",
+    "Savunmada kontrolsüzce topa hamle yapmak yerine pas açılarını kapatıp pozisyonunu koru.",
+    "Creator rolünün hakkını verip maç başı 0.33 olan asist ortalamanı yükseltmek için son paslarda çevreni daha iyi tara."
    ],
    "keep": [
-    "Kendi yarı sahada top kaybı güçlü yanın (Creator'lardan %56 iyi), böyle devam.",
-    "Başarısız ileri pas güçlü yanın (Creator'lardan %32 iyi), böyle devam."
+    "Kendi yarı sahanda maç başı 0.44 gibi çok temiz bir seviyede top kaybederek oyun kurma disiplinini koru.",
+    "Son maçlarda yüzde 72.73'e çıkardığın şut isabetini ve hücumdaki bitirici dokunuşlarını devam ettir."
    ],
-   "night": "5 maçta ortalama 7.4 puan (normalde 6.8), 4 gol 2 asist. Kendi yarı sahada top kaybı normalinden kötüydü (0.6, normalde 0.2).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 5 maçta çıkardığın 7.4 puan ortalaması, 4 gol ve 2 asistle hücum tarafında adeta şov yapmışsın.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "a5983998aaca",
    "n": 9,
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": 1792272385,
-   "updated": 1792336547
+   "updated": 1792336908
   },
   "rljer": {
-   "summary": "En büyük eksiğin pozisyon dışı: Target'ların 5.0 katı.",
+   "summary": "Target arketipine göre ceza sahası yerleşiminde ve hava toplarında ciddi eksiklerin olsa da kaleyi bulduğunda şut isabetin gayet üst düzey.",
    "dont": [
-    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 7.3, Target ortalaması 1.4)",
-    "Topu ayağında bekletme. ('Topu kullan' uyarısı: maç başı 1.6, Target ortalaması 0.7)"
+    "Target forvet olmana rağmen maç başına 7.26 pozisyon dışı uyarısı alacak kadar ceza sahasından kopma.",
+    "Hava topu mücadelesini maç başı 1.0 seviyesinde bırakıp arketipinin boy ve fizik avantajını harcama.",
+    "Pas tercihlerinde acele edip maç başı 3.89 kez hatalı pas uyarısı alma."
    ],
    "do": [
-    "Mevkinde kal, rakip top kaybedince boşlukta hazır ol.",
-    "Topu alınca hemen karar ver: pas, şut ya da boş alana sür.",
-    "Pas öncesi sahayı tara, daha iyi pozisyondaki oyuncuyu ara."
+    "Ceza sahası içine demirlenip maç başı 2.21 olan şut sayını yükseltmeye çalış.",
+    "Hava toplarında pozisyon alıp rakip stoperlere karşı daha fazla kafa topuna yüksel.",
+    "Gereksiz top sürmek yerine daha erken ve basit servislerle bağlantı oyuncusu ol."
    ],
    "keep": [
-    "Top kaybı güçlü yanın (Target'lardan %30 iyi), böyle devam.",
-    "Şut isabeti güçlü yanın (Target'lardan %20 iyi), böyle devam."
+    "Kıyas ortalaması olan %59.52'nin çok üstündeki %71.43'lük net şut isabetini koru.",
+    "Maç başına 2.42 top kaybı ile kıyasa (3.45) göre topu ayağında temiz tutma becerini sürdür."
    ],
-   "night": "10 maçta ortalama 7.1 puan (normalde 7.6), 5 gol 4 asist. Pozisyon dışı normalinden kötüydü (8.9, normalde 5.4).",
-   "source": "rules",
-   "model": null,
+   "night": "Dün geceki 10 maçta 5 gol ve 4 asist üretsen de 8.9 pozisyon dışı kalma ortalaması ve %70.05'e gerileyen pas isabetin puanını 7.13'e çekti.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "2f37004d7699",
    "n": 19,
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1792272385,
-   "updated": 1792336547
+   "updated": 1792336924
   }
  }
 }
