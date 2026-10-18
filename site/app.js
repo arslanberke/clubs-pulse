@@ -228,4 +228,4 @@ window.shareMatch=shareMatch;window.shareNight=shareNight;
 // ---------- boot ----------
 fetch("data.json",{cache:"no-cache"}).then(x=>x.json()).then(d=>{D=d;
 D.matches.forEach(m=>[...m.us,...m.them].forEach(p=>p.ev=new Proxy(p.ev,{get:(o,k)=>k in o?o[k]:0})));
- D.club.members.forEach(m=>real[m.name]=m.proName);r()});
+ D.club.members.forEach(m=>real[m.name]=m.proName);document.readyState=="loading"?addEventListener("DOMContentLoaded",()=>r()):r()});
