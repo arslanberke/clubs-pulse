@@ -13,12 +13,14 @@ from fc_clubs_api.assets import crest_url_candidates
 from fc_clubs_api.events import decode_events
 
 CLUB_ID = "654106"
+CLUB_NAME = "IONIA FC"
 PLATFORM = "common-gen5"
 MATCH_TYPES = {"leagueMatch": "Lig", "playoffMatch": "Playoff", "friendlyMatch": "Hazırlık"}
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / "data" / "raw"
 MATCHES = RAW / "matches"
+OPPS = RAW / "opponents"
 SITE = ROOT / "site"
 OUT = SITE / "data.json"
 
@@ -53,8 +55,53 @@ def fetch(api: FC27API) -> None:
                 match["_matchType"] = match_type
                 write_json(path, match)
                 new += 1
+    extras = {
+        "season": lambda: [c for c in api.search_club_by_name(CLUB_NAME, scope="current_season", output="raw")
+                           if str(c.get("clubId")) == CLUB_ID],
+        "playoffs": lambda: api.get_playoff_achievements(int(CLUB_ID), output="raw"),
+    }
+    for key, call in extras.items():
+        time.sleep(1)
+        try:
+            club[key] = call()
+        except Exception as exc:  # optional data; keep going
+            print(f"{key} failed: {exc}")
     write_json(RAW / "club.json", club)
     print(f"new matches: {new}")
+    fetch_opponents(api)
+
+
+def fetch_opponents(api: FC27API, limit: int = 12, max_age: int = 86400) -> None:
+    ids = set()
+    for path in MATCHES.glob("*.json"):
+        ids.update(c for c in json.loads(path.read_text()).get("clubs", {}) if c != CLUB_ID)
+    now, done = int(time.time()), 0
+    for cid in sorted(ids):
+        path = OPPS / f"{cid}.json"
+        if path.exists() and now - json.loads(path.read_text()).get("_fetched", 0) < max_age:
+            continue
+        if done >= limit:
+            break
+        time.sleep(1)
+        try:
+            stats = (api.get_json("clubs/overallStats", {"clubIds": cid}) or [{}])[0]
+        except Exception as exc:
+            print(f"opponent {cid} failed: {exc}")
+            continue
+        stats["_fetched"] = now
+        write_json(path, stats)
+        done += 1
+    print(f"opponents refreshed: {done}")
+
+
+def opponents() -> dict:
+    out = {}
+    for path in OPPS.glob("*.json"):
+        o = json.loads(path.read_text())
+        num = lambda k: int(float(o.get(k) or 0))
+        out[path.stem] = {"sr": num("skillRating"), "div": num("bestDivision"), "gp": num("gamesPlayed"),
+                          "w": num("wins"), "d": num("ties"), "l": num("losses")}
+    return out
 
 
 def crests(details: dict, team=None) -> list:
@@ -125,8 +172,12 @@ def build(fetch_error: str | None = None) -> None:
             "overall": overall,
             "members": (club_raw["members"] or {}).get("members", []),
             "career": (club_raw["career"] or {}).get("members", []),
+            "kit": info.get("customKit", {}),
+            "season": {k: (club_raw.get("season") or [{}])[0].get(k) for k in ("points", "cleanSheets", "reputationtier")},
+            "playoffs": club_raw.get("playoffs") or [],
         },
         "matches": matches,
+        "opps": opponents(),
     }
     download_crest(data["club"]["crest"])
     OUT.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")))

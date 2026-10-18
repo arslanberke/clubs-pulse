@@ -287,5 +287,66 @@
    "wins": "9",
    "wstreak": "0"
   }
+ ],
+ "playoffs": [
+  {
+   "bestDivision": "5",
+   "bestFinishGroup": "6",
+   "seasonId": "1",
+   "seasonName": "CLUBS_LEAGUE_CLOSED_SEASON_01"
+  }
+ ],
+ "season": [
+  {
+   "bestDivision": "5",
+   "cleanSheets": "3",
+   "clubId": "654106",
+   "clubInfo": {
+    "clubId": 654106,
+    "customKit": {
+     "crestAssetId": "99161005",
+     "crestColor": "0",
+     "customAwayKitId": "7509",
+     "customKeeperKitId": "5005",
+     "customKitId": "7509",
+     "customThirdKitId": "7511",
+     "dCustomKit": "0",
+     "kitAColor1": "5775459",
+     "kitAColor2": "15921906",
+     "kitAColor3": "15921906",
+     "kitAColor4": "15921906",
+     "kitColor1": "15921906",
+     "kitColor2": "5775459",
+     "kitColor3": "5775459",
+     "kitColor4": "5775459",
+     "kitId": "1990657",
+     "kitThrdColor1": "12706617",
+     "kitThrdColor2": "33627",
+     "kitThrdColor3": "396864",
+     "kitThrdColor4": "5775459",
+     "seasonalKitId": "1076404224",
+     "seasonalTeamId": "131397",
+     "selectedKitType": "0",
+     "stadName": "1. Kademe Stady"
+    },
+    "name": "IONIA FC",
+    "regionId": 5457221,
+    "teamId": 243
+   },
+   "clubName": "IONIA FC",
+   "currentDivision": "10",
+   "gamesPlayed": "30",
+   "gamesPlayedPlayoff": "10",
+   "goals": "67",
+   "goalsAgainst": "78",
+   "losses": "17",
+   "platform": "common-gen5",
+   "points": "19",
+   "promotions": "1",
+   "relegations": "0",
+   "reputationtier": "0",
+   "ties": "4",
+   "wins": "9"
+  }
  ]
 }

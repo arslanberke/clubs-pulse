@@ -32,7 +32,7 @@ jobs:
         run: python scripts/collect.py
       - name: Save new matches
         run: |
-          git add data/raw
+          git add data/raw site/data.json site/crest.png
           if ! git diff --cached --quiet; then
             git -c user.name="clubs-pulse bot" -c user.email="actions@users.noreply.github.com" commit -m "Update matches"
             git push

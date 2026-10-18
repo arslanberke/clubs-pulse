@@ -43,7 +43,7 @@ function highlights(n){const X=archData(n);if(!X||!X.R.length)return "";const R=
 function head(){const o=D.club.overall,ms=[...D.matches].sort((a,b)=>b.ts-a.ts);
  const w=+o.wins,dr=+o.ties,l=+o.losses,gp=+o.gamesPlayed||1;let st=0,sr=ms[0]?res(ms[0]):"";for(const m of ms){if(res(m)==sr)st++;else break}
  const fN=S.formN||10;const form=ms.slice(0,fN);
- const tabs=[["club","Genel"],["matches","Maçlar"],["night","Gece raporu"],["players","Oyuncular"],["cmp","Karşılaştır"],["fun","Eğlence"]];
+ const tabs=[["club","Genel"],["matches","Maçlar"],["night","Gece raporu"],["players","Oyuncular"],["cmp","Karşılaştır"],["fun","Eğlence"],["an","Analiz"]];
  return `<div class="top"><div class="wrap tb"><div class="logo">Clubs <b>Pulse</b></div><div class="thm">${[["forest","Koyu"],["light","Açık"]].map(([k,l])=>`<button class="mb mb-${k} ${MODE3==k?"on":""}" onclick="setMode3('${k}')"><i></i>${l}</button>`).join("")}</div></div></div>
  <div class="wrap"><div class="card hero"><img class="crest" src="crest.png"><div class="hi"><h1>${D.club.name}</h1>
  <div class="chips"><span class="chip div">${o.bestDivision}. küme</span><span class="chip">SR ${o.skillRating}</span><span class="wdl"><b class="cW">${w}G</b> <b class="cD">${dr}B</b> <b class="cL">${l}M</b></span></div></div>
@@ -166,7 +166,7 @@ let MODE3=localStorage.getItem("cp-mode3");if(!["forest","light"].includes(MODE3
 window.setMode3=k=>{MODE3=k;localStorage.setItem("cp-mode3",k);r()};
 window.setMode=()=>{MODE=MODE=="light"?"dark":"light";localStorage.setItem("cp-mode",MODE);r()};
 window.setTheme=t=>{THEME=t;localStorage.setItem("cp-theme",t);r()};
-function r(){let b;if(S.tab=="club")b=club();else if(S.tab=="players")b=S.player?player(S.player):players();else if(S.tab=="cmp")b=cmp();else if(S.tab=="night")b=night();else if(S.tab=="fun")b=fun();else b=matchesTab();
+function r(){let b;if(S.tab=="club")b=club();else if(S.tab=="players")b=S.player?player(S.player):players();else if(S.tab=="cmp")b=cmp();else if(S.tab=="night")b=night();else if(S.tab=="fun")b=fun();else if(S.tab=="an")b=analysis();else b=matchesTab();
  document.body.className="t-"+THEME+(THEME=="board"&&MODE=="light"?" light":"")+(THEME=="clean"&&MODE3!="light"?" dk m-"+MODE3:"");
  $(head()+b+`<p class="foot muted sm">EA Pro Clubs verisi · son güncelleme ${dt(D.updated)} · ${D.matches.length} maç kayıtlı · maçlar her ~30 dk otomatik kaydediliyor (EA sadece son 10 maçı veriyor, biz biriktiriyoruz) · bot oyuncuların istatistiği EA'da yok</p></div>`);
  if(S.match){const el=document.getElementById("m"+S.match);if(el&&S._sc!=S.match){S._sc=S.match;el.scrollIntoView({block:"start"})}}else S._sc=null}
