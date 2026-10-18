@@ -68,7 +68,7 @@ def crests(details: dict, team=None) -> list:
 
 
 def player(raw: dict) -> dict:
-    row = {"name": raw.get("playername", "?"), "pos": raw.get("pos", ""),
+    row = {"name": raw.get("playername", "?"), "pos": raw.get("pos", ""), "arch": raw.get("archetypeid", ""),
            "rating": float(raw.get("rating") or 0)}
     for src, dst in INT_FIELDS.items():
         row[dst] = int(float(raw.get(src) or 0))
