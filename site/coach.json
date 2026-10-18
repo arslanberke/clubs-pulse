@@ -1,6 +1,6 @@
 {
  "v": 1,
- "updated": 1792333206,
+ "updated": 1792336547,
  "players": {
   "Eghnzvrl": {
    "summary": "En büyük eksiğin pozisyon dışı: Magician'lara göre %11 geride.",
@@ -22,7 +22,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792272385,
-   "updated": 1792331675
+   "updated": 1792336547
   },
   "guppercan": {
    "summary": "En büyük eksiğin 2. asist: Magician'lara göre %54 geride.",
@@ -47,7 +47,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792272385,
-   "updated": 1792331675
+   "updated": 1792336547
   },
   "nycelia": {
    "summary": "En büyük eksiğin ofsayta düşen pas: Creator'ların 3.4 katı.",
@@ -72,7 +72,7 @@
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": 1792272385,
-   "updated": 1792331675
+   "updated": 1792336547
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Target'ların 5.0 katı.",
@@ -97,7 +97,7 @@
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1792272385,
-   "updated": 1792331675
+   "updated": 1792336547
   }
  }
 }
