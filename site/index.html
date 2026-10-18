@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ionia FC · Clubs Pulse</title>
+<style>
+:root{--bg:#0d0f12;--row:#14171c;--line:#22262d;--tx:#e8eaed;--mut:#8a919c;--acc:#4f9cf9;--g:#3ecf8e;--r:#f26b6b;--y:#f2c94c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:16px}
+header{display:flex;align-items:center;gap:14px;padding:6px 0 14px}
+header img{width:52px;height:52px;object-fit:contain}
+header h1{font-size:20px;margin:0;letter-spacing:.3px}header .sub{color:var(--mut);font-size:12.5px}
+nav{display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:14px}
+.pill{background:transparent;border:1px solid var(--line);color:var(--mut);padding:6px 12px;border-radius:999px;cursor:pointer;font:inherit;font-size:13px}
+.pill.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.bar{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 12px}.bar .lbl{color:var(--mut);font-size:12px;margin-right:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:18px}
+.kpi{background:var(--row);border-radius:10px;padding:10px 12px}.kpi b{display:block;font-size:20px}.kpi span{color:var(--mut);font-size:12px}
+h2{font-size:13px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.8px;margin:18px 0 8px}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{padding:8px 6px;text-align:right;white-space:nowrap}
+th{color:var(--mut);font-weight:500;font-size:11.5px;cursor:pointer;user-select:none;border-bottom:1px solid var(--line)}th.s{color:var(--tx)}
+td{border-bottom:1px solid var(--line)}th:first-child,td:first-child{text-align:left}
+tr.click{cursor:pointer}tr.click:hover td{background:var(--row)}
+.scroll{overflow-x:auto}
+.name b{font-weight:600}.name small{color:var(--mut);margin-left:6px}
+.res{display:inline-block;width:22px;height:22px;border-radius:6px;text-align:center;line-height:22px;font-size:12px;font-weight:700;color:#0d0f12}
+.W{background:var(--g)}.D{background:var(--y)}.L{background:var(--r)}
+.mrow{display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid var(--line);cursor:pointer}.mrow:hover{background:var(--row)}
+.mrow img{width:26px;height:26px;object-fit:contain}.mrow .opp{flex:1}.mrow .sc{font-weight:700;font-variant-numeric:tabular-nums;width:46px;text-align:center}
+.mrow .meta{color:var(--mut);font-size:12px;width:110px;text-align:right}
+.tag{font-size:10.5px;color:var(--mut);border:1px solid var(--line);border-radius:4px;padding:1px 5px;margin-left:6px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:760px){.cols{grid-template-columns:1fr}}
+.sect{background:var(--row);border-radius:10px;padding:4px 12px 8px}.sect h3{font-size:12px;color:var(--mut);margin:10px 0 4px;font-weight:600}
+.kv{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--line);font-size:13px}.kv:last-child{border:0}.kv span{color:var(--mut)}
+.cmpRow{display:grid;grid-template-columns:150px 1fr;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid var(--line)}
+.cmpRow .k{color:var(--mut);font-size:12.5px}.bars{display:flex;flex-direction:column;gap:3px}
+.bl{display:flex;align-items:center;gap:8px;font-size:12px}.bl i{display:block;height:8px;border-radius:4px}.bl em{font-style:normal;width:44px;text-align:right;font-variant-numeric:tabular-nums}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin:6px 0 10px}.legend span{display:flex;align-items:center;gap:6px;font-size:13px}.legend i{width:10px;height:10px;border-radius:3px;display:block}
+.chk{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:5px 11px;cursor:pointer;font-size:13px;color:var(--mut)}.chk.on{color:var(--tx);border-color:var(--tx)}
+.back{color:var(--acc);cursor:pointer;font-size:13px;margin-bottom:8px;display:inline-block}
+.spark{display:flex;align-items:flex-end;gap:4px;height:70px;padding:6px 0}.spark div{flex:1;background:var(--acc);border-radius:3px 3px 0 0;min-height:2px;position:relative}
+.spark div span{position:absolute;top:-16px;left:50%;transform:translateX(-50%);font-size:10px;color:var(--mut)}
+.note{color:var(--mut);font-size:12px;margin-top:20px;border-top:1px solid var(--line);padding-top:10px}
+.pitch{display:flex;gap:4px;height:26px;margin:6px 0}.pitch div{flex:1;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+</style></head><body><div class="wrap" id="app"></div>
+<script src="app.js"></script></body></html>
