@@ -29,7 +29,7 @@ jobs:
           python-version: "3.12"
       - run: pip install -r requirements.txt
       - name: Collect
-        run: python scripts/collect.py || python scripts/collect.py --build-only
+        run: python scripts/collect.py
       - name: Save new matches
         run: |
           git add data/raw

@@ -89,7 +89,7 @@ def download_crest(urls: list) -> None:
             continue
 
 
-def build() -> None:
+def build(fetch_error: str | None = None) -> None:
     club_raw = json.loads((RAW / "club.json").read_text())
     info = club_raw["info"][CLUB_ID]
     matches = []
@@ -117,6 +117,7 @@ def build() -> None:
     overall = (club_raw["overall"] or [{}])[0]
     data = {
         "updated": int(time.time()),
+        "fetchError": fetch_error,
         "club": {
             "name": info["name"],
             "stadium": info.get("customKit", {}).get("stadName", ""),
@@ -133,6 +134,11 @@ def build() -> None:
 
 
 if __name__ == "__main__":
+    error = None
     if "--build-only" not in sys.argv:
-        fetch(FC27API(platform=PLATFORM))
-    build()
+        try:
+            fetch(FC27API(platform=PLATFORM))
+        except Exception as exc:  # keep the site up with archived data
+            error = f"{type(exc).__name__}: {exc}"[:300]
+            print(f"fetch failed: {error}", file=sys.stderr)
+    build(error)
