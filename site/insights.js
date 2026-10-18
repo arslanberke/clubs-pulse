@@ -38,7 +38,7 @@ function oppBlock(ms){const O=D.opps||{},our=+D.club.overall.skillRating||0;
  <div class="card"><div class="ch"><h3>Rakipler</h3><span class="muted sm">${Object.keys(by).length} farklı kulüp</span></div><div class="tw"><table class="tbl"><thead><tr><th>Kulüp</th><th>SR</th><th>En iyi küme</th><th>Galibiyet %</th><th>Bize karşı</th></tr></thead><tbody>${rows}</tbody></table></div><p class="muted sm">SR, küme ve galibiyet oranı rakibin bugünkü değeri, maç anındaki değil.</p></div>`}
 
 function seasonBlock(){const s=D.club.season||{},o=D.club.overall,po=D.club.playoffs||[];
- const t=[[s.points??"–","Lig puanı"],[s.cleanSheets??"–","Gol yemeden biten"],[o.skillRating,"Skill rating"],[o.bestDivision+". küme","En iyi küme"]];
+ const t=[[s.points??"–","Lig puanı"],[s.cleanSheets??"–","Gol yemeden biten"],[o.skillRating,"Skill rating"],...(s.currentDivision?[[s.currentDivision+". küme","Şu anki küme"]]:[]),[o.bestDivision+". küme","En iyi küme"]];
  return `<div class="card"><div class="ch"><h3>Sezon</h3><span class="muted sm">EA'nın kulüp sayacı</span></div><div class="n4">${t.map(([v,l])=>`<div><b>${v}</b><span>${l}</span></div>`).join("")}</div>${po.length?`<p class="muted sm">Playoff geçmişi: ${po.map(p=>`Sezon ${p.seasonId}: en iyi ${p.bestDivision}. küme`).join(" · ")}</p>`:""}</div>`}
 
 function analysis(){const ms=matches(),ord=nightOrder(),ss=sessions().slice(0,6);

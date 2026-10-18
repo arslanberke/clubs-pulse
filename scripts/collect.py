@@ -173,7 +173,7 @@ def build(fetch_error: str | None = None) -> None:
             "members": (club_raw["members"] or {}).get("members", []),
             "career": (club_raw["career"] or {}).get("members", []),
             "kit": info.get("customKit", {}),
-            "season": {k: (club_raw.get("season") or [{}])[0].get(k) for k in ("points", "cleanSheets", "reputationtier")},
+            "season": {k: (club_raw.get("season") or [{}])[0].get(k) for k in ("points", "cleanSheets", "reputationtier", "currentDivision")},
             "playoffs": club_raw.get("playoffs") or [],
         },
         "matches": matches,
