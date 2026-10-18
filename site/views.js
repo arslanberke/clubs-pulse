@@ -1,5 +1,5 @@
 // ---------- redesign views (override app.js renderers) ----------
-const ARCH={"11":"Magician","13":"Finisher","12":"Target","10":"Spark","9":"Creator"};
+const ARCH={"1":"Shot Stopper","2":"Sweeper Keeper","3":"Progressor","4":"Boss","5":"Disruptor","6":"Marauder","7":"Recycler","8":"Maestro","9":"Creator","10":"Spark","11":"Magician","12":"Finisher","13":"Target"};
 const PPOS={0:"KL",3:"SĞB",4:"STP",5:"STP",6:"STP",7:"SLB",10:"DOS",12:"SĞO",13:"MO",14:"MO",15:"MO",16:"SLO",18:"OOS",21:"SF",23:"SĞK",24:"SF",25:"SF",26:"SF",27:"SLK"};
 const GRP={forward:"fw",midfielder:"mf",defender:"df",goalkeeper:"gk"};
 const archName=a=>ARCH[a]||(a?"Arketip "+a:"–");
@@ -115,21 +115,23 @@ function player(n){const ms=matches();const a=agg(n,ms);const m=mem(n);const c=(
  </div>`)}
  ${fold("Maç maç istatistikler",`<div class="${SIMPLE()?"":"card"}"><h3>Maçlar</h3><div class="scroll"><table class="tbl"><tr><th>Rakip</th><th>Skor</th><th>Arketip</th><th>Puan</th><th>G</th><th>A</th><th>2A</th><th>Pas</th><th>Int</th><th>Kayıp</th></tr>
  ${rows.map(({p,m})=>`<tr class="click" onclick="S.tab='matches';S.match='${m.id}';S.player=null;r()"><td>${m.opp.name}</td><td class="c${res(m)}">${m.gf}-${m.ga}</td><td class="muted">${archName(p.arch)}</td><td><span class="rt ${rc(p.rating)}">${p.rating.toFixed(1)}</span></td><td>${p.goals}</td><td>${p.assists}</td><td>${p.ev.secondAssists}</td><td>${p.ev.passesCompleted}/${p.ev.passesCompleted+p.ev.passesFailed}</td><td>${p.ev.interceptions}</td><td>${LOST(p)}</td></tr>`).join("")}</table></div></div>`)}`}
-function radar(list,keys){const cx=170,cy=165,R=120,n=keys.length;const mx=keys.map(k=>Math.max(...list.map(a=>val(a,k)||0),1e-9));
+function radar(list,keys,F,lab){const cx=170,cy=165,R=120,n=keys.length;F=F||((a,k,i)=>(val(a,k)||0)/mx[i]);lab=lab||(k=>ST.find(d=>d[0]==k)[1]);const mx=keys.map(k=>Math.max(...list.map(a=>val(a,k)||0),1e-9));
  const pt=(i,f)=>[cx+Math.sin(2*Math.PI*i/n)*R*f,cy-Math.cos(2*Math.PI*i/n)*R*f];let s=`<svg viewBox="-50 0 440 330" class="radar">`;
  [.25,.5,.75,1].forEach(f=>s+=`<polygon points="${keys.map((_,i)=>pt(i,f).join(",")).join(" ")}" class="rg"/>`);
- keys.forEach((k,i)=>{const[x,y]=pt(i,1.17);s+=`<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle">${ST.find(d=>d[0]==k)[1]}</text>`});
- list.forEach((a,j)=>{s+=`<polygon points="${keys.map((k,i)=>pt(i,Math.max(.03,(val(a,k)||0)/mx[i])).join(",")).join(" ")}" fill="${C[j]}26" stroke="${C[j]}" stroke-width="2.5"/>`});return s+"</svg>"}
-const NEG=[["Top kaybı",LOST],["Başarısız pas",p=>p.ev.passesFailed],["Kaybedilen tackle",p=>p.ev.tacklesLost],["Pozisyon dışı",p=>p.ev.outOfPosition],["\"Başka yere pas vermeliydin\"",p=>p.ev.feedbackShouldHavePassedElsewhere],["Ofsayta düşen pas",p=>p.ev.offsidePasses],["Tehlikeli müdahale",p=>p.ev.dangerousTackles],["Kırmızı kart",p=>p.red]];
+ keys.forEach((k,i)=>{const[x,y]=pt(i,1.17);s+=`<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle">${lab(k)}</text>`});
+ list.forEach((a,j)=>{s+=`<polygon points="${keys.map((k,i)=>pt(i,Math.max(.03,F(a,k,i))).join(",")).join(" ")}" fill="${C[j]}26" stroke="${C[j]}" stroke-width="2.5"/>`});return s+"</svg>"}
+const NEG=[["Top kaybı",LOST],["Başarısız pas",p=>p.ev.passesFailed],["Kaybedilen tackle",p=>p.ev.tacklesLost],["Pozisyon dışı",p=>p.ev.outOfPosition],["Yanlış pas tercihi",p=>p.ev.feedbackShouldHavePassedElsewhere],["Ofsayta düşen pas",p=>p.ev.offsidePasses],["Tehlikeli müdahale",p=>p.ev.dangerousTackles],["Kırmızı kart",p=>p.red]];
 function cmp(){const ms=matches();const all=names().filter(n=>agg(n,ms).n);if(!S.cmp.length)S.cmp=all.slice(0,2);const L=S.cmp.map(n=>agg(n,ms)).filter(a=>a.n);
  const bar=(l,vs,low)=>{const mx=Math.max(...vs,1e-9);const bi=vs.indexOf(low?Math.min(...vs):Math.max(...vs));
    return `<div class="cr"><div class="crl">${l}</div><div>${L.map((a,j)=>`<div class="crb"><em class="${j==bi&&L.length>1?"best":""}">${fmt(vs[j])}</em><i style="width:${vs[j]/mx*100}%;background:${C[j]}"></i></div>`).join("")}</div></div>`};
   const rows=ST.filter(x=>x[4]!=-1).map(([k,l])=>bar(l,L.map(a=>val(a,k)||0))).join("");
   const nv=(a,f)=>a.rows.reduce((s,r)=>s+(f(r.p)||0),0)/(S.mode=="avg"?a.n:1);
-  const neg=NEG.map(([l,f])=>{const vs=L.map(a=>nv(a,f));return vs.some(v=>v>0)?bar(l,vs,1):""}).join("");
+  const NV=NEG.map(([l,f])=>({l,vs:L.map(a=>nv(a,f))})).filter(x=>x.vs.some(v=>v>0));
+  const neg=NV.map(x=>bar(x.l,x.vs,1)).join("");
+  const nr=NV.length>=3?radar(L,NV.map((_,i)=>i),(a,i)=>{const vs=NV[i].vs,mn=Math.min(...vs);return (mn+.1)/(vs[L.indexOf(a)]+.1)},i=>NV[i].l.replace(/"/g,"")):"";
  return filters()+`<div class="card"><div class="ch"><h3>Oyuncu seç</h3><span class="muted sm">en fazla 4</span></div><div class="pick">${all.map(n=>{const j=S.cmp.indexOf(n);return `<button class="${j>=0?"on":""}" style="${j>=0?`border-color:${C[j]};color:${C[j]}`:""}" onclick="tg('${n}')">${n}</button>`}).join("")}</div></div>
  <div class="g2"><div class="card"><h3>Radar</h3>${radar(L,["goals","assists","sa","sot","drb","won","int","tw","pass"])}<p class="muted sm c">Seçili oyuncular arasında en iyiye göre ölçekli</p></div><div class="card"><h3>Artılar <small class="muted">çok olan iyi</small></h3>${rows}</div></div>
-  <div class="card"><h3>Eksiler <small class="muted">az olan iyi</small></h3>${neg}</div>`}
+  <div class="g2">${nr?`<div class="card"><h3>Eksiler radarı</h3>${nr}<p class="muted sm c">Dışa doğru büyük olan daha az hata yapıyor</p></div>`:""}<div class="card"><h3>Eksiler <small class="muted">az olan iyi</small></h3>${neg}</div></div>`}
 
 function night(){const ss=sessions();if(!ss.length)return "<p>Maç yok.</p>";const i=Math.min(S.night,ss.length-1),s=ss[i],ms=s.ms;
  const w=ms.filter(m=>res(m)=="W").length,d=ms.filter(m=>res(m)=="D").length,l=ms.length-w-d;const gf=ms.reduce((a,m)=>a+m.gf,0),ga=ms.reduce((a,m)=>a+m.ga,0);
