@@ -8,13 +8,14 @@ import json
 import os
 import sys
 import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "site" / "data.json"
 OUT = ROOT / "site" / "coach.json"
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+MODELS = [m for m in [os.environ.get("GEMINI_MODEL"), "gemini-2.5-flash", "gemini-flash-latest", "gemini-2.0-flash"] if m]
 VERSION = 1
 
 ARCH = {"1": "Shot Stopper", "2": "Sweeper Keeper", "3": "Progressor", "4": "Boss", "5": "Disruptor",
@@ -229,10 +230,26 @@ def prompt(f):
 
 
 def ask_gemini(text, key):
+    last = None
+    for model in MODELS:
+        try:
+            return ask_model(model, text, key), model
+        except urllib.error.HTTPError as exc:
+            try:
+                msg = json.load(exc)["error"]["message"]
+            except Exception:
+                msg = ""
+            last = RuntimeError(f"{model} HTTP {exc.code}: {msg[:200]}")
+            if exc.code not in (404, 429, 503):
+                break
+    raise last
+
+
+def ask_model(model, text, key):
     body = {"contents": [{"role": "user", "parts": [{"text": text}]}],
             "generationConfig": {"temperature": 0.6, "responseMimeType": "application/json", "responseSchema": SCHEMA}}
     req = urllib.request.Request(
-        f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent",
+        f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
         data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": key})
     with urllib.request.urlopen(req, timeout=60) as r:
         res = json.load(r)
@@ -247,7 +264,7 @@ def main():
     key = os.environ.get("GEMINI_API_KEY", "").strip()
     force = "--force" in sys.argv
     names = sorted({p["name"] for m in data["matches"] for p in m["us"]})
-    players = {}
+    players, errors = {}, []
     for n in names:
         f = findings(n, data["matches"])
         if not f:
@@ -256,21 +273,24 @@ def main():
         if old and old.get("hash") == f["hash"] and not force and (old.get("source") == "ai" or not key):
             players[n] = old
             continue
-        tips, source = rule_tips(f), "rules"
+        tips, source, model = rule_tips(f), "rules", None
         if key:
             try:
-                tips, source = ask_gemini(prompt(f), key), "ai"
+                (tips, model), source = ask_gemini(prompt(f), key), "ai"
             except Exception as exc:
-                print(f"gemini failed for {n}: {type(exc).__name__}: {str(exc)[:200]}", file=sys.stderr)
+                err = f"{type(exc).__name__}: {str(exc)[:240]}".replace(key, "***")
+                errors.append(err)
+                print(f"gemini failed for {n}: {err}", file=sys.stderr)
         if not f["night"]:
             tips["night"] = ""
-        players[n] = {**tips, "source": source, "model": MODEL if source == "ai" else None, "hash": f["hash"],
+        players[n] = {**tips, "source": source, "model": model, "hash": f["hash"],
                       "n": f["n"], "arch": f["arch"], "pos": f["pos"], "nightStart": f["night"]["start"] if f["night"] else None,
                       "updated": int(time.time())}
-    if prev.get("v") == VERSION and prev.get("players") == players:
+    ai_error = errors[0] if errors else None
+    if prev.get("v") == VERSION and prev.get("players") == players and prev.get("aiError") == ai_error:
         print("coach: no changes")
         return
-    OUT.write_text(json.dumps({"v": VERSION, "updated": int(time.time()), "players": players}, ensure_ascii=False, indent=1) + "\n")
+    OUT.write_text(json.dumps({"v": VERSION, "updated": int(time.time()), "aiError": ai_error, "players": players}, ensure_ascii=False, indent=1) + "\n")
     print(f"coach: {len(players)} players, " + ", ".join(f"{n}={p['source']}" for n, p in players.items()))
 
 
