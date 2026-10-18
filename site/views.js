@@ -44,13 +44,13 @@ function head(){const o=D.club.overall,ms=[...D.matches].sort((a,b)=>b.ts-a.ts);
  const w=+o.wins,dr=+o.ties,l=+o.losses,gp=+o.gamesPlayed||1;let st=0,sr=ms[0]?res(ms[0]):"";for(const m of ms){if(res(m)==sr)st++;else break}
  const fN=S.formN||10;const form=ms.slice(0,fN);
  const tabs=[["club","Genel"],["matches","Maçlar"],["night","Gece raporu"],["players","Oyuncular"],["cmp","Karşılaştır"],["fun","Eğlence"],["an","Analiz"]];
- return `<div class="top"><div class="wrap tb"><div class="logo">Clubs <b>Pulse</b></div><div class="thm">${[["forest","Koyu"],["light","Açık"]].map(([k,l])=>`<button class="mb mb-${k} ${MODE3==k?"on":""}" onclick="setMode3('${k}')"><i></i>${l}</button>`).join("")}</div></div></div>
- <div class="wrap"><div class="card hero"><img class="crest" src="crest.png"><div class="hi"><h1>${D.club.name}</h1>
+ return `<div class="top"><div class="wrap tb"><div class="logo" onclick="go('club')"><img src="crest.png" alt="">Clubs <b>Pulse</b></div><button class="srch" onclick="openSearch()" aria-label="Ara">${ico("search")}<span>Oyuncu, rakip ara</span><kbd>/</kbd></button>${meChip()}<div class="thm">${[["forest","Koyu"],["light","Açık"]].map(([k,l])=>`<button class="mb mb-${k} ${MODE3==k?"on":""}" onclick="setMode3('${k}')"><i></i>${l}</button>`).join("")}</div></div></div>
+ <div class="wrap">${S.tab=="club"?`<div class="card hero"><img class="crest" src="crest.png"><div class="hi"><h1>${D.club.name}</h1>
  <div class="chips"><span class="chip div">${(D.club.season||{}).currentDivision||o.bestDivision}. küme</span><span class="chip">SR ${o.skillRating}</span><span class="wdl"><b class="cW">${w}G</b> <b class="cD">${dr}B</b> <b class="cL">${l}M</b></span></div></div>
  <div class="tiles"><div class="tile"><b class="${w/gp>=.5?"cW":"cL"}">%${fmt(w/gp*100,0)}</b><span>Galibiyet</span></div><div class="tile"><b class="${o.goals-o.goalsAgainst>=0?"cW":"cL"}">${o.goals-o.goalsAgainst>0?"+":""}${o.goals-o.goalsAgainst}</b><span>Averaj</span></div>
  <div class="tile"><b>${fmt(o.goals/gp,2)}</b><span>Maç başı gol</span></div><div class="tile"><b class="c${sr}">${st}${resTr[sr]||""}</b><span>Seri</span></div></div>
- <div class="form"><div class="fn">${[5,10,20].map(k=>`<button class="${fN==k?"on":""}" onclick="S.formN=${k};r()">${k}</button>`).join("")}</div>${form.map(m=>`<span class="fp b${res(m)}" title="${m.opp.name} ${m.gf}-${m.ga}">${resTr[res(m)]}</span>`).join("")}</div></div>
- <nav class="tabs">${tabs.map(([k,l])=>`<button class="${S.tab==k?"on":""}" onclick="S.tab='${k}';S.player=null;S.match=null;r()">${l}</button>`).join("")}</nav>`}
+ <div class="form"><div class="fn">${[5,10,20].map(k=>`<button class="${fN==k?"on":""}" onclick="S.formN=${k};r()">${k}</button>`).join("")}</div>${form.map(m=>`<span class="fp b${res(m)}" title="${m.opp.name} ${m.gf}-${m.ga}">${resTr[res(m)]}</span>`).join("")}</div></div>`:""}
+ <nav class="tabs">${tabs.map(([k,l])=>`<button class="${S.tab==k?"on":""}" onclick="go('${k}')">${l}</button>`).join("")}</nav>${bnav()}`}
 
 function seg(arr,cur,key){return `<div class="seg">${arr.map(([v,l])=>`<button class="${cur==v?"on":""}" onclick="S.${key}='${v}';r()">${l}</button>`).join("")}</div>`}
 function filters(withMode=true){const ty=[["all","Tümü ("+D.matches.length+")"],...["Lig","Playoff","Hazırlık"].filter(t=>D.matches.some(m=>m.type==t)).map(t=>[t,`${t} (${D.matches.filter(m=>m.type==t).length})`])];
@@ -76,7 +76,7 @@ function matchDetail(m){const T=(l,f)=>l.reduce((s,p)=>s+(f(p)||0),0);const pc=l
  <button class="btn" onclick="shareMatch('${m.id}')">WhatsApp görseli</button></div>`}
 function ptable(list){return `<div class="scroll"><table class="tbl"><tr><th>Oyuncu</th><th>Puan</th><th>G</th><th>A</th><th>2A</th><th>Şut</th><th>Pas</th><th>Int</th><th>Tackle</th><th>Kayıp</th><th>Kazanma</th></tr>
  ${[...list].sort((a,b)=>b.rating-a.rating).map(p=>{const e=p.ev;return `<tr><td><b>${p.name}</b>${p.mom?' <span class="tag">MOTM</span>':""}<small class="muted"> ${archName(p.arch)}</small></td><td><span class="rt ${rc(p.rating)}">${p.rating.toFixed(1)}</span></td><td>${p.goals}</td><td>${p.assists}</td><td>${e.secondAssists}</td><td>${e.shotsOnTarget}/${p.shots}</td><td>${e.passesCompleted}/${e.passesCompleted+e.passesFailed}</td><td>${e.interceptions}</td><td>${e.tacklesWon}/${e.tacklesWon+e.tacklesLost}</td><td>${LOST(p)}</td><td>${WON(p)}</td></tr>`}).join("")}</table></div>`}
-function matchesTab(){const ms=matches().sort((a,b)=>b.ts-a.ts);return filters(false)+`<div class="g2">${ms.map(mcard).join("")}</div>`}
+function matchesTab(){const ms=mfilt(matches()).sort((a,b)=>b.ts-a.ts);return filters(false)+mfilters(ms)+(ms.length?`<div class="g2">${ms.map(mcard).join("")}</div>`:`<div class="card"><p class="muted">Bu filtrelere uyan maç yok.</p></div>`)}
 
 function pcard(a){const m=mem(a.name);const rows=[...a.rows].slice(-10);const mx=Math.max(...rows.map(r=>r.p.goals),1);const w=a.rows.filter(r=>res(r.m)=="W").length;
  const sh=a.rows.reduce((s,r)=>s+r.p.shots,0),so=a.rows.reduce((s,r)=>s+r.p.ev.shotsOnTarget,0);
