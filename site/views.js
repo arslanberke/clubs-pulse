@@ -1,5 +1,5 @@
 // ---------- redesign views (override app.js renderers) ----------
-const ARCH={"11":"Magician","12":"Finisher","13":"Target","10":"Spark","9":"Creator"};
+const ARCH={"11":"Magician","13":"Finisher","12":"Target","10":"Spark","9":"Creator"};
 const PPOS={0:"KL",3:"SĞB",4:"STP",5:"STP",6:"STP",7:"SLB",10:"DOS",12:"SĞO",13:"MO",14:"MO",15:"MO",16:"SLO",18:"OOS",21:"SF",23:"SĞK",24:"SF",25:"SF",26:"SF",27:"SLK"};
 const GRP={forward:"fw",midfielder:"mf",defender:"df",goalkeeper:"gk"};
 const archName=a=>ARCH[a]||(a?"Arketip "+a:"–");
