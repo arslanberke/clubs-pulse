@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "site" / "data.json"
 OUT = ROOT / "site" / "coach.json"
-MODELS = [m for m in [os.environ.get("GEMINI_MODEL"), "gemini-flash-latest", "gemini-2.5-flash"] if m]
+MODELS = [m for m in [os.environ.get("GEMINI_MODEL"), "gemini-flash-latest", "gemini-3.8-flash"] if m]
 VERSION = 2
 
 ARCH = {"1": "Shot Stopper", "2": "Sweeper Keeper", "3": "Progressor", "4": "Boss", "5": "Disruptor",
@@ -265,7 +265,7 @@ def ask_model(model, text, key):
     req = urllib.request.Request(
         f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
         data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": key})
-    with urllib.request.urlopen(req, timeout=60) as r:
+    with urllib.request.urlopen(req, timeout=180) as r:
         res = json.load(r)
     out = json.loads(res["candidates"][0]["content"]["parts"][0]["text"])
     return {k: (out.get(k) or ([] if k in ("dont", "do", "keep") else "")) for k in SCHEMA["required"]}
