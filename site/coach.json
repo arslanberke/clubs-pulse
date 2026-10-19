@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1792445579,
+ "updated": 1792449350,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Eghnzvrl": {
@@ -50,7 +50,7 @@
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": 1792432143,
-   "updated": 1792445579
+   "updated": 1792449350
   },
   "guppercan": {
    "summary": "En büyük eksiğin 2. asist: Magician'lara göre %48 geride.",
@@ -75,7 +75,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792432143,
-   "updated": 1792445579
+   "updated": 1792449350
   },
   "nycelia": {
    "summary": "En büyük eksiğin kaybedilen tackle: Creator'ların 3.1 katı.",
@@ -100,7 +100,7 @@
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": 1792432143,
-   "updated": 1792445579
+   "updated": 1792449350
   },
   "rljer": {
    "summary": "En büyük eksiğin 2. asist: Spark'lara göre %48 geride.",
@@ -125,7 +125,7 @@
    "arch": "Spark",
    "pos": "Forvet",
    "nightStart": 1792432143,
-   "updated": 1792445579
+   "updated": 1792449350
   }
  }
 }
