@@ -1,8 +1,10 @@
 name: Update stats
 
+# GitHub's scheduler often runs hours late, so each run stays alive and polls EA
+# every few minutes. The next scheduled run queues behind it and takes over.
 on:
   schedule:
-    - cron: "7,37 * * * *"
+    - cron: "7 * * * *"
   workflow_dispatch:
   push:
     branches: [main]
@@ -17,23 +19,39 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Collect
-        run: python scripts/collect.py
-      - name: Coach
-        continue-on-error: true
+      - name: Poll EA
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scripts/coach.py
-      - name: Save new matches
+          POLL_SECONDS: "240"
+          RUN_MINUTES: "340"
+          FULL_EVERY: "3600"
         run: |
-          git add data/raw site/data.json site/crest.png site/coach.json
-          if ! git diff --cached --quiet; then
-            git -c user.name="clubs-pulse bot" -c user.email="actions@users.noreply.github.com" commit -m "Update matches"
-            git push
-          fi
+          git config user.name "clubs-pulse bot"
+          git config user.email "actions@users.noreply.github.com"
+          end=$(( $(date +%s) + RUN_MINUTES * 60 ))
+          last_full=0
+          while :; do
+            git pull -q --rebase --autostash || { git rebase --abort 2>/dev/null; git checkout -q -- .; git pull -q --rebase; }
+            python -u scripts/collect.py || true
+            now=$(date +%s)
+            new=$(git status --porcelain data/raw/matches)
+            if [ -n "$new" ] || [ $((now - last_full)) -ge "$FULL_EVERY" ]; then
+              [ -n "$new" ] && echo "new matches:" && echo "$new"
+              python -u scripts/coach.py || true
+              git add data/raw site/data.json site/crest.png site/coach.json
+              if ! git diff --cached --quiet; then
+                git commit -q -m "Update matches"
+                git pull -q --rebase && git push -q || echo "push failed, retrying next loop"
+              fi
+              last_full=$now
+            fi
+            [ "$(date +%s)" -ge "$end" ] && break
+            sleep "$POLL_SECONDS"
+          done

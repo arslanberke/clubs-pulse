@@ -1,4 +1,4 @@
-"""Shared EA match conversion used by scripts/collect.py and the /api/live function."""
+"""Shared EA match conversion for scripts/collect.py."""
 
 from fc_clubs_api.assets import crest_url_candidates
 from fc_clubs_api.events import decode_events

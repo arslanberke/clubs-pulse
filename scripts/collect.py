@@ -10,9 +10,9 @@ from pathlib import Path
 
 from fc_clubs_api import FC27API
 
+from ea import CLUB_ID, MATCH_TYPES, PLATFORM, convert, crests
+
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "site" / "api"))
-from _ea import CLUB_ID, MATCH_TYPES, PLATFORM, convert, crests  # noqa: E402
 
 CLUB_NAME = "IONIA FC"
 RAW = ROOT / "data" / "raw"

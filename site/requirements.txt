@@ -1,1 +1,0 @@
-fc-clubs-api==0.3.0

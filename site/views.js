@@ -168,5 +168,5 @@ window.setMode=()=>{MODE=MODE=="light"?"dark":"light";localStorage.setItem("cp-m
 window.setTheme=t=>{THEME=t;localStorage.setItem("cp-theme",t);r()};
 function r(){let b;if(S.tab=="club")b=club();else if(S.tab=="players")b=S.player?player(S.player):players();else if(S.tab=="cmp")b=cmp();else if(S.tab=="night")b=night();else if(S.tab=="fun")b=fun();else if(S.tab=="an")b=analysis();else b=matchesTab();
  document.body.className="t-"+THEME+(THEME=="board"&&MODE=="light"?" light":"")+(THEME=="clean"&&MODE3!="light"?" dk m-"+MODE3:"");
- $(head()+b+`<p class="foot muted sm">EA Pro Clubs verisi · son güncelleme ${dt(D.updated)} · ${D.matches.length} maç kayıtlı · son maçlar site açılınca EA'dan anlık geliyor, hepsi arşivde birikiyor (EA sadece son 10 maçı veriyor) · bot oyuncuların istatistiği EA'da yok</p></div>`);
+ $(head()+b+`<p class="foot muted sm">EA Pro Clubs verisi · son güncelleme ${dt(D.updated)} · ${D.matches.length} maç kayıtlı · yeni maçlar EA'dan birkaç dakikada bir çekilip arşivleniyor (EA sadece son 10 maçı veriyor, biz biriktiriyoruz) · bot oyuncuların istatistiği EA'da yok</p></div>`);
  if(S.match){const el=document.getElementById("m"+S.match);if(el&&S._sc!=S.match){S._sc=S.match;el.scrollIntoView({block:"start"})}}else S._sc=null}
