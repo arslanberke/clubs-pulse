@@ -1,7 +1,7 @@
 name: Update stats
 
 # GitHub's scheduler often runs hours late, so each run stays alive and polls EA
-# every few minutes. The next scheduled run queues behind it and takes over.
+# every few minutes. A newer run (schedule or push) replaces the running one.
 on:
   schedule:
     - cron: "7 * * * *"
@@ -14,7 +14,7 @@ permissions:
 
 concurrency:
   group: update
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   update:
@@ -32,6 +32,7 @@ jobs:
           POLL_SECONDS: "240"
           RUN_MINUTES: "340"
           FULL_EVERY: "3600"
+          COACH_BUDGET: "420"
         run: |
           git config user.name "clubs-pulse bot"
           git config user.email "actions@users.noreply.github.com"
@@ -44,12 +45,16 @@ jobs:
             new=$(git status --porcelain data/raw/matches)
             if [ -n "$new" ] || [ $((now - last_full)) -ge "$FULL_EVERY" ]; then
               [ -n "$new" ] && echo "new matches:" && echo "$new"
+              save() {
+                git add data/raw site/data.json site/crest.png site/coach.json
+                if ! git diff --cached --quiet; then
+                  git commit -q -m "$1"
+                  git pull -q --rebase && git push -q || echo "push failed, retrying next loop"
+                fi
+              }
+              save "Update matches"
               python -u scripts/coach.py || true
-              git add data/raw site/data.json site/crest.png site/coach.json
-              if ! git diff --cached --quiet; then
-                git commit -q -m "Update matches"
-                git pull -q --rebase && git push -q || echo "push failed, retrying next loop"
-              fi
+              save "Update coach advice"
               last_full=$now
             fi
             [ "$(date +%s)" -ge "$end" ] && break

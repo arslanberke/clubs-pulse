@@ -243,6 +243,8 @@ def ask_gemini(text, key):
                 except Exception:
                     msg = ""
                 err = f"{model} HTTP {exc.code}: {msg[:160]}"
+                if exc.code == 429 and "quota" in msg.lower():
+                    raise RuntimeError(err)
                 if exc.code in (429, 500, 503) and attempt < 2:
                     time.sleep(20 * (attempt + 1))
                     continue
@@ -265,7 +267,7 @@ def ask_model(model, text, key):
     req = urllib.request.Request(
         f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
         data=json.dumps(body).encode(), headers={"Content-Type": "application/json", "x-goog-api-key": key})
-    with urllib.request.urlopen(req, timeout=180) as r:
+    with urllib.request.urlopen(req, timeout=90) as r:
         res = json.load(r)
     out = json.loads(res["candidates"][0]["content"]["parts"][0]["text"])
     return {k: (out.get(k) or ([] if k in ("dont", "do", "keep") else "")) for k in SCHEMA["required"]}
@@ -279,6 +281,7 @@ def main():
     force = "--force" in sys.argv
     names = sorted({p["name"] for m in data["matches"] for p in m["us"]})
     players, errors = {}, []
+    deadline = time.time() + float(os.environ.get("COACH_BUDGET", "600"))
     for n in names:
         f = findings(n, data["matches"])
         if not f:
@@ -288,13 +291,15 @@ def main():
             players[n] = old
             continue
         tips, source, model = rule_tips(f), "rules", None
-        if key:
+        if key and time.time() < deadline:
             try:
                 (tips, model), source = ask_gemini(prompt(f), key), "ai"
             except Exception as exc:
                 err = f"{type(exc).__name__}: {str(exc)[:240]}".replace(key, "***")
                 errors.append(err)
                 print(f"gemini failed for {n}: {err}", file=sys.stderr)
+                if "quota" in err.lower():
+                    deadline = 0
         if not f["night"]:
             tips["night"] = ""
         players[n] = {**tips, "source": source, "model": model, "hash": f["hash"],
