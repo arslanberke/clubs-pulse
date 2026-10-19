@@ -9,26 +9,17 @@ import urllib.request
 from pathlib import Path
 
 from fc_clubs_api import FC27API
-from fc_clubs_api.assets import crest_url_candidates
-from fc_clubs_api.events import decode_events
-
-CLUB_ID = "654106"
-CLUB_NAME = "IONIA FC"
-PLATFORM = "common-gen5"
-MATCH_TYPES = {"leagueMatch": "Lig", "playoffMatch": "Playoff", "friendlyMatch": "Hazırlık"}
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "site" / "api"))
+from _ea import CLUB_ID, MATCH_TYPES, PLATFORM, convert, crests  # noqa: E402
+
+CLUB_NAME = "IONIA FC"
 RAW = ROOT / "data" / "raw"
 MATCHES = RAW / "matches"
 OPPS = RAW / "opponents"
 SITE = ROOT / "site"
 OUT = SITE / "data.json"
-
-INT_FIELDS = {
-    "goals": "goals", "assists": "assists", "shots": "shots", "passattempts": "passAtt",
-    "passesmade": "passMade", "tackleattempts": "tklAtt", "tacklesmade": "tklMade",
-    "mom": "mom", "redcards": "red", "saves": "saves", "secondsPlayed": "sec",
-}
 
 
 def write_json(path: Path, data) -> None:
@@ -104,25 +95,6 @@ def opponents() -> dict:
     return out
 
 
-def crests(details: dict, team=None) -> list:
-    kit = details.get("customKit", {})
-    return crest_url_candidates(
-        team=team,
-        team_id=details.get("teamId"),
-        crest_asset_id=kit.get("crestAssetId"),
-        selected_kit_type=kit.get("selectedKitType"),
-    )
-
-
-def player(raw: dict) -> dict:
-    row = {"name": raw.get("playername", "?"), "pos": raw.get("pos", ""), "arch": raw.get("archetypeid", ""),
-           "rating": float(raw.get("rating") or 0)}
-    for src, dst in INT_FIELDS.items():
-        row[dst] = int(float(raw.get(src) or 0))
-    row["ev"] = {k: v for k, v in decode_events(raw).items() if v}
-    return row
-
-
 def download_crest(urls: list) -> None:
     for url in urls:
         try:
@@ -141,25 +113,9 @@ def build(fetch_error: str | None = None) -> None:
     info = club_raw["info"][CLUB_ID]
     matches = []
     for path in MATCHES.glob("*.json"):
-        m = json.loads(path.read_text())
-        clubs = m["clubs"]
-        if CLUB_ID not in clubs or len(clubs) < 2:
-            continue
-        opp_id = next(c for c in clubs if c != CLUB_ID)
-        us, them = clubs[CLUB_ID], clubs[opp_id]
-        opp_details = them.get("details") or {}
-        matches.append({
-            "id": m["matchId"],
-            "ts": int(m["timestamp"]),
-            "type": MATCH_TYPES.get(m.get("_matchType"), "Lig"),
-            "gf": int(us.get("goals") or 0),
-            "ga": int(them.get("goals") or 0),
-            "dnf": "1" in (us.get("winnerByDnf"), them.get("winnerByDnf")),
-            "opp": {"id": opp_id, "name": opp_details.get("name", "?"),
-                    "crest": crests(opp_details, them.get("TEAM"))},
-            "us": [player(p) for p in m["players"].get(CLUB_ID, {}).values()],
-            "them": [player(p) for p in m["players"].get(opp_id, {}).values()],
-        })
+        m = convert(json.loads(path.read_text()))
+        if m:
+            matches.append(m)
     matches.sort(key=lambda x: -x["ts"])
     overall = (club_raw["overall"] or [{}])[0]
     data = {

@@ -108,7 +108,7 @@ function matchDetail(m){const R=res(m);const sumT=(l,f)=>l.reduce((s,p)=>s+f(p),
  <h2>Takım karşılaştırması (sadece gerçek oyuncular)</h2>${line("Şut",p=>p.shots)}${line("Başarılı pas",p=>p.ev.passesCompleted)}${line("Interception",p=>p.ev.interceptions)}${line("Top kaybı",p=>p.ev.possessionLostDefensiveThird+p.ev.possessionLostMiddleThird+p.ev.possessionLostAttackingThird)}${line("Tackle",p=>p.ev.tacklesWon)}
  <h2>${D.club.name}</h2>${ptable(m.us)}<h2>${m.opp.name}</h2>${m.them.length?ptable(m.them):'<p style="color:var(--mut)">Rakip oyuncu verisi yok.</p>'}`}
 function r(){let b;if(S.tab=="club")b=club();else if(S.tab=="players")b=S.player?player(S.player):players();else if(S.tab=="cmp")b=cmp();else if(S.tab=="night")b=night();else if(S.tab=="fun")b=fun();else b=matchesTab();
- $(head()+b+`<div class="note">EA Pro Clubs verisi · son güncelleme ${dt(D.updated)} · ${D.matches.length} maç kayıtlı. Maçlar her ~30 dk otomatik kaydediliyor (EA sadece son 10 maçı veriyor, biz biriktiriyoruz). Bot (AI) oyuncuların istatistiği EA'da yok.</div>`)}
+ $(head()+b+`<div class="note">EA Pro Clubs verisi · son güncelleme ${dt(D.updated)} · ${D.matches.length} maç kayıtlı. Son maçlar site açılınca EA'dan anlık geliyor, hepsi arşivde birikiyor (EA sadece son 10 maçı veriyor). Bot (AI) oyuncuların istatistiği EA'da yok.</div>`)}
 
 // ---------- team scores ----------
 const clamp=x=>Math.round(Math.max(0,Math.min(100,x)));
@@ -226,6 +226,11 @@ function showShare(c,fname){c.toBlob(blob=>{const url=URL.createObjectURL(blob);
 window.shareMatch=shareMatch;window.shareNight=shareNight;
 
 // ---------- boot ----------
+const evProxy=m=>[...m.us,...m.them].forEach(p=>p.ev=new Proxy(p.ev,{get:(o,k)=>k in o?o[k]:0}));
+const whenReady=f=>document.readyState=="loading"?addEventListener("DOMContentLoaded",f):f();
 fetch("data.json",{cache:"no-cache"}).then(x=>x.json()).then(d=>{D=d;
-D.matches.forEach(m=>[...m.us,...m.them].forEach(p=>p.ev=new Proxy(p.ev,{get:(o,k)=>k in o?o[k]:0})));
- D.club.members.forEach(m=>real[m.name]=m.proName);document.readyState=="loading"?addEventListener("DOMContentLoaded",()=>r()):r()});
+ D.matches.forEach(evProxy);
+ D.club.members.forEach(m=>real[m.name]=m.proName);whenReady(()=>r());
+ fetch("api/live").then(x=>x.ok?x.json():null).then(l=>{if(!l||!l.matches)return;
+  const have=new Set(D.matches.map(m=>m.id)),add=l.matches.filter(m=>!have.has(m.id));
+  add.forEach(evProxy);D.matches=[...add,...D.matches].sort((a,b)=>b.ts-a.ts);D.updated=Math.floor(Date.now()/1000);whenReady(()=>r())}).catch(()=>{})});
