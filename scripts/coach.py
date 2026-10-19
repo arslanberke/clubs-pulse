@@ -15,7 +15,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "site" / "data.json"
 OUT = ROOT / "site" / "coach.json"
-MODELS = [m for m in [os.environ.get("GEMINI_MODEL"), "gemini-2.5-flash", "gemini-flash-latest", "gemini-2.0-flash"] if m]
+MODELS = [m for m in [os.environ.get("GEMINI_MODEL"), "gemini-flash-latest", "gemini-2.5-flash"] if m]
 VERSION = 2
 
 ARCH = {"1": "Shot Stopper", "2": "Sweeper Keeper", "3": "Progressor", "4": "Boss", "5": "Disruptor",
@@ -232,19 +232,31 @@ def prompt(f):
 
 
 def ask_gemini(text, key):
-    last = None
+    errors = []
     for model in MODELS:
-        try:
-            return ask_model(model, text, key), model
-        except urllib.error.HTTPError as exc:
+        for attempt in range(3):
             try:
-                msg = json.load(exc)["error"]["message"]
-            except Exception:
-                msg = ""
-            last = RuntimeError(f"{model} HTTP {exc.code}: {msg[:200]}")
-            if exc.code not in (404, 429, 503):
+                return ask_model(model, text, key), model
+            except urllib.error.HTTPError as exc:
+                try:
+                    msg = json.load(exc)["error"]["message"]
+                except Exception:
+                    msg = ""
+                err = f"{model} HTTP {exc.code}: {msg[:160]}"
+                if exc.code in (429, 500, 503) and attempt < 2:
+                    time.sleep(20 * (attempt + 1))
+                    continue
+                errors.append(err)
+                if exc.code in (400, 401, 403):
+                    raise RuntimeError(err)
                 break
-    raise last
+            except (urllib.error.URLError, TimeoutError, ValueError, KeyError) as exc:
+                if attempt < 2:
+                    time.sleep(10)
+                    continue
+                errors.append(f"{model} {type(exc).__name__}: {str(exc)[:120]}")
+                break
+    raise RuntimeError(" | ".join(errors))
 
 
 def ask_model(model, text, key):
