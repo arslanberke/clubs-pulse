@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1792438049,
- "aiError": "RuntimeError: gemini-2.0-flash HTTP 404: This model models/gemini-2.0-flash is no longer available. Please update your code to use models/gemini-3.8-flash for the latest features and improvements. We recommend you to use the Interactions API",
+ "updated": 1792438278,
+ "aiError": "RuntimeError: gemini-flash-latest TimeoutError: The read operation timed out | gemini-2.5-flash HTTP 404: This model models/gemini-2.5-flash is no longer available to new users. Please update your code to use models/gemini-3.8-flash for the latest featur",
  "players": {
   "Eghnzvrl": {
    "summary": "Magician olarak ortalamanın altında kaldığın belirgin bir alan yok.",
@@ -21,7 +21,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792432143,
-   "updated": 1792438042
+   "updated": 1792438220
   },
   "guppercan": {
    "summary": "Şut denemelerinde cömert ama bitiricilikte tutuksun, son maçlarda da mevki disiplininden biraz uzaklaşmış görünüyorsun.",
@@ -50,29 +50,29 @@
    "updated": 1792337004
   },
   "nycelia": {
-   "summary": "En büyük eksiğin kaybedilen tackle: Creator'ların 3.6 katı.",
+   "summary": "Orta sahada güvenli paslarla oynayıp savunmada top kapmaya başlasan da bir Creator olarak hücum üretiminde ve hamle zamanlamalarında geride kalıyorsun.",
    "dont": [
-    "Her topa dalarak girme. (Kaybedilen tackle: maç başı 5.6, Creator ortalaması 1.6)",
-    "Arkadan ve yandan sert müdahale yapma. (Tehlikeli müdahale: maç başı 2.1, Creator ortalaması 0.8)"
+    "Maç başına 5.6 kez boşa kayıp müdahale kaybederek savunma dengeni ve pozisyonunu bozma.",
+    "Hücumda acele edip maç başı 0.6 ofsayt pasıyla forvetlerinin atağını kesme.",
+    "Son maçlarda %33 seviyesine gerileyen şut isabetini düzeltmeden zorlama açılardan kaleyi deneme."
    ],
    "do": [
-    "Önünü kapat, rakip topu açınca müdahale et.",
-    "Kademeli savunma yap, faul vermeden yolu kapat.",
-    "Ara pası arkadaşın koşuya çıkarken at."
+    "Creator rolünün hakkını verip maç başına 0.4 olan asist ve 8.8 olan ara pası sayılarını artırmak için hücumda daha aktif sorumluluk al.",
+    "Savunmada direkt hamle yapmak yerine rakibin pas açısını kapatarak pas arası yapmayı sürdür."
    ],
    "keep": [
-    "Kendi yarı sahada top kaybı güçlü yanın (Creator'lardan %61 iyi), böyle devam.",
-    "Pozisyon dışı güçlü yanın (Creator'lardan %31 iyi), böyle devam."
+    "Kendi yarı sahanda maç başı yalnızca 0.4 top kaybı yaparak arkada hiç risk almaman harika.",
+    "Son dönemde maç başına 2.8 pas arası ve 2.6 kazanılan müdahale ile yükselen savunma katkını devam ettir."
    ],
-   "night": "5 maçta ortalama 8.1 puan (normalde 7.1), 1 gol 2 asist. Gol normalinden kötüydü (0.2, normalde 0.6).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 8.1 ortalama puanla savunmada harika iş çıkarsan da kaybettiğin 7.0 müdahale ve %33 şut isabeti oyununu biraz gölgeledi.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "e9556b40f9ae",
    "n": 14,
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": 1792432143,
-   "updated": 1792438049
+   "updated": 1792438278
   },
   "rljer": {
    "summary": "Target forvet olarak bitiriciliğin gayet temiz olsa da ceza sahasını terk edip pozisyonunu kaybetmen hücumdaki etkinliğini düşürüyor.",
