@@ -1,0 +1,3 @@
+const U="https://proclubs.ea.com/api/fc/clubs/info?platform=common-gen5&clubIds=654106";
+const H={"accept":"application/json","accept-language":"en-US,en;q=0.9","sec-ch-ua":'"Google Chrome";v="141", "Not?A_Brand";v="8", "Chromium";v="141"',"sec-ch-ua-mobile":"?0","sec-ch-ua-platform":'"Windows"',"sec-fetch-site":"same-origin","sec-fetch-mode":"cors","sec-fetch-dest":"empty","referer":"https://proclubs.ea.com/","user-agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"};
+module.exports=async(req,res)=>{let s;try{s=(await fetch(U,{headers:H})).status}catch(e){s=String(e)}res.setHeader("Cache-Control","no-store");res.json({node:s,region:process.env.VERCEL_REGION})};
