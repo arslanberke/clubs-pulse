@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1792456905,
+ "updated": 1792458075,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Eghnzvrl": {
@@ -80,29 +80,30 @@
    "updated": 1792453132
   },
   "nycelia": {
-   "summary": "En büyük eksiğin kaybedilen tackle: Creator'ların 3.1 katı.",
+   "summary": "Orta sahada pas vizyonun ve son dönemdeki savunma direncin umut veriyor fakat kontrolsüz müdahalelerin ve pozisyon kayıpların takımı zorluyor.",
    "dont": [
-    "Her topa dalarak girme. (Kaybedilen tackle: maç başı 5, Creator ortalaması 1.6)",
-    "Arkadan ve yandan sert müdahale yapma. (Tehlikeli müdahale: maç başı 2, Creator ortalaması 0.9)"
+    "Maç başı 5.0 kaybedilen tackle ve 2.0 tehlikeli müdahale ortalaman var, her topa kontrolsüzce hamle yapıp oyundan düşme.",
+    "Son 5 maçta 9.4 ortalamaya çıkan pozisyon dışı kalma hatalarını acilen azaltıp görev bölgene sadık kal.",
+    "Son 5 maçta %0 olan şut isabetini toparlamak için ceza sahası çevresinde zorlama vuruşlar denemekten vazgeç."
    ],
    "do": [
-    "Önünü kapat, rakip topu açınca müdahale et.",
-    "Kademeli savunma yap, faul vermeden yolu kapat.",
-    "Ara pası arkadaşın koşuya çıkarken at."
+    "Topu ayağından daha hızlı çıkarıp maç başı 7.5 olan ara pas sayını daha isabetli servislerle gole dönüştür.",
+    "Savunmada agresif kaymalar yerine ayakta kalarak son gecedeki gibi pas aralarına odaklan.",
+    "Hücumu organize ederken basit pas opsiyonlarını kullanarak genel maçlardaki 3.9 top kaybı ortalamanı aşağı çek."
    ],
    "keep": [
-    "Kendi yarı sahada top kaybı güçlü yanın (Creator'lardan %46 iyi), böyle devam.",
-    "Başarısız ileri pas güçlü yanın (Creator'lardan %11 iyi), böyle devam."
+    "Kendi yarı sahanda maç başı 0.4 gibi çok düşük bir top kaybı oranıyla oynaman geride büyük güven veriyor.",
+    "Son 5 maçta ofsayta düşen pas sayını 0.0'a çekerek zamanlamanı mükemmel ayarlamışsın."
    ],
-   "night": "11 maçta ortalama 7.7 puan (normalde 7.1), 2 gol 6 asist. Gol normalinden kötüydü (0.2, normalde 0.6).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 11 maçta 6 asist üretip 1.8 pas arası ortalamasıyla 7.7 puana ulaşarak harika bir oyun kurucu performansı sergiledin.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "d71bce63aa22",
    "n": 20,
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": 1792432143,
-   "updated": 1792456905
+   "updated": 1792458075
   },
   "rljer": {
    "summary": "En büyük eksiğin 2. asist: Spark'lara göre %48 geride.",
@@ -127,7 +128,7 @@
    "arch": "Spark",
    "pos": "Forvet",
    "nightStart": 1792432143,
-   "updated": 1792456905
+   "updated": 1792458075
   }
  }
 }
