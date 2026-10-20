@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1792461818,
- "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
+ "updated": 1792465583,
+ "aiError": null,
  "players": {
   "Eghnzvrl": {
    "summary": "Magician forvet olarak arketipinin çok üstünde skor üretiyorsun ancak 5 maçlık örneklem az olsa da son dönemde şut ve skor üretimin ciddi oranda geriledi.",
@@ -106,29 +106,30 @@
    "updated": 1792458075
   },
   "rljer": {
-   "summary": "En büyük eksiğin 2. asist: Spark'lara göre %48 geride.",
+   "summary": "Kıyas havuzumuz 9 maçla henüz dar olsa da pasörlüğün ve oyun aklın bir forvete göre çok temiz fakat son dönemde skorer kimliğini biraz unuttun.",
    "dont": [
-    "Son pası hep kendin atmaya çalışma. (2. asist: maç başı 0.3, Spark ortalaması 0.6)",
-    "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.5, Spark ortalaması 0.8)"
+    "Zor pozisyonlarda acele şut çıkarıp şut isabetini %14 seviyelerine kadar düşürme.",
+    "Kaleyi gördüğün anlarda fazla fedakar davranıp gereksiz pas aramaya kalkma.",
+    "İkili mücadelelerden ve kafa toplarından kaçınarak hücumdaki etkinliğini azaltma."
    ],
    "do": [
-    "Asisti yapacak arkadaşa ver, ön pası hazırla.",
-    "Kaleciyle karşı karşıyayken plase vur.",
-    "Ceza sahası çevresinde fırsat bulunca kaleyi dene, forvetten şut bekleniyor."
+    "Maç başına 1.4 seviyesine kadar düşen şut sayını artırıp daha kararlı vuruşlar yap.",
+    "Dribbling sayını son dönemdeki 9.0 ortalamadan önceki 15.3 düzeyine çıkarıp stoperleri üzerine çek.",
+    "Son vuruş öncesinde ceza sahası içinde kendine daha geniş ve temiz açılar hazırla."
    ],
    "keep": [
-    "Top kaybı güçlü yanın (Spark'lardan %33 iyi), böyle devam.",
-    "'Başka yere pas vermeliydin' güçlü yanın (Spark'lardan %31 iyi), böyle devam."
+    "Maç başı 2.4 gibi oldukça düşük seyreden top kaybı oranın ve pas disiplinin harika.",
+    "Son dönemde maç başı 0.8 asiste kadar çıkan servisçi kimliğin takıma büyük katkı sağlıyor."
    ],
-   "night": "5 maçta ortalama 6.4 puan (normalde 7.4), 1 gol 4 asist. Şut isabeti % normalinden kötüydü (14.3, normalde 71.4).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 6.4 ortalama puanla kendi 7.4 seviyenin gerisinde kalsan da ürettiğin 4 asistle takımın hücumunu ayakta tuttun.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "3e9471b87b16",
    "n": 24,
    "arch": "Spark",
    "pos": "Forvet",
    "nightStart": 1792432143,
-   "updated": 1792461818
+   "updated": 1792465583
   }
  }
 }
