@@ -1,31 +1,31 @@
 {
  "v": 2,
- "updated": 1792687921,
+ "updated": 1792688739,
  "aiError": null,
  "players": {
   "Eghnzvrl": {
-   "summary": "Genel kariyerinde 1.2 gol ve 0.8 asist ortalamasıyla arketipinin çok üstünde bir hücum liderisin ancak son 5 maçta skor katkın belirgin şekilde geriledi.",
+   "summary": "Genel tabloda skorerliğin ve pas kalitenle arketipinin çok üstündesin ancak son maçlarda dribblingi abartıp üretkenliğini biraz düşürmüşsün.",
    "dont": [
-    "Son geceki gibi topla fazla oyalanıp 3 kez 'topu kullan' uyarısı alacak ve 5 top kaybı yapacak kadar oyunu yavaşlatma.",
-    "Son 5 maçta şut isabetini %56 seviyesine çeken hazırlıksız ve zorlama şutları denemekten kaçın."
+    "Topu aldığında çalıma fazla gömülüp son gece 6.5'e çıkan top kayıplarınla hücumu baltalama.",
+    "Zorlama pas açılarını deneyip son 5 maçta 4.8'e yükselen pas hatası uyarısını tekrarlama."
    ],
    "do": [
-    "Ceza sahası çevresinde kariyer ortalaman olan 0.8 asisti tekrar yakalamak için boş durumdaki takım arkadaşlarına daha fazla servis yap.",
-    "Son 5 maçta 1.8'e kadar gerileyen şut sayını artırmak için ceza sahası içinde daha net bitiricilik pozisyonları kolla."
+    "Son 5 maçta %58 seviyesine gerileyen şut isabetini yükseltmek için ceza sahasında daha net vuruş açıları kolla.",
+    "Magician forvet olduğunu hatırla ve dribbling yerine boş arkadaşlarına hızlı servis yaparak asist katkını tekrar yukarı çek."
    ],
    "keep": [
-    "Forvet rolünde hücum organizasyonunu rahatlatan %80 pas isabetini korumaya devam et.",
-    "Son 5 maçta maç başına top kaybını 1.6'ya kadar düşürerek gösterdiğin top saklama disiplinini sürdür."
+    "Maç başına 1.2 gol ve 0.8 asistlik muazzam skor katkını mutlaka koru.",
+    "Pozisyon dışı kalma ortalamanı 9.7 seviyesinden 4.8'e indirerek yakaladığın saha içi disiplinini sürdür."
    ],
-   "night": "Son gece tek maçta 2 gol atıp 9.0 puanla parladın ama 26 dribbling denerken yaptığın 5 top kaybıyla oyunu biraz fazla tek başına forse ettin.",
+   "night": "Son gece sadece 2 maçlık küçük bir örnek olsa da dribblingi 26.0'a fırlatıp top kayıplarını ikiye katlamana rağmen 3 gol ve 1 asistle 8.7 puanı cebe koymuşsun.",
    "source": "ai",
    "model": "gemini-flash-latest",
-   "hash": "70203bc490bc",
-   "n": 28,
+   "hash": "abe9385148de",
+   "n": 29,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792687295,
-   "updated": 1792687856
+   "updated": 1792688695
   },
   "TandemFelixx": {
    "summary": "Henüz 6 maçlık dar bir verimiz olsa da Creator arketipine göre asist ve ara pas üretiminde biraz tutuk, savunma sezgisinde ise oldukça dengeli bir başlangıç yapmışsın.",
@@ -106,28 +106,29 @@
    "updated": 1792458075
   },
   "rljer": {
-   "summary": "Kıyas havuzumuz 9 maçla biraz dar olsa da harika bir oyun kurucu forvete dönüşmüşsün ama kaleyi tamamen unutmuşsun.",
+   "summary": "Bir Finisher için maç başı 0.5 gol ortalamasıyla kalenden uzak kalsan da forvetten gizli bir oyun kurucuya dönüşmüş durumdasın.",
    "dont": [
-    "Kaleyi gördüğünde pas vermeyi düşünüp şut çekmekte tereddüt etme, son 5 maçta şut isabetin %13'e kadar çakıldı.",
-    "Hücumda topu ayağında fazla geveleyip riskli çalımlarla top kaybını artırma."
+    "Maç başı 6.9 kez pozisyon dışına çıkarak ceza sahasını ve santrfor bölgesini boş bırakma.",
+    "Son gecedeki gibi topu ayağında fazla bekletip 'topu kullan' uyarısı alma ve top kaybını 5.5 seviyesine fırlatma.",
+    "Son 5 maçta %33'e kadar düşen şut isabetini toparlamak için açısız ve dengesiz pozisyonlarda acele şut deneme."
    ],
    "do": [
-    "Ceza sahası çevresinde daha net ve kararlı vuruşlar yaparak maç başı 2.0 olan şut sayını artır.",
-    "Son 5 maçtaki maç başı 1.0 asist ortalamanı korurken kendini bitirici pozisyonlara da sok."
+    "Ceza sahası içinde doğru pozisyon alarak maç başı 2.1 olan şut adedini artırmaya odaklan.",
+    "Maç başı 3.3 kez aldığın hatalı pas uyarısını azaltmak için hücumda daha net ve basit pas opsiyonlarını seç."
    ],
    "keep": [
-    "Genel ortalamada %77, son 5 maçta %83'e çıkan pas isabetin ve servis kaliten çok iyi.",
-    "Arketip ortalamasına kıyasla 2.6 olan düşük top kaybı disiplinini koru."
+    "Son 5 maçta 1.2 asist ortalamasına ulaşarak yakaladığın servisçi kimliğini ve pasör katkını koru.",
+    "Genel grafiğinde maç başı 2.6 olan düşük top kaybı disiplinini sürdür."
    ],
-   "night": "Son gece 1 asistle 7.3 puanı kapsan da yaptığın 8 top kaybı ve 0 isabetli şut yakışmadı.",
+   "night": "Son gece sadece 2 maç gibi ufak bir örnek olsa da 7.8 reyting, 1 gol ve 2 asistle skora harika katkı verdin ancak 5.5 top kaybıyla topu biraz fazla ezdin.",
    "source": "ai",
    "model": "gemini-flash-latest",
-   "hash": "eb1b16268f92",
-   "n": 25,
-   "arch": "Spark",
+   "hash": "733503db1882",
+   "n": 26,
+   "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1792687295,
-   "updated": 1792687921
+   "updated": 1792688739
   }
  }
 }
