@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1792772611,
+ "updated": 1792776475,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Eghnzvrl": {
@@ -100,7 +100,7 @@
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": null,
-   "updated": 1792772611
+   "updated": 1792776475
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %89 geride.",
@@ -124,7 +124,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1792768701,
-   "updated": 1792772611
+   "updated": 1792776475
   }
  }
 }
