@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1792768745,
+ "updated": 1792770276,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Eghnzvrl": {
@@ -53,7 +53,7 @@
    "updated": 1792711200
   },
   "guppercan": {
-   "summary": "En büyük eksiğin 2. asist: Magician'lara göre %41 geride.",
+   "summary": "En büyük eksiğin 2. asist: Magician'lara göre %43 geride.",
    "dont": [
     "Son pası hep kendin atmaya çalışma. (2. asist: maç başı 0.2, Magician ortalaması 0.3)",
     "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.6, Magician ortalaması 0.8)"
@@ -61,26 +61,26 @@
    "do": [
     "Asisti yapacak arkadaşa ver, ön pası hazırla.",
     "Kaleciyle karşı karşıyayken plase vur.",
-    "Daha iyi pozisyondaki arkadaşa son pası ver."
+    "Rakip yaklaşınca tek-iki dokunuşla en yakın arkadaşına ver, çalımı boş alana sakla."
    ],
    "keep": [
-    "Hava topu güçlü yanın (Magician'lardan %137 iyi), böyle devam.",
-    "Pozisyon dışı güçlü yanın (Magician'lardan %28 iyi), böyle devam."
+    "Hava topu güçlü yanın (Magician'lardan %134 iyi), böyle devam.",
+    "Pozisyon dışı güçlü yanın (Magician'lardan %31 iyi), böyle devam."
    ],
-   "night": "1 maçta ortalama 7.3 puan (normalde 7.2), 0 gol 0 asist. 'Başka yere pas vermeliydin' normalinden kötüydü (14.0, normalde 4.4).",
+   "night": "2 maçta ortalama 6.9 puan (normalde 7.2), 1 gol 2 asist. 2. asist normalinden kötüydü (0.0, normalde 0.2).",
    "source": "rules",
    "model": null,
-   "hash": "bd9ce98f75c0",
-   "n": 26,
+   "hash": "3c90711ea850",
+   "n": 27,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792768701,
-   "updated": 1792768745
+   "updated": 1792770276
   },
   "nycelia": {
-   "summary": "En büyük eksiğin kaybedilen tackle: Creator'ların 3.0 katı.",
+   "summary": "En büyük eksiğin kaybedilen tackle: Creator'ların 2.9 katı.",
    "dont": [
-    "Her topa dalarak girme. (Kaybedilen tackle: maç başı 4.5, Creator ortalaması 1.5)",
+    "Her topa dalarak girme. (Kaybedilen tackle: maç başı 4.5, Creator ortalaması 1.6)",
     "Arkadan ve yandan sert müdahale yapma. (Tehlikeli müdahale: maç başı 1.9, Creator ortalaması 0.9)"
    ],
    "do": [
@@ -89,8 +89,8 @@
     "Ara pası arkadaşın koşuya çıkarken at."
    ],
    "keep": [
-    "Kendi yarı sahada top kaybı güçlü yanın (Creator'lardan %35 iyi), böyle devam.",
-    "Kazanılan tackle güçlü yanın (Creator'lardan %26 iyi), böyle devam."
+    "Kendi yarı sahada top kaybı güçlü yanın (Creator'lardan %37 iyi), böyle devam.",
+    "Kazanılan tackle güçlü yanın (Creator'lardan %22 iyi), böyle devam."
    ],
    "night": "",
    "source": "rules",
@@ -100,13 +100,13 @@
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": null,
-   "updated": 1792768745
+   "updated": 1792770276
   },
   "rljer": {
-   "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %81 geride.",
+   "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %89 geride.",
    "dont": [
-    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 5.9, Finisher ortalaması 3.3)",
-    "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.5, Finisher ortalaması 1.1)"
+    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 6.1, Finisher ortalaması 3.2)",
+    "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.5, Finisher ortalaması 1.2)"
    ],
    "do": [
     "Mevkinde kal, rakip top kaybedince boşlukta hazır ol.",
@@ -114,17 +114,17 @@
     "Ceza sahası çevresinde fırsat bulunca kaleyi dene, forvetten şut bekleniyor."
    ],
    "keep": [
-    "Top kaybı güçlü yanın (Finisher'lardan %27 iyi), böyle devam."
+    "Top kaybı güçlü yanın (Finisher'lardan %23 iyi), böyle devam."
    ],
-   "night": "1 maçta ortalama 6.6 puan (normalde 7.2), 0 gol 0 asist. Gol normalinden kötüydü (0.0, normalde 0.5).",
+   "night": "2 maçta ortalama 7.0 puan (normalde 7.2), 1 gol 0 asist. Asist normalinden kötüydü (0.0, normalde 0.7).",
    "source": "rules",
    "model": null,
-   "hash": "fbf3db27d032",
-   "n": 35,
+   "hash": "feabd9bcdb29",
+   "n": 36,
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1792768701,
-   "updated": 1792768745
+   "updated": 1792770276
   }
  }
 }
