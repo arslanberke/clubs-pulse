@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1792744142,
- "aiError": "RuntimeError: gemini-flash-latest TimeoutError: The read operation timed out | gemini-3.8-flash TimeoutError: The read operation timed out",
+ "updated": 1792747475,
+ "aiError": "RuntimeError: gemini-3.8-flash HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Eghnzvrl": {
    "summary": "Magician forvetler arasında maç başı 1.1 gol ve %81 pas isabetiyle hücumda tam bir lidersin ama bazen topu gereğinden fazla ayağında tutuyorsun.",
@@ -101,7 +101,7 @@
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": 1792687295,
-   "updated": 1792744142
+   "updated": 1792747475
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %82 geride.",
@@ -125,7 +125,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1792687295,
-   "updated": 1792744142
+   "updated": 1792747475
   }
  }
 }
