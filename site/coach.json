@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1792823855,
- "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
+ "updated": 1792827695,
+ "aiError": null,
  "players": {
   "Eghnzvrl": {
    "summary": "Magician forvetler arasında maç başı 1.1 gol ve %81 pas isabetiyle hücumda tam bir lidersin ama bazen topu gereğinden fazla ayağında tutuyorsun.",
@@ -102,28 +102,30 @@
    "updated": 1792812964
   },
   "rljer": {
-   "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %70 geride.",
+   "summary": "Bitirici bir forvet olmana rağmen genel ortalamada maç başı 0.6 gol ve 2.4 şutla arketipinin gerisinde kalıyorsun.",
    "dont": [
-    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 5.5, Finisher ortalaması 3.2)",
-    "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.6, Finisher ortalaması 1.3)"
+    "Hücumda yerini kaybedip maç başı 5.5 kez pozisyon dışına düşerek ceza sahasını boş bırakma.",
+    "Şut atmaktan çekinip bitirici rolünde maç başına 2.4 şut seviyesinde kalma.",
+    "Hücumda acele edip maç başı 3.0 kez yanlış pas tercihinde bulunma."
    ],
    "do": [
-    "Mevkinde kal, rakip top kaybedince boşlukta hazır ol.",
-    "Kaleciyle karşı karşıyayken plase vur.",
-    "Ceza sahası çevresinde fırsat bulunca kaleyi dene, forvetten şut bekleniyor."
+    "Ceza sahası içinde merkezde kalarak kendini daha çok şut pozisyonuna sok.",
+    "Son 5 maçta pozisyon dışı kalmanı 2.2 seviyesine çektiğin gibi disiplinini koru.",
+    "Son gecedeki gibi kaleyi gördüğün net anlarda bitirici vuruşu tereddütsüz yap."
    ],
    "keep": [
-    "Top kaybı güçlü yanın (Finisher'lardan %28 iyi), böyle devam."
+    "Maç başı 2.9 top kaybıyla mevkidaşlarının 4.0 ortalamasına kıyasla topu gayet iyi saklaman.",
+    "Son 5 maçta top kaybını 1.4 seviyesine kadar çekerek topa sahip olma disiplinini artırman."
    ],
-   "night": "9 maçta ortalama 7.1 puan (normalde 7.2), 9 gol 2 asist. 2. asist normalinden kötüydü (0.0, normalde 0.3).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 9 maçlık dar bir örneklem olsa da maç başına 1.0 gol ve %71 şut isabetiyle harika bir bitiricilik performansı gösterdin.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "a91a0cf8712d",
    "n": 43,
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1792768701,
-   "updated": 1792823855
+   "updated": 1792827695
   }
  }
 }
