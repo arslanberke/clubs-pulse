@@ -1,32 +1,27 @@
 {
  "v": 2,
- "updated": 1792848108,
+ "updated": 1792849418,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Eghnzvrl": {
-   "summary": "Hücumda hem gol hem asistlerinle diğer forvetlere fark atıyorsun ama son maçlarda pas tercihlerindeki hatalar ve şut isabetindeki düşüş alarm veriyor.",
-   "dont": [
-    "Zorlama kilit paslar deneme, son gece maç başına 6.7 kez yanlış adrese pas uyarısı aldın.",
-    "Acele şut çekme, son gece %57 seviyesine kadar gerileyen şut isabetini toparlamalısın."
-   ],
+   "summary": "Magician olarak ortalamanın altında kaldığın belirgin bir alan yok.",
+   "dont": [],
    "do": [
-    "Ceza sahası çevresinde daha net ve garanti şut açılarını bulana kadar sabırlı kal.",
-    "Arkadaşlarına servis yaparken en müsait durumdaki adama dönerek basit oyna.",
-    "Son 5 maçta maç başına 5.2'ye çektiğin pozisyon sadakatini koru."
+    "Oynadığın gibi devam et, maç biriktikçe öneriler netleşecek."
    ],
    "keep": [
-    "Geneldeki maç başına 1.1 gol ve %69 şut isabetiyle yakaladığın harika bitiricilik.",
-    "Maç başına 0.8 asist ve %80 pas isabetiyle sergilediğin üst düzey forvet playmakerlığı."
+    "Gol güçlü yanın (Magician'lardan %73 iyi), böyle devam.",
+    "Asist güçlü yanın (Magician'lardan %73 iyi), böyle devam."
    ],
-   "night": "Son gece 3 maçlık ufak bir örnek olsa da 8.6 ortalama puan ve toplam 5 asistle yıldızlaştın, tek sorun 6.7'ye çıkan pas tercihi hataların oldu.",
-   "source": "ai",
-   "model": "gemini-flash-latest",
-   "hash": "23dc373c06b0",
-   "n": 41,
+   "night": "4 maçta ortalama 8.5 puan (normalde 7.6), 5 gol 5 asist. 'Başka yere pas vermeliydin' normalinden kötüydü (6.2, normalde 4.2).",
+   "source": "rules",
+   "model": null,
+   "hash": "4369939d6cce",
+   "n": 42,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792845006,
-   "updated": 1792848108
+   "updated": 1792849418
   },
   "TandemFelixx": {
    "summary": "Creator rolünde topu çok temiz ve güvenli kullanıyorsun ama maç başına 0.1 asist ve 4.5 ara pasla forvetleri yeterince besleyemiyorsun.",
@@ -54,10 +49,10 @@
    "updated": 1792711200
   },
   "guppercan": {
-   "summary": "En büyük eksiğin 2. asist: Magician'lara göre %31 geride.",
+   "summary": "En büyük eksiğin 2. asist: Magician'lara göre %33 geride.",
    "dont": [
     "Son pası hep kendin atmaya çalışma. (2. asist: maç başı 0.2, Magician ortalaması 0.3)",
-    "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.6, Magician ortalaması 0.8)"
+    "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.6, Magician ortalaması 0.9)"
    ],
    "do": [
     "Asisti yapacak arkadaşa ver, ön pası hazırla.",
@@ -65,43 +60,43 @@
     "Bir pas daha yap, ceza sahasında açı bulunca vur."
    ],
    "keep": [
-    "Hava topu güçlü yanın (Magician'lardan %108 iyi), böyle devam.",
+    "Hava topu güçlü yanın (Magician'lardan %86 iyi), böyle devam.",
     "Şut güçlü yanın (Magician'lardan %34 iyi), böyle devam."
    ],
-   "night": "3 maçta ortalama 7.8 puan (normalde 7.1), 2 gol 3 asist. Pozisyon dışı normalinden kötüydü (13.0, normalde 6.1).",
+   "night": "4 maçta ortalama 7.6 puan (normalde 7.1), 3 gol 3 asist. Pozisyon dışı normalinden kötüydü (13.5, normalde 6.1).",
    "source": "rules",
    "model": null,
-   "hash": "df80d2f27c37",
-   "n": 37,
+   "hash": "6eb5738174be",
+   "n": 38,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792845006,
-   "updated": 1792848108
+   "updated": 1792849418
   },
   "nycelia": {
-   "summary": "En büyük eksiğin kaybedilen tackle: Creator'ların 2.7 katı.",
+   "summary": "En büyük eksiğin kaybedilen tackle: Creator'ların 2.6 katı.",
    "dont": [
-    "Her topa dalarak girme. (Kaybedilen tackle: maç başı 4.4, Creator ortalaması 1.6)",
-    "Arkadan ve yandan sert müdahale yapma. (Tehlikeli müdahale: maç başı 1.9, Creator ortalaması 0.9)"
+    "Her topa dalarak girme. (Kaybedilen tackle: maç başı 4.3, Creator ortalaması 1.6)",
+    "Arkadan ve yandan sert müdahale yapma. (Tehlikeli müdahale: maç başı 1.8, Creator ortalaması 0.9)"
    ],
    "do": [
     "Önünü kapat, rakip topu açınca müdahale et.",
     "Kademeli savunma yap, faul vermeden yolu kapat.",
-    "Kaleciyle karşı karşıyayken plase vur."
+    "Ara pası arkadaşın koşuya çıkarken at."
    ],
    "keep": [
-    "Kendi yarı sahada top kaybı güçlü yanın (Creator'lardan %41 iyi), böyle devam.",
-    "Başarısız ileri pas güçlü yanın (Creator'lardan %23 iyi), böyle devam."
+    "Kendi yarı sahada top kaybı güçlü yanın (Creator'lardan %42 iyi), böyle devam.",
+    "Başarısız ileri pas güçlü yanın (Creator'lardan %21 iyi), böyle devam."
    ],
-   "night": "2 maçta ortalama 7.5 puan (normalde 7.3), 2 gol 3 asist. Top kazanma normalinden kötüydü (0.0, normalde 1.4).",
+   "night": "3 maçta ortalama 7.5 puan (normalde 7.3), 2 gol 6 asist. Top kazanma normalinden kötüydü (0.0, normalde 1.4).",
    "source": "rules",
    "model": null,
-   "hash": "92c30eaf1d2e",
-   "n": 31,
+   "hash": "cc3fe821ec1e",
+   "n": 32,
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": 1792845006,
-   "updated": 1792848108
+   "updated": 1792849418
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %67 geride.",
@@ -112,20 +107,20 @@
    "do": [
     "Mevkinde kal, rakip top kaybedince boşlukta hazır ol.",
     "Kaleciyle karşı karşıyayken plase vur.",
-    "Asisti yapacak arkadaşa ver, ön pası hazırla."
+    "Ceza sahası çevresinde fırsat bulunca kaleyi dene, forvetten şut bekleniyor."
    ],
    "keep": [
-    "Top kaybı güçlü yanın (Finisher'lardan %29 iyi), böyle devam."
+    "Top kaybı güçlü yanın (Finisher'lardan %30 iyi), böyle devam."
    ],
-   "night": "3 maçta ortalama 8.0 puan (normalde 7.2), 5 gol 0 asist. Asist normalinden kötüydü (0.0, normalde 0.6).",
+   "night": "4 maçta ortalama 7.6 puan (normalde 7.2), 5 gol 0 asist. Asist normalinden kötüydü (0.0, normalde 0.6).",
    "source": "rules",
    "model": null,
-   "hash": "8931cb25c364",
-   "n": 46,
+   "hash": "b3f7872b9db3",
+   "n": 47,
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1792845006,
-   "updated": 1792848108
+   "updated": 1792849418
   }
  }
 }
