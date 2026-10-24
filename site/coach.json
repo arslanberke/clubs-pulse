@@ -1,29 +1,31 @@
 {
  "v": 2,
- "updated": 1792868715,
+ "updated": 1792872550,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Eghnzvrl": {
-   "summary": "En büyük eksiğin 'başka yere pas vermeliydin': Magician'lara göre %13 geride.",
+   "summary": "Magician forvet olarak genel ortalamanın çok üstünde asist ve gol katkısı veriyorsun ama son dönemde gol atmayı biraz geri plana itip fazla servise odaklanmışsın.",
    "dont": [
-    "İlk gördüğün arkadaşa pas verme. ('Başka yere pas vermeliydin': maç başı 4.4, Magician ortalaması 3.9)"
+    "'Başka yere pas vermeliydin' uyarın son gece maç başı 5.3'e kadar çıktığı için zorlama pas açılarını denemekten vazgeç.",
+    "Son maçlarda şut sayını 2.2'ye kadar düşürmüşken ceza sahasında net fırsatlarda pas aramak yerine kaleyi kendin denemekten çekinme."
    ],
    "do": [
-    "Pas öncesi sahayı tara, daha iyi pozisyondaki oyuncuyu ara."
+    "Son 5 maçta %100 şut isabeti yakalamışken doğru anı bulduğunda daha kararlı şutlar çek.",
+    "Son gece %74 seviyesine gerileyen pas isabetini toparlamak için riskli ara paslar yerine garanti pas opsiyonlarını daha sık değerlendir."
    ],
    "keep": [
-    "Asist güçlü yanın (Magician'lardan %90 iyi), böyle devam.",
-    "Gol güçlü yanın (Magician'lardan %42 iyi), böyle devam."
+    "Maç başı 0.8 asist ve 0.3 ikinci asist ile arketip ortalamasının neredeyse iki katı oyun kurma vizyonuna sahipsin.",
+    "Maç başı 17.2 dribbling yapmana rağmen 3.1 top kaybıyla oynaman topla ne kadar güvenilir olduğunu gösteriyor."
    ],
-   "night": "9 maçta ortalama 8.2 puan (normalde 7.6), 8 gol 11 asist. 'Başka yere pas vermeliydin' normalinden kötüydü (5.3, normalde 4.2).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 9 maçlık az bir örneklem olsa da 8.2 puan ortalaması, 8 gol ve 11 asistle hücumda tam anlamıyla resital sunmuşsun.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "a43c8f3ef48c",
    "n": 47,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792845006,
-   "updated": 1792868715
+   "updated": 1792872550
   },
   "TandemFelixx": {
    "summary": "Creator rolünde topu çok temiz ve güvenli kullanıyorsun ama maç başına 0.1 asist ve 4.5 ara pasla forvetleri yeterince besleyemiyorsun.",
@@ -73,7 +75,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792845006,
-   "updated": 1792868715
+   "updated": 1792872550
   },
   "nycelia": {
    "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %78 geride.",
@@ -98,7 +100,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1792845006,
-   "updated": 1792868715
+   "updated": 1792872550
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %67 geride.",
@@ -122,7 +124,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1792845006,
-   "updated": 1792868715
+   "updated": 1792872550
   }
  }
 }
