@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1792809084,
+ "updated": 1792812964,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Eghnzvrl": {
@@ -53,54 +53,53 @@
    "updated": 1792711200
   },
   "guppercan": {
-   "summary": "En büyük eksiğin 2. asist: Magician'lara göre %43 geride.",
+   "summary": "Servislerin ve pozisyon bilgin gayet yerinde ama gereksiz şut ısrarın yüzünden kaleyi bulma oranın dibi görmüş durumda.",
    "dont": [
-    "Son pası hep kendin atmaya çalışma. (2. asist: maç başı 0.2, Magician ortalaması 0.3)",
-    "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.6, Magician ortalaması 0.8)"
+    "Dengesiz açılardan kaleyi düşünerek rastgele şut savurma.",
+    "Topu ayağında fazla bekletip gereksiz yere 'topu kullan' uyarısı yeme."
    ],
    "do": [
-    "Asisti yapacak arkadaşa ver, ön pası hazırla.",
-    "Kaleciyle karşı karşıyayken plase vur.",
-    "Bir pas daha yap, ceza sahasında açı bulunca vur."
+    "Ceza sahasında şut açısını netleştirene kadar biraz daha soğukkanlı kalıp temiz vuruşlar ara.",
+    "Şutun zor olduğu anlarda forvetten oyun kurucuya dönüşüp boştaki arkadaşlarına pası çıkar."
    ],
    "keep": [
-    "Hava topu güçlü yanın (Magician'lardan %112 iyi), böyle devam.",
-    "Pozisyon dışı güçlü yanın (Magician'lardan %36 iyi), böyle devam."
+    "Pozisyonunu koruma disiplinin ve sahadaki doğru yer tutuşun çok iyi.",
+    "Arketipinin üzerinde olan maç başı 0.5 asistlik pas katkını aynen sürdür."
    ],
-   "night": "9 maçta ortalama 6.7 puan (normalde 7.2), 5 gol 8 asist. Şut isabeti % normalinden kötüydü (25.0, normalde 63.5).",
-   "source": "rules",
-   "model": null,
+   "night": "9 maçlık dar bir örneklem olsa da son gece 8 asistle şov yaptın fakat %25 şut isabetiyle kaleyi pek rahatsız edemedin.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "b69820a30f6d",
    "n": 34,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792768701,
-   "updated": 1792809084
+   "updated": 1792812909
   },
   "nycelia": {
-   "summary": "En büyük eksiğin kaybedilen tackle: Creator'ların 2.6 katı.",
+   "summary": "Son 5 maçta asist ve hücum katkını katlamışsın ama savunmadaki kontrolsüz müdahalelerin ve yüksek top kayıpların orta sahada ritmini bozuyor.",
    "dont": [
-    "Her topa dalarak girme. (Kaybedilen tackle: maç başı 4.5, Creator ortalaması 1.7)",
-    "Arkadan ve yandan sert müdahale yapma. (Tehlikeli müdahale: maç başı 1.9, Creator ortalaması 0.9)"
+    "Maç başı 4.5 kaybedilen tackle ve 1.9 tehlikeli müdahalen var, savunmada bodoslama dalıp kendini oyundan düşürme.",
+    "Son 5 maçta maç başı 1.0 ortalamaya çıkan ofsayt paslarını azaltmak için forvetin hareketlenmesini beklemeden ara pası zorlama.",
+    "Maç başına 4.1 top kaybı yapıyorsun, Creator olarak hücum geçişlerinde pası geciktirip topu kaptırma."
    ],
    "do": [
-    "Önünü kapat, rakip topu açınca müdahale et.",
-    "Kademeli savunma yap, faul vermeden yolu kapat.",
-    "Asisti yapacak arkadaşa ver, ön pası hazırla."
+    "Savunmada agresif hamleler yerine rakibin pas açılarını kapatarak yerini korumaya odaklan.",
+    "Son dönemde yakaladığın maç başı 1.0 asist ve 0.4 ikinci asist formunu korumak için ceza sahası çevresinde sabırlı pas dağıtmaya devam et."
    ],
    "keep": [
-    "Kendi yarı sahada top kaybı güçlü yanın (Creator'lardan %33 iyi), böyle devam.",
-    "Başarısız ileri pas güçlü yanın (Creator'lardan %20 iyi), böyle devam."
+    "Son 5 maçta ciddi pozisyon hatalarını 4.6 seviyesinden 2.8'e indirip saha içi disiplinini toparlaman harika.",
+    "Şut isabetini son 5 maçta %65'ten %80'e çıkararak kaleyi bulma konusunda yakaladığın netlik böyle devam etmeli."
    ],
    "night": "",
-   "source": "rules",
-   "model": null,
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "e05ed45f5547",
    "n": 29,
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": null,
-   "updated": 1792809084
+   "updated": 1792812964
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %70 geride.",
@@ -124,7 +123,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1792768701,
-   "updated": 1792809084
+   "updated": 1792812964
   }
  }
 }
