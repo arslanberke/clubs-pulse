@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1792958043,
+ "updated": 1792961606,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Eghnzvrl": {
@@ -75,7 +75,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792925154,
-   "updated": 1792958043
+   "updated": 1792961606
   },
   "nycelia": {
    "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %73 geride.",
@@ -100,7 +100,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1792925154,
-   "updated": 1792958043
+   "updated": 1792961606
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %63 geride.",
@@ -125,7 +125,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1792925154,
-   "updated": 1792958043
+   "updated": 1792961606
   }
  }
 }
