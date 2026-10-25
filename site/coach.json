@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1792961606,
+ "updated": 1792964399,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Eghnzvrl": {
@@ -53,29 +53,28 @@
    "updated": 1792711200
   },
   "guppercan": {
-   "summary": "En büyük eksiğin şut isabeti %: Magician'lara göre %28 geride.",
+   "summary": "Genel kariyerinde şut isabetinde aksasan da son dönemde pas kaliteni ve skor üretkenliğini ciddi şekilde yükselttin.",
    "dont": [
-    "Kötü açıdan ve uzaktan şut çekme. (Şut isabeti %: maç başı 52.5, Magician ortalaması 73.3)",
-    "Son pası hep kendin atmaya çalışma. (2. asist: maç başı 0.2, Magician ortalaması 0.3)"
+    "Açıyı net bulmadan acele vuruş yapma; maç başı 3.0 şut denemene rağmen %53 şut isabetinde kalıyorsun.",
+    "Topla fazla oyalanıp uyarı alma ve hücumda yerini kaybedip pozisyon dışı kalma."
    ],
    "do": [
-    "Bir pas daha yap, ceza sahasında açı bulunca vur.",
-    "Asisti yapacak arkadaşa ver, ön pası hazırla.",
-    "Kaleciyle karşı karşıyayken plase vur."
+    "Son 5 maçta yakaladığın maç başı 2.6 şut ve %62 isabet dengesini koruyarak doğru anı bekle.",
+    "Hücumu organize ederken son 5 maçtaki gibi %79 pas isabetiyle oynamaya devam et."
    ],
    "keep": [
-    "Hava topu güçlü yanın (Magician'lardan %79 iyi), böyle devam.",
-    "Şut güçlü yanın (Magician'lardan %32 iyi), böyle devam."
+    "Hava toplarında maç başı 1.3 kazanma ile arketip ortalaması olan 0.7'ye kurduğun bariz üstünlük.",
+    "Son 5 maçta maç başına 1.0 gol ve 0.8 asiste ulaşan yüksek hücum verimliliğin."
    ],
-   "night": "3 maçta ortalama 8.0 puan (normalde 7.2), 2 gol 2 asist. Hava topu normalinden kötüydü (0.7, normalde 1.4).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 3 maçlık küçük bir örneklem olsa da 8.0 puan ortalamasıyla parladın, fakat 9.0 pozisyon dışı seviyesine çıkarak yerini biraz fazla kaybettin.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "4c7840298c52",
    "n": 46,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1792925154,
-   "updated": 1792961606
+   "updated": 1792964399
   },
   "nycelia": {
    "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %73 geride.",
@@ -100,7 +99,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1792925154,
-   "updated": 1792961606
+   "updated": 1792964399
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %63 geride.",
@@ -125,7 +124,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1792925154,
-   "updated": 1792961606
+   "updated": 1792964399
   }
  }
 }
