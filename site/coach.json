@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1792995964,
- "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
+ "updated": 1793000063,
+ "aiError": "RuntimeError: gemini-flash-latest HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. | gemini-3.8-flash HTTP 503: This model is currently experiencing high demand. Spikes in demand ",
  "players": {
   "Eghnzvrl": {
    "summary": "Magician forvet olarak genel ortalamanın çok üstünde asist ve gol katkısı veriyorsun ama son dönemde gol atmayı biraz geri plana itip fazla servise odaklanmışsın.",
@@ -125,7 +125,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1792925154,
-   "updated": 1792995964
+   "updated": 1793000063
   }
  }
 }
