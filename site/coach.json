@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1792976772,
+ "updated": 1792980677,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Eghnzvrl": {
@@ -77,29 +77,30 @@
    "updated": 1792964399
   },
   "nycelia": {
-   "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %73 geride.",
+   "summary": "Hücumda harika servisler yapıp skora doğrudan katkı veriyorsun ama zorlama paslar ve gereksiz top kayıpları oyununu aşağı çekiyor.",
    "dont": [
-    "Savunmada çizgini bozma. (Ciddi pozisyon hatası: maç başı 3.8, Magician ortalaması 2.2)",
-    "İlk gördüğün arkadaşa pas verme. ('Başka yere pas vermeliydin': maç başı 7.3, Magician ortalaması 5.3)"
+    "Maç başına 7.3 kez 'başka yere pas vermeliydin' uyarısı alacak kadar zorlama ve aceleci ileri paslar deneme.",
+    "Ayağında topu fazla tutup maç başına 4.5 top kaybı yapma ve 'topu kullan' uyarısı alana kadar oyalanma.",
+    "Gereksiz hamlelerle maçta 4.4 kez kaybedilen tackle ve 1.8 tehlikeli müdahale istatistiğine ulaşacak sert savunma aksiyonlarına girme."
    ],
    "do": [
-    "Top kaybında hemen kendi bölgene dön, arkadaşının yerini kapatmaya çalışma.",
-    "Pas öncesi sahayı tara, daha iyi pozisyondaki oyuncuyu ara.",
-    "Önünü kapat, rakip topu açınca müdahale et."
+    "Pas yüzdende %70'in altına inmemek için daha garanti ve basit pas opsiyonlarını değerlendir.",
+    "Arketipine göre maç başına 7.8 olan ara pas kaliteni doğru anda ve arkadaşının boş koşusuna göre zamanla.",
+    "Kendi yarı sahanda top kaybetmeme disiplinini (0.3) rakip yarı sahaya geçerken de koru."
    ],
    "keep": [
-    "2. asist güçlü yanın (Magician'lardan %81 iyi), böyle devam.",
-    "Kazanılan tackle güçlü yanın (Magician'lardan %44 iyi), böyle devam."
+    "Maç başına 0.8 asist ve 0.3 ikinci asist ile arketiplerine fark atan oyun kuruculuğunu koru.",
+    "Şutlarında %66 isabet yakaladığın o bitirici kararlılığını sürdür."
    ],
-   "night": "3 maçta ortalama 8.1 puan (normalde 7.4), 1 gol 3 asist. Başarısız ileri pas normalinden kötüydü (9.0, normalde 4.2).",
-   "source": "rules",
-   "model": null,
+   "night": "3 maçlık az bir örneklem olsa da son gece 8.1 puan, 1 gol ve 3 asistle hücumda parladın ama maç başı 9.0 başarısız ileri pasla sabrımızı biraz zorladın.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "c558d312c7af",
    "n": 40,
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1792925154,
-   "updated": 1792976772
+   "updated": 1792980577
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %63 geride.",
@@ -124,7 +125,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1792925154,
-   "updated": 1792976772
+   "updated": 1792980677
   }
  }
 }
