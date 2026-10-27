@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1793064846,
- "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
+ "updated": 1793066373,
+ "aiError": null,
  "players": {
   "Eghnzvrl": {
    "summary": "Magician forvet olarak genel ortalamanın çok üstünde asist ve gol katkısı veriyorsun ama son dönemde gol atmayı biraz geri plana itip fazla servise odaklanmışsın.",
@@ -103,29 +103,28 @@
    "updated": 1792980577
   },
   "rljer": {
-   "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %63 geride.",
+   "summary": "Genel kariyerinde maç başı 0.8 golle diğer bitiricilerin gerisinde kalsan da son dönemde ritmini ciddi şekilde buldun.",
    "dont": [
-    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 5.1, Finisher ortalaması 3.1)",
-    "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.8, Finisher ortalaması 1.3)"
+    "Maç başı 5.1 seviyesinde olan pozisyon dışı kalma hatasını tekrarlayarak hücum düzenini bozma.",
+    "Diğer forvetlerin 3.9 şut ortalamasının gerisinde kalarak maç başı 2.6 şutla kaleyi yoklamaktan çekinme."
    ],
    "do": [
-    "Mevkinde kal, rakip top kaybedince boşlukta hazır ol.",
-    "Kaleciyle karşı karşıyayken plase vur.",
-    "Ceza sahası çevresinde fırsat bulunca kaleyi dene, forvetten şut bekleniyor."
+    "Ceza sahası çevresinde daha kararlı davranıp şut hacmini artırmaya odaklan.",
+    "Son 5 maçta %80 seviyesine çıkardığın şut isabetini doğru koşularla destekle."
    ],
    "keep": [
-    "Top kaybı güçlü yanın (Finisher'lardan %35 iyi), böyle devam.",
-    "'Topu kullan' uyarısı güçlü yanın (Finisher'lardan %13 iyi), böyle devam."
+    "Maç başı 2.9 top kaybıyla benzerlerinin 4.4 ortalamasına kıyasla topu ayakta çok iyi tutuyorsun.",
+    "Son 5 maçta pozisyon hatalarını 3.2 seviyesine çekip bitiriciliğini yukarı taşıman harika."
    ],
-   "night": "3 maçta ortalama 8.6 puan (normalde 7.3), 5 gol 3 asist. 2. asist normalinden kötüydü (0.0, normalde 0.2).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece sadece 3 maçlık küçük bir örneklem olsa da 8.6 ortalama puan, 5 gol ve 3 asistle adeta alev aldın.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "2adf43eceb06",
    "n": 55,
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1792925154,
-   "updated": 1793064846
+   "updated": 1793066373
   }
  }
 }
