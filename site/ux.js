@@ -7,7 +7,7 @@ applyRoute();
 let ROUTE_NOW=routeOf();
 const _r0=r;
 function render(){const tb=document.getElementById("tipbox");if(tb)tb.remove();if(S.player&&!names().includes(S.player))S.player=null;if(S.night>=sessions().length)S.night=0;_r0();post()}
-r=function(){const old=ROUTE_NOW;render();const nr=routeOf();if(nr!=old){history.pushState(null,"","#/"+nr);ROUTE_NOW=nr;if(nr.split("/")[0]!=old.split("/")[0]||S.tab=="players")window.scrollTo(0,0)}};
+r=function(){const old=ROUTE_NOW;render();const nr=routeOf();if(nr!=old){history.pushState(null,"","#/"+nr);ROUTE_NOW=nr;{const[a,b]=nr.split("/"),[c,d]=old.split("/");if(a!=c||(S.tab=="players"&&b!=d))window.scrollTo(0,0)}}};
 addEventListener("popstate",()=>{applyRoute();ROUTE_NOW=routeOf();render()});
 window.go=k=>{S.tab=k;S.player=null;S.match=null;r()};
 
