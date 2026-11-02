@@ -1,8 +1,8 @@
 // ---------- routing ----------
 const ROUTE={club:"genel",matches:"maclar",night:"gece",players:"oyuncular",cmp:"karsilastir",fun:"eglence",an:"analiz"};
 const TAB_OF=Object.fromEntries(Object.entries(ROUTE).map(([k,v])=>[v,k]));
-function routeOf(){const t=ROUTE[S.tab]||"genel";if(S.tab=="players"&&S.player)return t+"/"+encodeURIComponent(S.player);if(S.tab=="matches"&&S.match)return t+"/"+S.match;if(S.tab=="night"&&S.night)return t+"/"+S.night;return t}
-function applyRoute(){const [t,a]=location.hash.replace(/^#\/?/,"").split("/");S.tab=TAB_OF[t]||"club";S.player=S.tab=="players"&&a?decodeURIComponent(a):null;S.match=S.tab=="matches"&&a?a:null;S.night=S.tab=="night"?+a||0:0}
+function routeOf(){const t=ROUTE[S.tab]||"genel";if(S.tab=="players"&&S.player)return t+"/"+encodeURIComponent(S.player)+(archOn(S.player)?"/"+S.arch:"");if(S.tab=="matches"&&S.match)return t+"/"+S.match;if(S.tab=="night"&&S.night)return t+"/"+S.night;return t}
+function applyRoute(){const [t,a,b]=location.hash.replace(/^#\/?/,"").split("/");S.arch=b||null;S.archP=a?decodeURIComponent(a):null;S.tab=TAB_OF[t]||"club";S.player=S.tab=="players"&&a?decodeURIComponent(a):null;S.match=S.tab=="matches"&&a?a:null;S.night=S.tab=="night"?+a||0:0}
 applyRoute();
 let ROUTE_NOW=routeOf();
 const _r0=r;

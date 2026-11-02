@@ -15,7 +15,11 @@ const M90={
  gk:[["Kurtarış",p=>p.saves],["Pas isabeti %",null,1,"pct"]]};
 function metricVal(list,f,kind){if(!list.length)return null;if(kind=="pct"){let a=0,b=0;list.forEach(p=>{a+=p.ev.passesCompleted;b+=p.ev.passesCompleted+p.ev.passesFailed});return b?a/b*100:null}
  return list.reduce((s,p)=>s+(f(p)||0),0)/list.length}
-function archData(n){const ar=mainArch(n);if(!ar.length)return null;const a=ar[0][0];
+const archOn=n=>S.arch&&S.archP==n&&D&&mainArch(n).some(x=>x[0]==S.arch)?S.arch:null;
+function archPick(n){const ar=mainArch(n);if(ar.length<2)return "";const A=archOn(n),tot=ar.reduce((s,x)=>s+x[1],0);
+ const b=(v,l,c)=>`<button class="${(A||"")==v?"on":""}" onclick="S.arch='${v}'||null;S.archP='${n.replace(/'/g,"\\'")}';r()">${l} <small>${c}</small></button>`;
+ return `<div class="fbar archbar"><div class="seg">${b("","Tüm arketipler",tot)}${ar.map(([x,c])=>b(x,archName(x),c)).join("")}</div></div>${A?`<p class="muted sm archnote">Sayfadaki istatistikler sadece ${archName(A)} olarak oynadığı maçlardan.</p>`:""}`}
+function archData(n){const ar=mainArch(n);if(!ar.length)return null;const a=archOn(n)||ar[0][0];
  const mine=[],bench=[];let pos=null;
  D.matches.forEach(m=>[...m.us,...m.them].forEach(p=>{if(p.arch!=a)return;if(p.name==n&&m.us.includes(p)){mine.push(p);pos=pos||p.pos}else bench.push(p)}));
  const g=GRP[pos]||"fw";const sameZone=bench.filter(p=>p.pos==pos);const B=sameZone.length>=5?sameZone:bench;
@@ -28,7 +32,7 @@ function archBlock(n){const X=archData(n);if(!X)return "";const {a,ar,mine,B,sam
   <div class="abb"><div class="abr me" style="width:${me/mx*100}%"></div><div class="abr av" style="width:${av/mx*100}%"></div></div>
   <div class="abv"><b>${fmt(me)}</b><small>ort. ${fmt(av)}</small></div><div class="abd ${cls}">${cls=="eq"?"≈":(diff>0?"+":"")+fmt(diff,0)+"%"}</div></div>`};
  const neg=X.R.filter(x=>x.dir==-1);const rows=`<h4 class="sub">Artılar</h4>${X.R.filter(x=>x.dir!=-1).map(row).join("")}`+(neg.length?`<h4 class="sub">Eksiler <small>az olması iyi</small></h4>${neg.map(row).join("")}`:"");
- const other=ar.slice(1).map(([x,c])=>`${archName(x)} ${c} maç`).join(", ");
+ const other=ar.filter(x=>x[0]!=a).map(([x,c])=>`${archName(x)} ${c} maç`).join(", ");
  return `<div class="card"><div class="ch"><h3>Arketipine göre</h3><span class="chip">${archName(a)} · ${posTr[pos]||pos}</span></div>
  <p class="muted sm">${n}, ${archName(a)} arketipiyle ${mine.length} maç oynadı${other?` (ayrıca ${other})`:""}. Kıyas: kayıtlı maçlarda aynı arketiple ${B===sameZone?"aynı bölgede ":""}oynayan ${B.length} oyuncu-maç (rakipler dahil). Hepsi maç başı.</p>
  <div class="leg"><span><i class="me"></i>${n}</span><span><i class="av"></i>${archName(a)} ortalaması</span></div>${rows}
@@ -94,7 +98,7 @@ function players(){const ms=matches();const L=names().map(n=>agg(n,ms)).filter(a
  <div class="g3">${L.map(pcard).join("")}</div>
  ${fold("Tüm istatistikler tablosu",`<div class="${SIMPLE()?"":"card"}"><div class="ch"><h3>Tüm istatistikler</h3><span class="muted sm">${S.mode=="avg"?"maç başı":"toplam"} · başlığa bas: sırala</span></div><div class="scroll"><table class="tbl"><tr><th>Oyuncu</th><th>Maç</th>${ST.map(([k,l])=>`<th class="${S.sort==k?"s":""}" onclick="S.sort='${k}';r()">${l}</th>`).join("")}</tr>
  ${L.map(a=>`<tr class="click" onclick="S.player='${a.name}';r()"><td><b>${a.name}</b></td><td>${a.n}</td>${ST.map(([k])=>`<td class="${S.sort==k?"s":""}">${fmt(val(a,k))}</td>`).join("")}</tr>`).join("")}</table></div></div>`)}`}
-function player(n){const ms=matches();const a=agg(n,ms);const m=mem(n);const c=(D.club.career||[]).find(x=>x.name==n)||{};
+function player(n){const A=archOn(n);const ms=matches().filter(m=>!A||m.us.some(p=>p.name==n&&p.arch==A));const a=agg(n,ms);const m=mem(n);const c=(D.club.career||[]).find(x=>x.name==n)||{};
  if(!a.n)return `<span class="back" onclick="S.player=null;r()">← Oyuncular</span><p>Bu filtrede maç yok.</p>`;
  const sum=f=>a.rows.reduce((s,r)=>s+(f(r.p.ev)||0),0);const per=x=>S.mode=="avg"?x/a.n:x;
  const kv=(l,v)=>`<div class="kv"><span>${l}</span><b>${typeof v=="number"?fmt(per(v)):v}</b></div>`;
@@ -103,8 +107,8 @@ function player(n){const ms=matches();const a=agg(n,ms);const m=mem(n);const c=(
  const rows=[...a.rows].reverse();
  return `<span class="back" onclick="S.player=null;r()">← Oyuncular</span>
  <div class="card ph2">${posBadge(n)}<div class="pn"><h2>${n}</h2><small class="muted">${m.proName||""} · OVR ${m.proOverall||"–"} · ${m.proHeight||"–"} cm · Kulüpte ${c.gamesPlayed||m.gamesPlayed||"–"} maç, ${c.goals||m.goals||"–"} gol, ${c.assists||m.assists||"–"} asist</small></div><div class="pr"><b class="${rc(a.rating.avg)}">${fmt(a.rating.avg)}</b><small>Ort. puan</small></div></div>
- ${filters()}
- <div class="card"><div class="ch"><h3>Maç maç puan</h3><span class="muted sm">son ${a.n} maç</span></div><div class="spk big"><div>${[...a.rows].map(r=>`<i class="${rc(r.p.rating)}" style="height:${Math.max(8,(r.p.rating-4)/6*100)}%"><em>${r.p.rating.toFixed(1)}</em></i>`).join("")}</div></div></div>
+ ${filters()}${archPick(n)}
+ <div class="card"><div class="ch"><h3>Maç maç puan</h3><span class="muted sm">son ${a.n} maç${A?" · "+archName(A):""}</span></div><div class="spk big"><div>${[...a.rows].map(r=>`<i class="${rc(r.p.rating)}" style="height:${Math.max(8,(r.p.rating-4)/6*100)}%"><em>${r.p.rating.toFixed(1)}</em></i>`).join("")}</div></div></div>
  ${SIMPLE()?highlights(n):""}${SIMPLE()?fold("Arketip ortalamasıyla tam kıyas",archBlock(n),"open"):archBlock(n)}
  ${fold("Detaylı istatistikler (hücum, pas, savunma, top kaybı bölgeleri)",`<div class="g2">
   <div class="card"><h3>Hücum</h3>${kv("Gol",sum(e=>e.goals))}${kv("Asist",sum(e=>e.assists))}${kv("2. asist",sum(e=>e.secondAssists))}${kv("Ara pas asisti",sum(e=>e.throughBallAssists))}${kv("Şut",sum(e=>e.shots))}${kv("İsabetli şut",sum(e=>e.shotsOnTarget))}${kv("Ceza sahası dışından isabetli",sum(e=>e.shotsOnTargetOutsideBox))}${kv("Zayıf ayakla gol",sum(e=>e.goalsWeakFoot))}</div>

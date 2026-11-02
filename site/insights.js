@@ -93,7 +93,7 @@ function shareCard(n){const m=mem(n),a=agg(n,D.matches),ar=(mainArch(n)[0]||[])[
 
 const TRK=[["Puan",p=>p.rating,1],["Gol + asist",p=>p.goals+p.assists,1],["Top kaybı",LOST,-1],["Pas %",p=>{const t=p.ev.passesCompleted+p.ev.passesFailed;return t?p.ev.passesCompleted/t*100:null},1]];
 function setTrk(i){S.trk=i;r()}
-function trendBlock(n){const k=S.trk||0,[,f,dir]=TRK[k];const rows=[];[...D.matches].sort((a,b)=>a.ts-b.ts).forEach(m=>{const p=m.us.find(z=>z.name==n);if(p){const v=f(p);if(v!=null)rows.push({m,v})}});
+function trendBlock(n){const k=S.trk||0,[,f,dir]=TRK[k];const rows=[];[...D.matches].sort((a,b)=>a.ts-b.ts).forEach(m=>{const p=m.us.find(z=>z.name==n);if(p&&(!archOn(n)||p.arch==archOn(n))){const v=f(p);if(v!=null)rows.push({m,v})}});
  if(rows.length<3)return "";
  const v=rows.map(o=>o.v),ma=v.map((_,i)=>mean(v.slice(Math.max(0,i-4),i+1)));
  let lo=Math.min(...v),hi=Math.max(...v);if(hi-lo<1){hi+=.5;lo-=.5}const pad=(hi-lo)*.1;lo-=pad;hi+=pad;
