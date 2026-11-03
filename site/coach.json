@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1793712280,
+ "updated": 1793715943,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Clandestinoooo": {
@@ -26,7 +26,7 @@
    "arch": "Disruptor",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793712280
+   "updated": 1793715943
   },
   "Eghnzvrl": {
    "summary": "Magician olarak ortalamanın altında kaldığın belirgin bir alan yok.",
@@ -46,7 +46,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793712280
+   "updated": 1793715943
   },
   "TandemFelixx": {
    "summary": "En büyük eksiğin asist: Creator'lara göre %81 geride.",
@@ -71,7 +71,7 @@
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793712280
+   "updated": 1793715943
   },
   "guppercan": {
    "summary": "En büyük eksiğin gol: Magician'lara göre %23 geride.",
@@ -96,7 +96,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793712280
+   "updated": 1793715943
   },
   "nycelia": {
    "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %88 geride.",
@@ -121,7 +121,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793712280
+   "updated": 1793715943
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %74 geride.",
@@ -146,7 +146,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793712280
+   "updated": 1793715943
   }
  }
 }
