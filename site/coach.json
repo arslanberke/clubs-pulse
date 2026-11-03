@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1793687989,
- "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
+ "updated": 1793698064,
+ "aiError": "RuntimeError: gemini-flash-latest TimeoutError: The read operation timed out | gemini-3.8-flash HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
  "players": {
   "Clandestinoooo": {
    "summary": "En büyük eksiğin gol: Disruptor'lara göre %100 geride.",
@@ -26,7 +26,7 @@
    "arch": "Disruptor",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793687989
+   "updated": 1793697850
   },
   "Eghnzvrl": {
    "summary": "Magician olarak ortalamanın altında kaldığın belirgin bir alan yok.",
@@ -46,7 +46,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793687989
+   "updated": 1793698064
   },
   "TandemFelixx": {
    "summary": "En büyük eksiğin asist: Creator'lara göre %81 geride.",
@@ -71,7 +71,7 @@
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793687989
+   "updated": 1793698064
   },
   "guppercan": {
    "summary": "En büyük eksiğin gol: Magician'lara göre %23 geride.",
@@ -96,7 +96,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793687989
+   "updated": 1793698064
   },
   "nycelia": {
    "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %88 geride.",
@@ -121,7 +121,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793687989
+   "updated": 1793698064
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %74 geride.",
@@ -146,7 +146,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793687989
+   "updated": 1793698064
   }
  }
 }
