@@ -1,52 +1,57 @@
 {
  "v": 2,
- "updated": 1793819905,
+ "updated": 1793826894,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Clandestinoooo": {
-   "summary": "En büyük eksiğin gol: Disruptor'lara göre %100 geride.",
+   "summary": "Henüz 7 maçlık kısıtlı bir örneklem olsa da Disruptor rolünde görev yerini çok terk ediyor ve %67 pas isabetiyle oynuyorsun.",
    "dont": [
-    "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0, Disruptor ortalaması 0.3)",
-    "Ceza sahasında topu tutma. (Asist: maç başı 0, Disruptor ortalaması 0.7)"
+    "Maç başına 10.0 kez pozisyon dışına çıkarak orta sahadaki savunma kurgunu aksatma.",
+    "Maç başı 2.9 başarısız ileri pas yapıyorsun, geçmeyecek derin topları ezbere zorlama.",
+    "Rakibin üzerine kontrolsüz dalıp maç başı 0.9 olan kazanılan müdahale oranını düşürme."
    ],
    "do": [
-    "Kaleciyle karşı karşıyayken plase vur.",
-    "Daha iyi pozisyondaki arkadaşa son pası ver.",
-    "Mevkinde kal, rakip top kaybedince boşlukta hazır ol."
+    "Daha basit ve risksiz tercihler yaparak %67 olan pas isabetini toparla.",
+    "Savunma hattının önünde yerini koruyarak maç başı 2.1 olan top kesme sayını artırmaya odaklan.",
+    "Kendi yarı sahandaki top kayıplarını (0.4) sıfırlamak için çevre kontrolünü iyi yap."
    ],
    "keep": [
-    "Ara pas güçlü yanın (Disruptor'lardan %90 iyi), böyle devam.",
-    "2. asist güçlü yanın (Disruptor'lardan %71 iyi), böyle devam."
+    "Maç başı 2.9 ara pas denemesiyle hücumu dikine açma niyetin çok iyi.",
+    "Topu ayağında fazla tutmayıp maç başı genel top kaybını 1.0 gibi düşük bir seviyede tutman takdire şayan."
    ],
-   "night": "7 maçta ortalama 7.0 puan, 0 gol 0 asist.",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece oynadığın 7 maçta 7.0 ortalama puan yakaladın ancak savunma sertliği ve tabela katkısı eksik kaldı.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "644bc2f68463",
    "n": 7,
    "arch": "Disruptor",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793819905
+   "updated": 1793826881
   },
   "Eghnzvrl": {
-   "summary": "Magician olarak ortalamanın altında kaldığın belirgin bir alan yok.",
-   "dont": [],
+   "summary": "Genel grafiğin diğer Magician forvetlere göre harika olsa da son dönemde şut ve dribbling denemelerini azaltman skor üretimini biraz düşürmüş.",
+   "dont": [
+    "Kaleyi gördüğün pozisyonlarda çekinip maç başı şut sayını 1.6 seviyelerine kadar indirme.",
+    "Genel ortalamada 4.3 kez aldığın 'başka yere pas vermeliydin' uyarısını daha da artıracak zorlama paslar deneme."
+   ],
    "do": [
-    "Oynadığın gibi devam et, maç biriktikçe öneriler netleşecek."
+    "Son maçlarda %88'e kadar fırlayan şut isabetine güven ve ceza sahası çevresinde daha fazla kaleyi dene.",
+    "Top kaybını 1.2 seviyesine kadar düşürmüşken eski maçlarındaki gibi 17 bandında dikine dribblinglerle savunmayı yıprat."
    ],
    "keep": [
-    "Asist güçlü yanın (Magician'lardan %94 iyi), böyle devam.",
-    "Gol güçlü yanın (Magician'lardan %48 iyi), böyle devam."
+    "Genel ortalamadaki maç başı 1.0 gol ve 0.8 asistlik elit seviye hücum katkını.",
+    "Maç başı top kaybını son dönemde 1.2'ye kadar çekerek sağladığın top saklama disiplinini."
    ],
-   "night": "8 maçta ortalama 7.7 puan (normalde 7.7), 6 gol 6 asist. Gol normalinden kötüydü (0.8, normalde 1.1).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 8 maçlık dar bir örneklem olsa da 6 gol ve 6 asist ürettin; ancak pas isabetinin %72'ye gerilemesi hücum akışını biraz yavaşlattı.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "85148231cf78",
    "n": 55,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793819905
+   "updated": 1793826894
   },
   "TandemFelixx": {
    "summary": "En büyük eksiğin asist: Creator'lara göre %81 geride.",
@@ -71,7 +76,7 @@
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793819905
+   "updated": 1793826894
   },
   "guppercan": {
    "summary": "En büyük eksiğin gol: Magician'lara göre %23 geride.",
@@ -96,7 +101,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793819905
+   "updated": 1793826894
   },
   "nycelia": {
    "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %88 geride.",
@@ -121,7 +126,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793819905
+   "updated": 1793826894
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %74 geride.",
@@ -146,7 +151,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793819905
+   "updated": 1793826894
   }
  }
 }
