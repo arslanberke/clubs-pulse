@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1793875558,
- "aiError": "RuntimeError: gemini-flash-latest HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. | gemini-3.8-flash TimeoutError: The read operation timed out",
+ "updated": 1793878930,
+ "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Clandestinoooo": {
    "summary": "Henüz 7 maçlık kısıtlı bir örneklem olsa da Disruptor rolünde görev yerini çok terk ediyor ve %67 pas isabetiyle oynuyorsun.",
@@ -76,7 +76,7 @@
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793875457
+   "updated": 1793878930
   },
   "guppercan": {
    "summary": "En büyük eksiğin gol: Magician'lara göre %23 geride.",
@@ -101,7 +101,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793875558
+   "updated": 1793878930
   },
   "nycelia": {
    "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %88 geride.",
@@ -126,7 +126,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793875558
+   "updated": 1793878930
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %74 geride.",
@@ -151,7 +151,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793875558
+   "updated": 1793878930
   }
  }
 }
