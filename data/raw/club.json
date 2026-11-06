@@ -94,7 +94,7 @@
     "kitColor2": "5775459",
     "kitColor3": "5775459",
     "kitColor4": "5775459",
-    "kitId": "1084555264",
+    "kitId": "1679363",
     "kitThrdColor1": "12706617",
     "kitThrdColor2": "33627",
     "kitThrdColor3": "396864",
@@ -106,7 +106,7 @@
    },
    "name": "IONIA FC",
    "regionId": 5457221,
-   "teamId": 132392
+   "teamId": 205
   }
  },
  "members": {
@@ -413,7 +413,7 @@
      "kitColor2": "5775459",
      "kitColor3": "5775459",
      "kitColor4": "5775459",
-     "kitId": "1084555264",
+     "kitId": "1679363",
      "kitThrdColor1": "12706617",
      "kitThrdColor2": "33627",
      "kitThrdColor3": "396864",
@@ -425,7 +425,7 @@
     },
     "name": "IONIA FC",
     "regionId": 5457221,
-    "teamId": 132392
+    "teamId": 205
    },
    "clubName": "IONIA FC",
    "currentDivision": "3",
