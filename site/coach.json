@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1794000904,
+ "updated": 1794001913,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
  "players": {
   "Clandestinoooo": {
@@ -36,18 +36,18 @@
     "Oynadığın gibi devam et, maç biriktikçe öneriler netleşecek."
    ],
    "keep": [
-    "Asist güçlü yanın (Magician'lardan %83 iyi), böyle devam.",
-    "Gol güçlü yanın (Magician'lardan %49 iyi), böyle devam."
+    "Asist güçlü yanın (Magician'lardan %88 iyi), böyle devam.",
+    "Gol güçlü yanın (Magician'lardan %52 iyi), böyle devam."
    ],
-   "night": "3 maçta ortalama 7.8 puan (normalde 7.7), 4 gol 1 asist. 'Topu kullan' uyarısı normalinden kötüydü (3.0, normalde 1.2).",
+   "night": "4 maçta ortalama 8.0 puan (normalde 7.7), 5 gol 2 asist. 'Topu kullan' uyarısı normalinden kötüydü (2.5, normalde 1.2).",
    "source": "rules",
    "model": null,
-   "hash": "1a4e8581ea32",
-   "n": 58,
+   "hash": "0aa148d22a11",
+   "n": 59,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1793998185,
-   "updated": 1794000904
+   "updated": 1794001913
   },
   "TandemFelixx": {
    "summary": "Creator rolüne göre hücumda fazla garantici kalsan da top kaybetmeme becerin ve son maçlardaki skor katkınla gelişim gösteriyorsun.",
@@ -76,8 +76,8 @@
   "guppercan": {
    "summary": "En büyük eksiğin gol: Magician'lara göre %27 geride.",
    "dont": [
-    "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.6, Magician ortalaması 0.9)",
-    "Kötü açıdan ve uzaktan şut çekme. (Şut isabeti %: maç başı 56.7, Magician ortalaması 73.6)"
+    "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.6, Magician ortalaması 0.8)",
+    "Kötü açıdan ve uzaktan şut çekme. (Şut isabeti %: maç başı 56.7, Magician ortalaması 74.2)"
    ],
    "do": [
     "Kaleciyle karşı karşıyayken plase vur.",
@@ -85,18 +85,18 @@
     "Asisti yapacak arkadaşa ver, ön pası hazırla."
    ],
    "keep": [
-    "Hava topu güçlü yanın (Magician'lardan %74 iyi), böyle devam.",
-    "Şut güçlü yanın (Magician'lardan %33 iyi), böyle devam."
+    "Hava topu güçlü yanın (Magician'lardan %76 iyi), böyle devam.",
+    "Şut güçlü yanın (Magician'lardan %31 iyi), böyle devam."
    ],
-   "night": "3 maçta ortalama 7.6 puan (normalde 7.2), 1 gol 3 asist. 'Başka yere pas vermeliydin' normalinden kötüydü (11.0, normalde 4.1).",
+   "night": "4 maçta ortalama 7.7 puan (normalde 7.2), 1 gol 5 asist. 'Başka yere pas vermeliydin' normalinden kötüydü (9.2, normalde 4.1).",
    "source": "rules",
    "model": null,
-   "hash": "dd8bbcdcbce6",
-   "n": 57,
+   "hash": "4aa9b2478eab",
+   "n": 58,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1793998185,
-   "updated": 1794000904
+   "updated": 1794001913
   },
   "nycelia": {
    "summary": "Hücumda harika bir oyun kurucusun ve kaleyi gördüğünde affetmiyorsun ancak savunmada kontrolsüz müdahalelerin ve pozisyonunu kaybetmen takımı zorluyor.",
@@ -125,7 +125,7 @@
    "updated": 1793934686
   },
   "rljer": {
-   "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %62 geride.",
+   "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %59 geride.",
    "dont": [
     "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 5.2, Finisher ortalaması 3.2)",
     "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.7, Finisher ortalaması 1.2)"
@@ -137,17 +137,17 @@
    ],
    "keep": [
     "Top kaybı güçlü yanın (Finisher'lardan %35 iyi), böyle devam.",
-    "'Topu kullan' uyarısı güçlü yanın (Finisher'lardan %18 iyi), böyle devam."
+    "'Topu kullan' uyarısı güçlü yanın (Finisher'lardan %19 iyi), böyle devam."
    ],
-   "night": "3 maçta ortalama 7.7 puan (normalde 7.4), 2 gol 3 asist. Şut isabeti % normalinden kötüydü (50.0, normalde 66.4).",
+   "night": "4 maçta ortalama 6.5 puan (normalde 7.4), 3 gol 3 asist. Şut isabeti % normalinden kötüydü (44.4, normalde 66.4).",
    "source": "rules",
    "model": null,
-   "hash": "f3ccbb10871e",
-   "n": 66,
+   "hash": "12d86e4ba78b",
+   "n": 67,
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1793998185,
-   "updated": 1794000904
+   "updated": 1794001913
   }
  }
 }
