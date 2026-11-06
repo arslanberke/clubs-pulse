@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1793922619,
+ "updated": 1793923328,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Clandestinoooo": {
@@ -54,29 +54,28 @@
    "updated": 1793826894
   },
   "TandemFelixx": {
-   "summary": "En büyük eksiğin asist: Creator'lara göre %81 geride.",
+   "summary": "Creator rolüne göre hücumda fazla garantici kalsan da top kaybetmeme becerin ve son maçlardaki skor katkınla gelişim gösteriyorsun.",
    "dont": [
-    "Ceza sahasında topu tutma. (Asist: maç başı 0.2, Creator ortalaması 0.9)",
-    "Topu rakibe bırakma. (Kazanılan tackle: maç başı 0.6, Creator ortalaması 1.2)"
+    "Creator arketipine sahipken maç başı 4.2 ara pasta kalarak hücumda risk almaktan kaçınma.",
+    "Son gece maç başı 7.8 kez pozisyon dışına çıktığın gibi sahadaki görev bölgende disiplini elden bırakma."
    ],
    "do": [
-    "Daha iyi pozisyondaki arkadaşa son pası ver.",
-    "İkili mücadelede zamanlamayla gir, kazandığın topu hemen arkadaşa ver.",
-    "Top kaybından sonra 3 saniye bas, topu geri kazan."
+    "Kıyas grubundaki 8.9 ortalamaya yaklaşmak için savunma arkasına daha sık kilit ara paslar dene.",
+    "Rakip orta sahanın dengesini bozmak için maç başı 12.6 olan dribbling sayını biraz daha yukarı çek."
    ],
    "keep": [
-    "Ofsayta düşen pas güçlü yanın (Creator'lardan %75 iyi), böyle devam.",
-    "Interception güçlü yanın (Creator'lardan %43 iyi), böyle devam."
+    "Maç başı 2.8 top kaybı ve %71 pas isabetiyle topla oynarken gösterdiğin soğukkanlılığı koru.",
+    "Son 5 maçta yakaladığın maç başı 0.6 asistlik ve 0.6 gollük hücum üretkenliğini aynen sürdür."
    ],
-   "night": "8 maçta ortalama 6.9 puan (normalde 7.1), 5 gol 3 asist. Ofsayta düşen pas normalinden kötüydü (0.2, normalde 0.1).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 8 maç gibi az bir örneklemde 5 gol ve 3 asistle skora harika katkı verdin ama 7.8 pozisyon dışı hatasıyla görev yerini fazla boşladın.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "e823734c4542",
    "n": 22,
    "arch": "Creator",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793922619
+   "updated": 1793923328
   },
   "guppercan": {
    "summary": "En büyük eksiğin gol: Magician'lara göre %23 geride.",
@@ -101,7 +100,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793922619
+   "updated": 1793923328
   },
   "nycelia": {
    "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %88 geride.",
@@ -126,7 +125,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793922619
+   "updated": 1793923328
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %74 geride.",
@@ -151,7 +150,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793922619
+   "updated": 1793923328
   }
  }
 }
