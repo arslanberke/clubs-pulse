@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1793956459,
+ "updated": 1793959976,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. | gemini-3.8-flash HTTP 503: This model is currently experiencing high demand. Spikes in demand ",
  "players": {
   "Clandestinoooo": {
@@ -150,7 +150,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793956459
+   "updated": 1793959976
   }
  }
 }
