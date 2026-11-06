@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1793927083,
+ "updated": 1793930892,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/",
  "players": {
   "Clandestinoooo": {
@@ -100,7 +100,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793927083
+   "updated": 1793930892
   },
   "nycelia": {
    "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %88 geride.",
@@ -125,7 +125,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1793642427,
-   "updated": 1793927083
+   "updated": 1793930892
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %74 geride.",
@@ -150,7 +150,7 @@
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1793642427,
-   "updated": 1793927083
+   "updated": 1793930892
   }
  }
 }
