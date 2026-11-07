@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1794081170,
+ "updated": 1794082676,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
  "players": {
   "Clandestinoooo": {
@@ -36,18 +36,18 @@
     "Oynadığın gibi devam et, maç biriktikçe öneriler netleşecek."
    ],
    "keep": [
-    "Asist güçlü yanın (Magician'lardan %101 iyi), böyle devam.",
-    "Gol güçlü yanın (Magician'lardan %63 iyi), böyle devam."
+    "Asist güçlü yanın (Magician'lardan %88 iyi), böyle devam.",
+    "Gol güçlü yanın (Magician'lardan %72 iyi), böyle devam."
    ],
-   "night": "3 maçta ortalama 9.4 puan (normalde 7.8), 7 gol 3 asist. 2. asist normalinden kötüydü (0.0, normalde 0.3).",
+   "night": "4 maçta ortalama 9.6 puan (normalde 7.8), 11 gol 4 asist.",
    "source": "rules",
    "model": null,
-   "hash": "18f452075eda",
-   "n": 66,
+   "hash": "554766e9bdc1",
+   "n": 67,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1794078331,
-   "updated": 1794081170
+   "updated": 1794082676
   },
   "TandemFelixx": {
    "summary": "Creator rolüne göre hücumda fazla garantici kalsan da top kaybetmeme becerin ve son maçlardaki skor katkınla gelişim gösteriyorsun.",
@@ -74,10 +74,10 @@
    "updated": 1793923328
   },
   "guppercan": {
-   "summary": "En büyük eksiğin gol: Magician'lara göre %36 geride.",
+   "summary": "En büyük eksiğin gol: Magician'lara göre %37 geride.",
    "dont": [
     "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.6, Magician ortalaması 0.9)",
-    "Kötü açıdan ve uzaktan şut çekme. (Şut isabeti %: maç başı 56.6, Magician ortalaması 75.4)"
+    "Kötü açıdan ve uzaktan şut çekme. (Şut isabeti %: maç başı 56.6, Magician ortalaması 74.6)"
    ],
    "do": [
     "Kaleciyle karşı karşıyayken plase vur.",
@@ -85,8 +85,8 @@
     "Daha iyi pozisyondaki arkadaşa son pası ver."
    ],
    "keep": [
-    "Hava topu güçlü yanın (Magician'lardan %69 iyi), böyle devam.",
-    "Şut güçlü yanın (Magician'lardan %22 iyi), böyle devam."
+    "Hava topu güçlü yanın (Magician'lardan %68 iyi), böyle devam.",
+    "Şut güçlü yanın (Magician'lardan %21 iyi), böyle devam."
    ],
    "night": "",
    "source": "rules",
@@ -96,12 +96,12 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": null,
-   "updated": 1794081170
+   "updated": 1794082676
   },
   "nycelia": {
-   "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %66 geride.",
+   "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %64 geride.",
    "dont": [
-    "Savunmada çizgini bozma. (Ciddi pozisyon hatası: maç başı 3.9, Magician ortalaması 2.3)",
+    "Savunmada çizgini bozma. (Ciddi pozisyon hatası: maç başı 3.8, Magician ortalaması 2.3)",
     "Arkadaş çizgiyi beklemeden ara pas atma. (Ofsayta düşen pas: maç başı 0.6, Magician ortalaması 0.4)"
    ],
    "do": [
@@ -110,43 +110,43 @@
     "Önünü kapat, rakip topu açınca müdahale et."
    ],
    "keep": [
-    "2. asist güçlü yanın (Magician'lardan %61 iyi), böyle devam.",
-    "Kazanılan tackle güçlü yanın (Magician'lardan %48 iyi), böyle devam."
+    "2. asist güçlü yanın (Magician'lardan %75 iyi), böyle devam.",
+    "Kazanılan tackle güçlü yanın (Magician'lardan %50 iyi), böyle devam."
    ],
-   "night": "3 maçta ortalama 8.5 puan (normalde 7.5), 3 gol 3 asist. Tehlikeli müdahale normalinden kötüydü (5.3, normalde 1.9).",
+   "night": "4 maçta ortalama 8.8 puan (normalde 7.5), 5 gol 6 asist. Tehlikeli müdahale normalinden kötüydü (4.5, normalde 1.9).",
    "source": "rules",
    "model": null,
-   "hash": "9ad4ac70432e",
-   "n": 51,
+   "hash": "98129d334ee4",
+   "n": 52,
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1794078331,
-   "updated": 1794081170
+   "updated": 1794082676
   },
   "rljer": {
-   "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %45 geride.",
+   "summary": "En büyük eksiğin pozisyon dışı: Finisher'lara göre %47 geride.",
    "dont": [
-    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 5, Finisher ortalaması 3.5)",
-    "Son pası hep kendin atmaya çalışma. (2. asist: maç başı 0.2, Finisher ortalaması 0.3)"
+    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 5.1, Finisher ortalaması 3.4)",
+    "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.8, Finisher ortalaması 1.2)"
    ],
    "do": [
     "Mevkinde kal, rakip top kaybedince boşlukta hazır ol.",
-    "Asisti yapacak arkadaşa ver, ön pası hazırla.",
-    "Kaleciyle karşı karşıyayken plase vur."
+    "Kaleciyle karşı karşıyayken plase vur.",
+    "Asisti yapacak arkadaşa ver, ön pası hazırla."
    ],
    "keep": [
-    "Top kaybı güçlü yanın (Finisher'lardan %38 iyi), böyle devam.",
-    "'Topu kullan' uyarısı güçlü yanın (Finisher'lardan %25 iyi), böyle devam."
+    "Top kaybı güçlü yanın (Finisher'lardan %37 iyi), böyle devam.",
+    "'Topu kullan' uyarısı güçlü yanın (Finisher'lardan %24 iyi), böyle devam."
    ],
-   "night": "3 maçta ortalama 8.3 puan (normalde 7.4), 2 gol 4 asist. 2. asist normalinden kötüydü (0.0, normalde 0.2).",
+   "night": "4 maçta ortalama 8.7 puan (normalde 7.4), 4 gol 7 asist. Top kaybı normalinden kötüydü (3.2, normalde 2.7).",
    "source": "rules",
    "model": null,
-   "hash": "60d54a02da26",
-   "n": 74,
+   "hash": "0c78baf477e6",
+   "n": 75,
    "arch": "Finisher",
    "pos": "Forvet",
    "nightStart": 1794078331,
-   "updated": 1794081170
+   "updated": 1794082676
   }
  }
 }
