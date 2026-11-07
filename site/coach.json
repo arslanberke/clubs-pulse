@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1794090575,
+ "updated": 1794091181,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
  "players": {
   "Clandestinoooo": {
@@ -30,24 +30,28 @@
    "updated": 1793826881
   },
   "Eghnzvrl": {
-   "summary": "Magician olarak ortalamanın altında kaldığın belirgin bir alan yok.",
-   "dont": [],
+   "summary": "Magician forvet olarak hücumda arketipinin çok üstündesin ancak 5 maçlık dar örneklemde gol ve asist üretiminde bir düşüş yaşamışsın.",
+   "dont": [
+    "Hücum hattını boş bırakıp son maçlarda 9.2'ye yükselen pozisyon dışı kalma hatalarını tekrarlama.",
+    "Hücumda gereksiz riskler alarak top kaybı sayını son dönemdeki gibi 3.6 seviyesine çıkarma."
+   ],
    "do": [
-    "Oynadığın gibi devam et, maç biriktikçe öneriler netleşecek."
+    "Son 5 maçta 1.4 ortalamaya çıkan kilit paslarını doğrudan asiste çevirecek son pasları ara.",
+    "Son gece yakaladığın maç başı 3.4 şut temposunu sürdürerek ceza sahasında daha çok kaleyi düşün."
    ],
    "keep": [
-    "Gol güçlü yanın (Magician'lardan %62 iyi), böyle devam.",
-    "Asist güçlü yanın (Magician'lardan %49 iyi), böyle devam."
+    "Kariyer ortalaman olan maç başı 1.1 gol ve %76 şut isabetini koru.",
+    "Arketipinin üzerinde seyreden %77 pas isabetiyle hücum organizasyonlarını yönetmeye devam et."
    ],
-   "night": "10 maçta ortalama 8.4 puan (normalde 7.8), 15 gol 6 asist. Asist normalinden kötüydü (0.6, normalde 0.8).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece çıktığın 10 maçta 8.4 ortalama puan, 15 gol ve 6 asistle hücumda adeta şov yaptın.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "f5527c50743e",
    "n": 73,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1794078331,
-   "updated": 1794090575
+   "updated": 1794091180
   },
   "TandemFelixx": {
    "summary": "Creator rolüne göre hücumda fazla garantici kalsan da top kaybetmeme becerin ve son maçlardaki skor katkınla gelişim gösteriyorsun.",
@@ -96,7 +100,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1794078331,
-   "updated": 1794090575
+   "updated": 1794091181
   },
   "nycelia": {
    "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %71 geride.",
@@ -121,7 +125,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1794078331,
-   "updated": 1794090575
+   "updated": 1794091181
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Target'ların 3.0 katı.",
@@ -146,7 +150,7 @@
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1794078331,
-   "updated": 1794090575
+   "updated": 1794091181
   }
  }
 }
