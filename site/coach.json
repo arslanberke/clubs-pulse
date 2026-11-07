@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1794091503,
+ "updated": 1794092760,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
  "players": {
   "Clandestinoooo": {
@@ -30,29 +30,24 @@
    "updated": 1793826881
   },
   "Eghnzvrl": {
-   "summary": "Genel tabloda mevkidaşlarının çok önünde bir forvetsin fakat son 5 maçlık dar örneklemde doğrudan skor katkın biraz gerilemiş.",
-   "dont": [
-    "Son dönemde 9.4 seviyesine çıkan pozisyon dışı kalma sıklığını azaltıp hücum hattını erken terk etme.",
-    "Topu ayağında fazla bekletip top kaybını 4.2 ortalamaya çıkarma.",
-    "Ceza sahasında net vuruş imkanı varken fazladan pas arayışına girme."
-   ],
+   "summary": "Magician olarak ortalamanın altında kaldığın belirgin bir alan yok.",
+   "dont": [],
    "do": [
-    "Son gece yakaladığın maç başı 3.4 şutluk agresifliğini sürdürerek kaleyi daha çok dene.",
-    "İkinci asistlerdeki 1.4 ortalamanı korurken kendini ceza sahasında daha çok bitirici konuma sok."
+    "Oynadığın gibi devam et, maç biriktikçe öneriler netleşecek."
    ],
    "keep": [
-    "Genelindeki %76 ve son dönemdeki %85 seviyesindeki yüksek şut isabetini aynen koru.",
-    "Arketip ortalamasının çok üstünde olan maç başı 1.1 gol ve 0.8 asistlik hücum liderliğini devam ettir."
+    "Gol güçlü yanın (Magician'lardan %63 iyi), böyle devam.",
+    "Asist güçlü yanın (Magician'lardan %50 iyi), böyle devam."
    ],
-   "night": "Son gece 11 maçta kaydettiğin 16 gol, 6 asist ve 8.2 reytingle hücumda harika bir oyun sergiledin.",
-   "source": "ai",
-   "model": "gemini-flash-latest",
-   "hash": "61b587c7e37f",
-   "n": 74,
+   "night": "12 maçta ortalama 8.1 puan (normalde 7.8), 17 gol 6 asist. Asist normalinden kötüydü (0.5, normalde 0.8).",
+   "source": "rules",
+   "model": null,
+   "hash": "023bb3f288a9",
+   "n": 75,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1794078331,
-   "updated": 1794091503
+   "updated": 1794092760
   },
   "TandemFelixx": {
    "summary": "Creator rolüne göre hücumda fazla garantici kalsan da top kaybetmeme becerin ve son maçlardaki skor katkınla gelişim gösteriyorsun.",
@@ -82,7 +77,7 @@
    "summary": "En büyük eksiğin gol: Magician'lara göre %35 geride.",
    "dont": [
     "Pozisyonu harcayan acele vuruşlar yapma. (Gol: maç başı 0.6, Magician ortalaması 0.9)",
-    "Kötü açıdan ve uzaktan şut çekme. (Şut isabeti %: maç başı 56.4, Magician ortalaması 75.8)"
+    "Kötü açıdan ve uzaktan şut çekme. (Şut isabeti %: maç başı 56.6, Magician ortalaması 76.1)"
    ],
    "do": [
     "Kaleciyle karşı karşıyayken plase vur.",
@@ -90,23 +85,23 @@
     "Asisti yapacak arkadaşa ver, ön pası hazırla."
    ],
    "keep": [
-    "Hava topu güçlü yanın (Magician'lardan %63 iyi), böyle devam.",
-    "Şut güçlü yanın (Magician'lardan %23 iyi), böyle devam."
+    "Hava topu güçlü yanın (Magician'lardan %61 iyi), böyle devam.",
+    "Şut güçlü yanın (Magician'lardan %22 iyi), böyle devam."
    ],
-   "night": "6 maçta ortalama 7.9 puan (normalde 7.3), 4 gol 6 asist. Pozisyon dışı normalinden kötüydü (13.0, normalde 7.2).",
+   "night": "7 maçta ortalama 7.8 puan (normalde 7.3), 5 gol 6 asist. Pozisyon dışı normalinden kötüydü (13.7, normalde 7.2).",
    "source": "rules",
    "model": null,
-   "hash": "dab11d05f42d",
-   "n": 68,
+   "hash": "18d51807e3bd",
+   "n": 69,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1794078331,
-   "updated": 1794091503
+   "updated": 1794092760
   },
   "nycelia": {
-   "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %74 geride.",
+   "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %76 geride.",
    "dont": [
-    "Savunmada çizgini bozma. (Ciddi pozisyon hatası: maç başı 3.9, Magician ortalaması 2.3)",
+    "Savunmada çizgini bozma. (Ciddi pozisyon hatası: maç başı 4, Magician ortalaması 2.3)",
     "Her topa dalarak girme. (Kaybedilen tackle: maç başı 5.4, Magician ortalaması 3.6)"
    ],
    "do": [
@@ -115,23 +110,23 @@
     "Ara pası arkadaşın koşuya çıkarken at."
    ],
    "keep": [
-    "2. asist güçlü yanın (Magician'lardan %69 iyi), böyle devam.",
+    "2. asist güçlü yanın (Magician'lardan %66 iyi), böyle devam.",
     "Şut isabeti güçlü yanın (Magician'lardan %47 iyi), böyle devam."
    ],
-   "night": "11 maçta ortalama 8.1 puan (normalde 7.5), 9 gol 11 asist. Tehlikeli müdahale normalinden kötüydü (4.2, normalde 1.9).",
+   "night": "12 maçta ortalama 8.0 puan (normalde 7.5), 9 gol 12 asist. Tehlikeli müdahale normalinden kötüydü (4.0, normalde 1.9).",
    "source": "rules",
    "model": null,
-   "hash": "0f3a263e01ec",
-   "n": 59,
+   "hash": "1cfdfd581762",
+   "n": 60,
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1794078331,
-   "updated": 1794091503
+   "updated": 1794092760
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Target'ların 3.1 katı.",
    "dont": [
-    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 5.1, Target ortalaması 1.7)",
+    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 5.1, Target ortalaması 1.6)",
     "İlk gördüğün arkadaşa pas verme. ('Başka yere pas vermeliydin': maç başı 3.1, Target ortalaması 2.0)"
    ],
    "do": [
@@ -140,18 +135,18 @@
     "Topun düşeceği yere erken git, gövdeyle pozisyon al."
    ],
    "keep": [
-    "Top kaybı güçlü yanın (Target'lardan %24 iyi), böyle devam.",
-    "Dribbling güçlü yanın (Target'lardan %21 iyi), böyle devam."
+    "Dribbling güçlü yanın (Target'lardan %23 iyi), böyle devam.",
+    "Top kaybı güçlü yanın (Target'lardan %23 iyi), böyle devam."
    ],
-   "night": "11 maçta ortalama 8.3 puan (normalde 7.4), 11 gol 14 asist.",
+   "night": "12 maçta ortalama 8.2 puan (normalde 7.4), 11 gol 14 asist.",
    "source": "rules",
    "model": null,
-   "hash": "9181b73f72c7",
-   "n": 82,
+   "hash": "f9e1c9787e03",
+   "n": 83,
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1794078331,
-   "updated": 1794091503
+   "updated": 1794092760
   }
  }
 }
