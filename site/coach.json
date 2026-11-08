@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1794136611,
- "aiError": "RuntimeError: gemini-flash-latest HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. | gemini-3.8-flash TimeoutError: The read operation timed out",
+ "updated": 1794139959,
+ "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
  "players": {
   "Clandestinoooo": {
    "summary": "Henüz 7 maçlık kısıtlı bir örneklem olsa da Disruptor rolünde görev yerini çok terk ediyor ve %67 pas isabetiyle oynuyorsun.",
@@ -152,7 +152,7 @@
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1794078331,
-   "updated": 1794136611
+   "updated": 1794139959
   }
  }
 }
