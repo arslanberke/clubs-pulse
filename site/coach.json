@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1794133124,
- "aiError": "RuntimeError: gemini-flash-latest TimeoutError: The read operation timed out | gemini-3.8-flash HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.",
+ "updated": 1794136611,
+ "aiError": "RuntimeError: gemini-flash-latest HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. | gemini-3.8-flash TimeoutError: The read operation timed out",
  "players": {
   "Clandestinoooo": {
    "summary": "Henüz 7 maçlık kısıtlı bir örneklem olsa da Disruptor rolünde görev yerini çok terk ediyor ve %67 pas isabetiyle oynuyorsun.",
@@ -152,7 +152,7 @@
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1794078331,
-   "updated": 1794133124
+   "updated": 1794136611
   }
  }
 }
