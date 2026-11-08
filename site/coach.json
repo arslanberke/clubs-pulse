@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1794143709,
- "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
+ "updated": 1794147512,
+ "aiError": null,
  "players": {
   "Clandestinoooo": {
    "summary": "Henüz 7 maçlık kısıtlı bir örneklem olsa da Disruptor rolünde görev yerini çok terk ediyor ve %67 pas isabetiyle oynuyorsun.",
@@ -130,29 +130,30 @@
    "updated": 1794132624
   },
   "rljer": {
-   "summary": "En büyük eksiğin pozisyon dışı: Target'ların 3.1 katı.",
+   "summary": "Target forvet olarak top saklama becerin harika olsa da ceza sahasından çok fazla uzaklaşıp pozisyonunu kaybediyorsun.",
    "dont": [
-    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 5.1, Target ortalaması 1.6)",
-    "İlk gördüğün arkadaşa pas verme. ('Başka yere pas vermeliydin': maç başı 3, Target ortalaması 2.0)"
+    "Maç başı 5.1 kez pozisyon dışı kalıp takımın hücum yerleşimini bozacak şekilde gezinme.",
+    "Hücumda pas tercihlerini zorlayıp maç başı 3.0 kez yanlış adrese top atma.",
+    "Topu ayağında fazla tutup gereksiz yere uyarı alma."
    ],
    "do": [
-    "Mevkinde kal, rakip top kaybedince boşlukta hazır ol.",
-    "Pas öncesi sahayı tara, daha iyi pozisyondaki oyuncuyu ara.",
-    "Topun düşeceği yere erken git, gövdeyle pozisyon al."
+    "Target forvet kimliğine dönüp son 5 maçtaki gibi maç başı 3.6 hava topu seviyesini ceza sahasında koru (son 5 maçlık veri az olsa da gelişim net).",
+    "Kıyasa göre geride kalan maç başı 2.6 şut sayını artırıp kaleyi daha fazla yokla.",
+    "Ceza sahası merkezinde sırtı dönük bekleyip kanatlardan gelen ortalara odaklan."
    ],
    "keep": [
-    "Top kaybı güçlü yanın (Target'lardan %23 iyi), böyle devam.",
-    "Dribbling güçlü yanın (Target'lardan %21 iyi), böyle devam."
+    "Maç başı sadece 2.7 top kaybıyla arketip kıyasına göre topu ayağında çok iyi saklıyorsun.",
+    "%68 şut isabetiyle yakaladığın fırsatlarda çerçeveyi gayet iyi buluyorsun."
    ],
-   "night": "14 maçta ortalama 8.1 puan (normalde 7.4), 13 gol 15 asist.",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 14 maçta 8.1 puan ortalaması, 13 gol ve 15 asistle muazzam bir hücum performansı sergiledin.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "c9d803fdc422",
    "n": 85,
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1794078331,
-   "updated": 1794143709
+   "updated": 1794147512
   }
  }
 }
