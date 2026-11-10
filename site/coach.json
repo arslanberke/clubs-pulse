@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1794303801,
- "aiError": "RuntimeError: gemini-flash-latest HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. | gemini-3.8-flash HTTP 503: This model is currently experiencing high demand. Spikes in demand ",
+ "updated": 1794307478,
+ "aiError": "RuntimeError: gemini-flash-latest HTTP 503: This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later. | gemini-3.8-flash TimeoutError: The read operation timed out",
  "players": {
   "Clandestinoooo": {
    "summary": "Henüz 7 maçlık kısıtlı bir örneklem olsa da Disruptor rolünde görev yerini çok terk ediyor ve %67 pas isabetiyle oynuyorsun.",
@@ -47,7 +47,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1794248406,
-   "updated": 1794303397
+   "updated": 1794307378
   },
   "TandemFelixx": {
    "summary": "Creator rolüne göre hücumda fazla garantici kalsan da top kaybetmeme becerin ve son maçlardaki skor katkınla gelişim gösteriyorsun.",
@@ -96,7 +96,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1794248406,
-   "updated": 1794303801
+   "updated": 1794307478
   },
   "nycelia": {
    "summary": "En büyük eksiğin ciddi pozisyon hatası: Magician'lara göre %74 geride.",
@@ -121,7 +121,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1794248406,
-   "updated": 1794303801
+   "updated": 1794307478
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Target'ların 3.0 katı.",
@@ -146,7 +146,7 @@
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1794248406,
-   "updated": 1794303801
+   "updated": 1794307478
   }
  }
 }
