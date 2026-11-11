@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1794383777,
- "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
+ "updated": 1794393472,
+ "aiError": null,
  "players": {
   "Clandestinoooo": {
    "summary": "Henüz 7 maçlık kısıtlı bir örneklem olsa da Disruptor rolünde görev yerini çok terk ediyor ve %67 pas isabetiyle oynuyorsun.",
@@ -131,29 +131,30 @@
    "updated": 1794383777
   },
   "rljer": {
-   "summary": "En büyük eksiğin pozisyon dışı: Target'ların 3.0 katı.",
+   "summary": "Bir hedef santrafor olarak dribblinge fazla kapılıp pozisyonunu kaybediyorsun ve bitiriciliğin düşüşte, ancak servisçi kimliğin ve hava topu etkinliğin yükselişte.",
    "dont": [
-    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 5, Target ortalaması 1.6)",
-    "İlk gördüğün arkadaşa pas verme. ('Başka yere pas vermeliydin': maç başı 3, Target ortalaması 2.0)"
+    "Topu ayağında fazla tutup dribblingi 16.2'ye çıkararak 'topu kullan' uyarısı ve top kaybı alma.",
+    "Hedef santrafor olduğunu unutup maç başı 5.0 ortalamayla mevkini terk ederek pozisyon dışı kalma.",
+    "Acele vuruşlarla son dönemdeki %33-%42 bandına inen şut isabetine razı olma."
    ],
    "do": [
-    "Mevkinde kal, rakip top kaybedince boşlukta hazır ol.",
-    "Pas öncesi sahayı tara, daha iyi pozisyondaki oyuncuyu ara.",
-    "Topun düşeceği yere erken git, gövdeyle pozisyon al."
+    "Ceza sahası merkezinde kalarak son maçlarda 4.0'a çıkardığın hava topu üstünlüğünü gol fırsatlarına çevir.",
+    "Şut öncesi doğru açıyı bulup genel ortalamandaki %67 şut isabeti standardını yakala.",
+    "Boştaki kanat ve orta sahalara tek topla servis yaparak oyun kurucu rolünü koru."
    ],
    "keep": [
-    "Dribbling güçlü yanın (Target'lardan %23 iyi), böyle devam.",
-    "Top kaybı güçlü yanın (Target'lardan %21 iyi), böyle devam."
+    "Son gece 4.5 seviyesine çıkan hava topu hakimiyetin hedef forvet arketipinin hakkını veriyor, böyle devam.",
+    "Hücum organizasyonlarında maç başı 0.8 ortalamaya ulaşan 2. asist katkın takımı çok rahatlatıyor."
    ],
-   "night": "4 maçta ortalama 7.5 puan (normalde 7.5), 2 gol 3 asist. Şut isabeti % normalinden kötüydü (33.3, normalde 68.3).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 4 maçlık dar örneklemde 2 gol ve 3 asistle tabelaya katkı versen de %33 şut isabeti ve 3.2 top kaybı sana pek yakışmadı.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "218294a4dca8",
    "n": 89,
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1794248406,
-   "updated": 1794383777
+   "updated": 1794393472
   }
  }
 }
