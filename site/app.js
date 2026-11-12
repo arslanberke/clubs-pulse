@@ -15,6 +15,7 @@ const ST=[
  ["rating","Puan",p=>p.rating,"avgOnly"],
  ["goals","Gol",p=>p.goals],["assists","Asist",p=>p.assists],["sa","2. asist",p=>p.ev.secondAssists],
  ["shots","Şut",p=>p.shots],["sot","İsabetli şut",p=>p.ev.shotsOnTarget],
+ ["sacc","Şut isabeti %",null,"pct",1,p=>[p.ev.shotsOnTarget,p.shots]],["conv","Gole çevirme %",null,"pct",1,p=>[p.goals,p.shots]],["sotc","İsabetliyi gole çevirme %",null,"pct",1,p=>[p.goals,p.ev.shotsOnTarget]],
  ["pass","Pas %",null,"pct",1,p=>[p.ev.passesCompleted,p.ev.passesCompleted+p.ev.passesFailed]],
  ["pc","Başarılı pas",p=>p.ev.passesCompleted],["pf","İleri pas",p=>p.ev.passesCompletedForward],["tp","Ara pas",p=>p.ev.throughPasses],
  ["drb","Dribbling",p=>p.ev.dribblesCompleted],["beat","Adam geçme",p=>p.ev.dribblesBeat+p.ev.dribblesSkillMoveBeat],
