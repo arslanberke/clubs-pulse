@@ -18,7 +18,7 @@ const ST=[
  ["sacc","Şut isabeti %",null,"pct",1,p=>[p.ev.shotsOnTarget,p.shots]],["conv","Gole çevirme %",null,"pct",1,p=>[p.goals,p.shots]],["sotc","İsabetliyi gole çevirme %",null,"pct",1,p=>[p.goals,p.ev.shotsOnTarget]],
  ["pass","Pas %",null,"pct",1,p=>[p.ev.passesCompleted,p.ev.passesCompleted+p.ev.passesFailed]],
  ["pc","Başarılı pas",p=>p.ev.passesCompleted],["pf","İleri pas",p=>p.ev.passesCompletedForward],["tp","Ara pas",p=>p.ev.throughPasses],
- ["drb","Dribbling",p=>p.ev.dribblesCompleted],["beat","Adam geçme",p=>p.ev.dribblesBeat+p.ev.dribblesSkillMoveBeat],
+ ["tch","Topla buluşma",p=>touches(p)], ["drb","Dribbling",p=>p.ev.dribblesCompleted],["beat","Adam geçme",p=>p.ev.dribblesBeat+p.ev.dribblesSkillMoveBeat],
  ["lost","Top kaybı",p=>p.ev.possessionLostDefensiveThird+p.ev.possessionLostMiddleThird+p.ev.possessionLostAttackingThird,0,-1],
  ["won","Top kazanma",p=>p.ev.possessionWonDefensiveThird+p.ev.possessionWonMiddleThird+p.ev.possessionWonAttackingThird],
  ["int","Interception",p=>p.ev.interceptions],["tw","Tackle (kazanılan)",p=>p.ev.tacklesWon],

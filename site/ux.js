@@ -78,7 +78,7 @@ const GL={"2. asist":"Gol pasını atan oyuncuya pası veren. Asistten önceki s
  "Maçın adamı":"EA'nın maçın en iyisi seçtiği oyuncu.","SR":"Skill rating: EA'nın kulüp gücü puanı. Kazandıkça artar, kaybettikçe düşer.","Skill rating":"EA'nın kulüp gücü puanı. Kazandıkça artar, kaybettikçe düşer.",
  "Saldırı":"100 üzerinden; maç başı gol ve isabetli şuta göre.","Savunma":"100 üzerinden; yenen gol ve top kazanmaya göre.","Top güvenliği":"100 üzerinden; pas isabeti ve top kaybına göre.",
  "Averaj":"Atılan gol eksi yenen gol.","Seri":"Üst üste gelen aynı sonuç (G galibiyet, B beraberlik, M mağlubiyet).","Hava topu":"Kazanılan hava topu mücadelesi.","OVR":"Pro'nun genel reytingi.",
- "Başarısız pas":"Arkadaşına ulaşmayan pas.","Kırmızı kart":"Oyundan atılma.","Gol yemeden biten":"Rakibe gol izni vermeden biten maç."};
+ "Başarısız pas":"Arkadaşına ulaşmayan pas.","Topla buluşma":"Tahmini sayı: pas denemesi + şut + dribbling. EA topa dokunma sayısını ve topla geçen süreyi vermiyor.","Takımdaki pay":"Takımın (sadece gerçek oyuncular) topla buluşmalarının yüzde kaçı bu oyuncuda.","Topu sürme":"Topu ayağında taşıyarak ilerlediği an sayısı.","Buluşmada 1 kayıp":"Topla kaç kez buluşunca bir kez topu kaptırıyor. Yüksek olması iyi.","Kırmızı kart":"Oyundan atılma.","Gol yemeden biten":"Rakibe gol izni vermeden biten maç."};
 function post(){const app=document.getElementById("app");if(!app)return;
  app.querySelectorAll("b,strong,td,th,span,div,em,small,h3").forEach(el=>{if(el.children.length)return;const t=el.textContent.trim();
   if(meOk()&&t==ME&&!el.closest(".mechip,.pick,.mecard")){el.classList.add("me-n");const tr=el.closest("tr");if(tr)tr.classList.add("me-r")}
