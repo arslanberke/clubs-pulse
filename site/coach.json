@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1794752349,
- "aiError": "RuntimeError: gemini-3.8-flash HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
+ "updated": 1794757798,
+ "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
  "players": {
   "Clandestinoooo": {
    "summary": "Henüz 7 maçlık kısıtlı bir örneklem olsa da Disruptor rolünde görev yerini çok terk ediyor ve %67 pas isabetiyle oynuyorsun.",
@@ -30,24 +30,30 @@
    "updated": 1793826881
   },
   "Eghnzvrl": {
-   "summary": "Magician olarak ortalamanın altında kaldığın belirgin bir alan yok.",
-   "dont": [],
+   "summary": "Genel olarak Magician rolünün hakkını fazlasıyla verip harika skor üretiyorsun ancak son 5 maçlık dar örneklemde pozisyon disiplininden epey koptuğun görülüyor.",
+   "dont": [
+    "Hücumda gereksiz gezinip son 5 maçta 21.0 seviyesine fırlayan pozisyon dışı kalma hatasını tekrarlama.",
+    "Topu ayağında fazla tutup son dönemde maç başı 3.0 kez aldığın 'topu kullan' uyarısını çoğaltma.",
+    "Zorlama paslar deneyip maç başı 5.6 kez yanlış pas tercihi uyarısı alma."
+   ],
    "do": [
-    "Oynadığın gibi devam et, maç biriktikçe öneriler netleşecek."
+    "Son 5 maçta maç başı 0.2'ye inen asist katkını eski 0.8 seviyesine çekmek için boş arkadaşlarına daha erken pas çıkar.",
+    "Hücum hattında merkezdeki yerini koruyarak pozisyon sadakatini yükselt.",
+    "Son 5 maçtaki %89 gibi müthiş şut isabetini koruyarak ceza sahasında daha sık net vuruş ara."
    ],
    "keep": [
-    "Gol güçlü yanın (Magician'lardan %60 iyi), böyle devam.",
-    "Asist güçlü yanın (Magician'lardan %51 iyi), böyle devam."
+    "Akranlarına göre maç başı 1.0 gol ve %77 şut isabetiyle yakaladığın elit bitiriciliği koru.",
+    "Maç başı 16.9 başarılı dribbling ve %77 pas isabetiyle hücumu yönlendirme becerini aynen devam ettir."
    ],
-   "night": "17 maçta ortalama 7.9 puan (normalde 7.8), 13 gol 12 asist. Pozisyon dışı normalinden kötüydü (14.8, normalde 7.9).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 17 maçta 13 gol ve 12 asistle 7.9 puan ortalaması yakalayıp şov yapsan da 14.8 pozisyon dışı uyarısıyla yerini çok kaybettin.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "8323e684f08c",
    "n": 98,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1794677571,
-   "updated": 1794752349
+   "updated": 1794757798
   },
   "TandemFelixx": {
    "summary": "Creator rolüne göre hücumda fazla garantici kalsan da top kaybetmeme becerin ve son maçlardaki skor katkınla gelişim gösteriyorsun.",
@@ -121,7 +127,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1794677571,
-   "updated": 1794752349
+   "updated": 1794757798
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Target'ların 3.4 katı.",
@@ -146,7 +152,7 @@
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1794677571,
-   "updated": 1794752349
+   "updated": 1794757798
   }
  }
 }
