@@ -1,6 +1,6 @@
 let D;
 const C=["#4f9cf9","#f2994a","#3ecf8e","#bb6bd9"];
-const S={tab:"club",night:0,type:"all",mode:"avg",sort:"rating",player:null,match:null,cmp:[]};
+const S={last:localStorage.getItem("cp-last")||"0",tab:"club",night:0,type:"all",mode:"avg",sort:"rating",player:null,match:null,cmp:[]};
 const $=h=>document.getElementById("app").innerHTML=h;
 const fmt=(v,d=1)=>v==null||isNaN(v)?"–":(Number.isInteger(v)?v:v.toFixed(d));
 const dt=ts=>new Date(ts*1000).toLocaleString("tr-TR",{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"});
@@ -9,7 +9,9 @@ const posTr={forward:"Forvet",midfielder:"Orta saha",defender:"Defans",goalkeepe
 const real={};
 const LOST=p=>p.ev.possessionLostDefensiveThird+p.ev.possessionLostMiddleThird+p.ev.possessionLostAttackingThird;
 const WON=p=>p.ev.possessionWonDefensiveThird+p.ev.possessionWonMiddleThird+p.ev.possessionWonAttackingThird;
-const matches=()=>D.matches.filter(m=>S.type=="all"||m.type==S.type);
+const allMatches=()=>D.matches.filter(m=>S.type=="all"||m.type==S.type);
+const lastN=()=>+S.last||0;
+const matches=()=>{const L=allMatches();return lastN()?[...L].sort((a,b)=>b.ts-a.ts).slice(0,lastN()):L};
 // stat definitions: [key, label, getter(player-match), per-match avg allowed, higherIsBetter]
 const ST=[
  ["rating","Puan",p=>p.rating,"avgOnly"],
@@ -24,7 +26,8 @@ const ST=[
  ["int","Interception",p=>p.ev.interceptions],["tw","Tackle (kazanılan)",p=>p.ev.tacklesWon],
  ["oop","Pozisyon dışı",p=>p.ev.outOfPosition,0,-1],["mom","Maçın adamı",p=>p.mom],
 ];
-function agg(name,ms){const rows=[];ms.forEach(m=>m.us.forEach(p=>{if(p.name==name)rows.push({p,m})}));
+function agg(name,ms){let rows=[];ms.forEach(m=>m.us.forEach(p=>{if(p.name==name)rows.push({p,m})}));
+ if(lastN()&&rows.length>lastN()){const keep=new Set([...rows].sort((x,y)=>y.m.ts-x.m.ts).slice(0,lastN()));rows=rows.filter(o=>keep.has(o))}
  const o={name,n:rows.length,rows};if(!rows.length)return o;
  ST.forEach(([k,l,g,f,dir,pg])=>{
   if(f=="pct"){let a=0,b=0;rows.forEach(r=>{const[x,y]=pg(r.p);a+=x;b+=y});o[k]={tot:b?a/b*100:null,avg:b?a/b*100:null}}

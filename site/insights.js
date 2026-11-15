@@ -94,7 +94,7 @@ function shareCard(n){const m=mem(n),a=agg(n,D.matches),ar=(mainArch(n)[0]||[])[
 const TRK=[["Puan",p=>p.rating,1],["Gol + asist",p=>p.goals+p.assists,1],["Top kaybı",LOST,-1],["Topla buluşma",p=>touches(p),1],["Pas %",p=>{const t=p.ev.passesCompleted+p.ev.passesFailed;return t?p.ev.passesCompleted/t*100:null},1]];
 function setTrk(i){S.trk=i;r()}
 function trendBlock(n){const k=S.trk||0,[,f,dir]=TRK[k];const rows=[];[...D.matches].sort((a,b)=>a.ts-b.ts).forEach(m=>{const p=m.us.find(z=>z.name==n);if(p&&(!archOn(n)||p.arch==archOn(n))){const v=f(p);if(v!=null)rows.push({m,v})}});
- if(rows.length<3)return "";
+ if(lastN())rows.splice(0,Math.max(0,rows.length-lastN()));if(rows.length<3)return "";
  const v=rows.map(o=>o.v),ma=v.map((_,i)=>mean(v.slice(Math.max(0,i-4),i+1)));
  let lo=Math.min(...v),hi=Math.max(...v);if(hi-lo<1){hi+=.5;lo-=.5}const pad=(hi-lo)*.1;lo-=pad;hi+=pad;
  const W=640,H=230,L=40,R=12,T=14,B=16,X=i=>L+i*(W-L-R)/(rows.length-1),Y=y=>T+(hi-y)/(hi-lo)*(H-T-B);
@@ -140,7 +140,7 @@ const teamTouches=m=>m.us.reduce((s,x)=>s+touches(x),0);
 function ballStats(L){const s=f=>L.reduce((t,o)=>t+(f(o.p,o.m)||0),0),n=L.length;
  return {n,tch:s(touches),team:s((p,m)=>teamTouches(m)),pas:s(p=>p.passAtt),sht:s(p=>p.shots),drb:s(p=>p.ev.dribblesCompleted),car:s(p=>p.ev.dribblesCarried),lost:s(LOST),
   z:ZONES.map(([k])=>s(p=>zoneOf(p,k))),inB:s(p=>p.ev.shotsOnTargetInsideBox+p.ev.shotsOffTargetInsideBox),outB:s(p=>p.ev.shotsOnTargetOutsideBox+p.ev.shotsOffTargetOutsideBox)}}
-function ballRows(n,ms){const A=archOn(n),out=[];ms.forEach(m=>{const p=m.us.find(z=>z.name==n);if(p&&(!A||p.arch==A))out.push({p,m})});return out.sort((a,b)=>a.m.ts-b.m.ts)}
+function ballRows(n,ms){const A=archOn(n),out=[];ms.forEach(m=>{const p=m.us.find(z=>z.name==n);if(p&&(!A||p.arch==A))out.push({p,m})});out.sort((a,b)=>a.m.ts-b.m.ts);return lastN()?out.slice(-lastN()):out}
 function ballPitch(z){const t=z.reduce((a,b)=>a+b,0)||1,W=300,H=180;
  return `<svg class="bpitch" viewBox="0 0 ${W} ${H}">${z.map((v,i)=>`<rect x="${i*100}" y="0" width="100" height="${H}" fill="var(--acc)" opacity="${(.08+.72*v/Math.max(...z,1)).toFixed(2)}"/>`).join("")}
  <g fill="none" stroke="#ffffff55" stroke-width="1.5"><rect x="1" y="1" width="${W-2}" height="${H-2}" rx="4"/><line x1="150" y1="1" x2="150" y2="${H-1}"/><circle cx="150" cy="90" r="22"/><rect x="1" y="45" width="46" height="90"/><rect x="${W-47}" y="45" width="46" height="90"/><rect x="1" y="70" width="16" height="40"/><rect x="${W-17}" y="70" width="16" height="40"/></g>
@@ -148,7 +148,7 @@ function ballPitch(z){const t=z.reduce((a,b)=>a+b,0)||1,W=300,H=180;
  ${z.map((v,i)=>`<text x="${i*100+50}" y="98" text-anchor="middle" class="bz">%${fmt(v/t*100,0)}</text>`).join("")}
  <text x="8" y="${H-8}" class="bl">← kendi kalemiz</text><text x="${W-8}" y="${H-8}" text-anchor="end" class="bl">rakip kale →</text></svg>`}
 function sbar(parts){const t=parts.reduce((a,x)=>a+x[1],0)||1;return `<div class="sbar">${parts.map(([l,v,c])=>`<i style="width:${v/t*100}%;background:${c}"></i>`).join("")}</div><div class="sleg muted sm">${parts.map(([l,v,c])=>`<span><i style="background:${c}"></i>${l} %${fmt(v/t*100,0)}</span>`).join("")}</div>`}
-function ballBlock(n){const R=ballRows(n,matches());if(!R.length)return "";const b=ballStats(R),N=b.n;
+function ballBlock(n){const R=ballRows(n,allMatches());if(!R.length)return "";const b=ballStats(R),N=b.n;
  const all=[];matches().forEach(m=>m.us.forEach(p=>all.push({p,m})));const T=ballStats(all);
  const n3=(v,l,c="")=>`<div><b class="${c}">${v}</b><span>${l}</span></div>`,per=b.tch/N,tper=T.tch/T.n;
  const last=R.slice(-15),mx=Math.max(...last.map(o=>touches(o.p)),1);
@@ -160,7 +160,7 @@ function ballBlock(n){const R=ballRows(n,matches());if(!R.length)return "";const
  <div><h4 class="sub">Şutlar nereden</h4>${b.inB+b.outB?sbar([["Ceza sahası içi",b.inB,"var(--good)"],["Ceza sahası dışı",b.outB,"var(--mid)"]]):'<p class="muted sm">Şut yok.</p>'}
  <h4 class="sub" style="margin-top:14px">Maç maç topla buluşma</h4><div class="spk big"><div>${last.map(o=>{const v=touches(o.p);return `<i style="height:${Math.max(6,v/mx*100)}%;background:var(--acc)" title="${o.m.opp.name} ${o.m.gf}-${o.m.ga}"><em>${v}</em></i>`}).join("")}</div></div></div></div>
  <p class="muted sm">Topla buluşma = pas denemesi + şut + dribbling (EA'nın verdiği olaylardan tahmin). EA topa dokunma sayısını, topla geçen süreyi ve sahadaki tam konumu vermiyor. Takımdaki pay sadece gerçek oyuncular arasında.</p></div>`}
-function ballTable(){const ms=matches();const L=names().map(n=>{const R=[];ms.forEach(m=>{const p=m.us.find(z=>z.name==n);if(p)R.push({p,m})});return R.length?{n,b:ballStats(R)}:null}).filter(Boolean).sort((x,y)=>y.b.tch/y.b.n-x.b.tch/x.b.n);
+function ballTable(){const ms=allMatches();const L=names().map(n=>{const R=ballRows(n,ms);return R.length?{n,b:ballStats(R)}:null}).filter(Boolean).sort((x,y)=>y.b.tch/y.b.n-x.b.tch/x.b.n);
  if(!L.length)return "";const c=(v,d=1)=>`<td>${fmt(v,d)}</td>`;
  return fold("Topla buluşma tablosu",`<div class="${SIMPLE()?"":"card"}"><div class="ch"><h3>Topla buluşma</h3><span class="muted sm">maç başı · bölge = top kazanma + kaybı</span></div><div class="tw"><table class="tbl"><tr><th>Oyuncu</th><th>Maç</th><th>Topla buluşma</th><th>Takımdaki pay</th><th>Pas</th><th>Dribbling</th><th>Şut</th><th>Topu sürme</th><th>Kendi / Orta / Rakip</th></tr>
  ${L.map(({n,b})=>{const N=b.n,zt=b.z.reduce((a,x)=>a+x,0)||1;return `<tr class="click" onclick="S.player='${n}';r()"><td><b>${n}</b></td><td>${N}</td><td class="s">${fmt(b.tch/N)}</td><td>%${fmt(b.team?b.tch/b.team*100:0,0)}</td>${c(b.pas/N)}${c(b.drb/N)}${c(b.sht/N)}${c(b.car/N)}<td>${b.z.map(v=>"%"+fmt(v/zt*100,0)).join(" / ")}</td></tr>`}).join("")}</table></div>

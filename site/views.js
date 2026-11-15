@@ -58,7 +58,7 @@ function head(){const o=D.club.overall,ms=[...D.matches].sort((a,b)=>b.ts-a.ts);
 
 function seg(arr,cur,key){return `<div class="seg">${arr.map(([v,l])=>`<button class="${cur==v?"on":""}" onclick="S.${key}='${v}';r()">${l}</button>`).join("")}</div>`}
 function filters(withMode=true){const ty=[["all","Tümü ("+D.matches.length+")"],...["Lig","Playoff","Hazırlık"].filter(t=>D.matches.some(m=>m.type==t)).map(t=>[t,`${t} (${D.matches.filter(m=>m.type==t).length})`])];
- return `<div class="fbar">${seg(ty,S.type,"type")}${withMode?seg([["avg","Maç başı"],["tot","Toplam"]],S.mode,"mode"):""}</div>`}
+ return `<div class="fbar">${seg(ty,S.type,"type")}${seg([["0","Tüm maçlar"],["20","Son 20"],["30","Son 30"],["50","Son 50"]],S.last,"last")}${withMode?seg([["avg","Maç başı"],["tot","Toplam"]],S.mode,"mode"):""}</div>`}
 function ring(v,l){const c=2*Math.PI*30,col=v>=65?"var(--good)":v>=45?"var(--mid)":"var(--bad)";
  return `<div class="ring"><svg viewBox="0 0 72 72"><circle cx="36" cy="36" r="30" class="rt"/><circle cx="36" cy="36" r="30" fill="none" stroke="${col}" stroke-width="6" stroke-linecap="round" stroke-dasharray="${c*v/100} ${c}" transform="rotate(-90 36 36)"/><text x="36" y="41" text-anchor="middle">${v}</text></svg><span>${l}</span></div>`}
 function scoresBlock(ms){const t=teamScores(ms);if(!t)return "";return `<div class="rings">${ring(t.att,"Saldırı")}${ring(t.def,"Savunma")}${ring(t.sec,"Top güvenliği")}</div><p class="muted sm c">100 üzerinden · saldırı: gol + isabetli şut · savunma: yenen gol + top kazanma · top güvenliği: pas isabeti + top kaybı</p>`}
@@ -90,7 +90,7 @@ function pcard(a){const m=mem(a.name);const rows=[...a.rows].slice(-10);const mx
  <div class="n4">${n3(a.n,"Maç")}${n3(a.goals.tot,"Gol")}${n3(a.assists.tot,"Asist")}${n3(a.sa.tot,"2. asist")}</div>
  ${SIMPLE()?"":`<div class="n4">${n3("%"+fmt(w/a.n*100,0),"Galibiyet",w/a.n>=.5?"cW":"cO")}${n3("%"+fmt(a.pass.tot,0),"Pas",a.pass.tot>=75?"cW":"cO")}${n3("%"+fmt(sh?so/sh*100:0,0),"Şut isabeti",sh&&so/sh>=.5?"cW":"cO")}${n3(fmt(a.int.avg),"Int / maç","cI")}</div>`}
  <div class="spk"><span class="muted sm">Son ${rows.length} maç puanı</span><div>${rows.map(r=>`<i class="${rc(r.p.rating)}" style="height:${Math.max(8,(r.p.rating-4)/6*100)}%" title="${r.m.opp.name} ${r.p.rating.toFixed(1)}"></i>`).join("")}</div></div></div>`}
-function players(){const ms=matches();const L=names().map(n=>agg(n,ms)).filter(a=>a.n);
+function players(){const ms=allMatches();const L=names().map(n=>agg(n,ms)).filter(a=>a.n);
  L.sort((a,b)=>(val(b,S.sort)??-1e9)-(val(a,S.sort)??-1e9)*(1)+0);
  const cnt=g=>L.filter(a=>(mem(a.name).favoritePosition||a.pos)==g).length;
  return filters()+`<div class="fbar"><div class="pchips"><span class="pb gk">Kaleci ${cnt("goalkeeper")}</span><span class="pb df">Defans ${cnt("defender")}</span><span class="pb mf">Orta saha ${cnt("midfielder")}</span><span class="pb fw">Forvet ${cnt("forward")}</span></div>
@@ -98,7 +98,7 @@ function players(){const ms=matches();const L=names().map(n=>agg(n,ms)).filter(a
  <div class="g3">${L.map(pcard).join("")}</div>
  ${fold("Tüm istatistikler tablosu",`<div class="${SIMPLE()?"":"card"}"><div class="ch"><h3>Tüm istatistikler</h3><span class="muted sm">${S.mode=="avg"?"maç başı":"toplam"} · başlığa bas: sırala</span></div><div class="scroll"><table class="tbl"><tr><th>Oyuncu</th><th>Maç</th>${ST.map(([k,l])=>`<th class="${S.sort==k?"s":""}" onclick="S.sort='${k}';r()">${l}</th>`).join("")}</tr>
  ${L.map(a=>`<tr class="click" onclick="S.player='${a.name}';r()"><td><b>${a.name}</b></td><td>${a.n}</td>${ST.map(([k])=>`<td class="${S.sort==k?"s":""}">${fmt(val(a,k))}</td>`).join("")}</tr>`).join("")}</table></div></div>`)}`}
-function player(n){const A=archOn(n);const ms=matches().filter(m=>!A||m.us.some(p=>p.name==n&&p.arch==A));const a=agg(n,ms);const m=mem(n);const c=(D.club.career||[]).find(x=>x.name==n)||{};
+function player(n){const A=archOn(n);const ms=allMatches().filter(m=>!A||m.us.some(p=>p.name==n&&p.arch==A));const a=agg(n,ms);const m=mem(n);const c=(D.club.career||[]).find(x=>x.name==n)||{};
  if(!a.n)return `<span class="back" onclick="S.player=null;r()">← Oyuncular</span><p>Bu filtrede maç yok.</p>`;
  const sum=f=>a.rows.reduce((s,r)=>s+(f(r.p.ev)||0),0);const per=x=>S.mode=="avg"?x/a.n:x;
  const kv=(l,v)=>`<div class="kv"><span>${l}</span><b>${typeof v=="number"?fmt(per(v)):v}</b></div>`;
@@ -125,7 +125,7 @@ function radar(list,keys,F,lab){const cx=170,cy=165,R=120,n=keys.length;F=F||((a
  keys.forEach((k,i)=>{const[x,y]=pt(i,1.17);s+=`<text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle">${lab(k)}</text>`});
  list.forEach((a,j)=>{s+=`<polygon points="${keys.map((k,i)=>pt(i,Math.max(.03,F(a,k,i))).join(",")).join(" ")}" fill="${C[j]}26" stroke="${C[j]}" stroke-width="2.5"/>`});return s+"</svg>"}
 const NEG=[["Top kaybı",LOST],["Başarısız pas",p=>p.ev.passesFailed],["Kaybedilen tackle",p=>p.ev.tacklesLost],["Pozisyon dışı",p=>p.ev.outOfPosition],["Yanlış pas tercihi",p=>p.ev.feedbackShouldHavePassedElsewhere],["Ofsayta düşen pas",p=>p.ev.offsidePasses],["Tehlikeli müdahale",p=>p.ev.dangerousTackles],["Kırmızı kart",p=>p.red]];
-function cmp(){const ms=matches();const all=names().filter(n=>agg(n,ms).n);if(!S.cmp.length)S.cmp=all.slice(0,2);const L=S.cmp.map(n=>agg(n,ms)).filter(a=>a.n);
+function cmp(){const ms=allMatches();const all=names().filter(n=>agg(n,ms).n);if(!S.cmp.length)S.cmp=all.slice(0,2);const L=S.cmp.map(n=>agg(n,ms)).filter(a=>a.n);
  const bar=(l,vs,low)=>{const mx=Math.max(...vs,1e-9);const bi=vs.indexOf(low?Math.min(...vs):Math.max(...vs));
    return `<div class="cr"><div class="crl">${l}</div><div>${L.map((a,j)=>`<div class="crb"><em class="${j==bi&&L.length>1?"best":""}">${fmt(vs[j])}</em><i style="width:${vs[j]/mx*100}%;background:${C[j]}"></i></div>`).join("")}</div></div>`};
   const rows=ST.filter(x=>x[4]!=-1).map(([k,l])=>bar(l,L.map(a=>val(a,k)||0))).join("");

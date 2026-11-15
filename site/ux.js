@@ -6,7 +6,7 @@ function applyRoute(){const [t,a,b]=location.hash.replace(/^#\/?/,"").split("/")
 applyRoute();
 let ROUTE_NOW=routeOf();
 const _r0=r;
-function render(){const tb=document.getElementById("tipbox");if(tb)tb.remove();if(S.player&&!names().includes(S.player))S.player=null;if(S.night>=sessions().length)S.night=0;_r0();post()}
+function render(){localStorage.setItem("cp-last",S.last||"0");const tb=document.getElementById("tipbox");if(tb)tb.remove();if(S.player&&!names().includes(S.player))S.player=null;if(S.night>=sessions().length)S.night=0;_r0();post()}
 r=function(){const old=ROUTE_NOW;render();const nr=routeOf();if(nr!=old){history.pushState(null,"","#/"+nr);ROUTE_NOW=nr;{const[a,b]=nr.split("/"),[c,d]=old.split("/");if(a!=c||(S.tab=="players"&&b!=d))window.scrollTo(0,0)}}};
 addEventListener("popstate",()=>{applyRoute();ROUTE_NOW=routeOf();render()});
 window.go=k=>{S.tab=k;S.player=null;S.match=null;r()};
@@ -57,7 +57,7 @@ window.skipMe=()=>{localStorage.setItem("cp-me-skip","1");r()};
 function meChip(){return meOk()?`<button class="mechip" onclick="S.tab='players';S.player=ME;S.match=null;r()">${ico("players")}<span>${ME}</span></button>`:""}
 function meBlock(){if(!meOk()){if(localStorage.getItem("cp-me-skip"))return "";
   return `<div class="card meask"><div class="ch"><h3>Sen hangisisin?</h3><button class="clr" onclick="skipMe()">Geç</button></div><p class="muted sm">Seçersen istatistiklerin her yerde vurgulu görünür, profiline üstten tek tıkla gidersin.</p><div class="pick">${names().map(n=>`<button onclick="setMe('${n}')">${n}</button>`).join("")}</div></div>`}
- const m=mem(ME),a=agg(ME,matches()),s=sessions()[0],ln=s&&agg(ME,s.ms);
+ const m=mem(ME),a=agg(ME,allMatches()),s=sessions()[0],ln=s&&agg(ME,s.ms);
  const cell=(v,l,c="")=>`<div><b class="${c}">${v}</b><span>${l}</span></div>`;
  return `<div class="card mecard" onclick="S.tab='players';S.player=ME;r()"><div class="ch"><h3>Sen · ${ME}</h3><span class="lnk">Profilim →</span></div>
  <div class="n4">${cell(ln&&ln.n?fmt(ln.rating.avg):"–","Son gece puanı",ln&&ln.n?rc(ln.rating.avg):"")}${cell(a.n?fmt(a.rating.avg):"–","Ort. puan",a.n?rc(a.rating.avg):"")}${cell(a.n?a.goals.tot+a.assists.tot:"–","Gol + asist")}${cell(m.gamesPlayed||a.n,"Kulüpte maç")}</div>
