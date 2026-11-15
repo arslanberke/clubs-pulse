@@ -1,6 +1,6 @@
 let D;
 const C=["#4f9cf9","#f2994a","#3ecf8e","#bb6bd9"];
-const S={last:localStorage.getItem("cp-last")||"0",tab:"club",night:0,type:"all",mode:"avg",sort:"rating",player:null,match:null,cmp:[]};
+const S={last:localStorage.getItem("cp-last")||"0",dx:"pas",tab:"club",night:0,type:"all",mode:"avg",sort:"rating",player:null,match:null,cmp:[]};
 const $=h=>document.getElementById("app").innerHTML=h;
 const fmt=(v,d=1)=>v==null||isNaN(v)?"–":(Number.isInteger(v)?v:v.toFixed(d));
 const dt=ts=>new Date(ts*1000).toLocaleString("tr-TR",{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"});
@@ -19,11 +19,14 @@ const ST=[
  ["shots","Şut",p=>p.shots],["sot","İsabetli şut",p=>p.ev.shotsOnTarget],
  ["sacc","Şut isabeti %",null,"pct",1,p=>[p.ev.shotsOnTarget,p.shots]],["conv","Gole çevirme %",null,"pct",1,p=>[p.goals,p.shots]],["sotc","İsabetliyi gole çevirme %",null,"pct",1,p=>[p.goals,p.ev.shotsOnTarget]],
  ["pass","Pas %",null,"pct",1,p=>[p.ev.passesCompleted,p.ev.passesCompleted+p.ev.passesFailed]],
+ ["fpa","İleri pas isabeti %",null,"pct",1,p=>[p.ev.passesCompletedForward,p.ev.passesCompletedForward+p.ev.passesFailedForward]],["ftp","Tek vuruş pas",p=>p.ev.firstTimePasses],
+ ["dec","Doğru karar %",null,"pct",1,p=>[p.ev.feedbackBestOptionTaken+p.ev.feedbackGoodOptionTaken,p.ev.feedbackBestOptionTaken+p.ev.feedbackGoodOptionTaken+p.ev.feedbackShouldHavePassedElsewhere]],
  ["pc","Başarılı pas",p=>p.ev.passesCompleted],["pf","İleri pas",p=>p.ev.passesCompletedForward],["tp","Ara pas",p=>p.ev.throughPasses],
  ["tch","Topla buluşma",p=>touches(p)], ["drb","Dribbling",p=>p.ev.dribblesCompleted],["beat","Adam geçme",p=>p.ev.dribblesBeat+p.ev.dribblesSkillMoveBeat],
  ["lost","Top kaybı",p=>p.ev.possessionLostDefensiveThird+p.ev.possessionLostMiddleThird+p.ev.possessionLostAttackingThird,0,-1],
  ["won","Top kazanma",p=>p.ev.possessionWonDefensiveThird+p.ev.possessionWonMiddleThird+p.ev.possessionWonAttackingThird],
  ["int","Interception",p=>p.ev.interceptions],["tw","Tackle (kazanılan)",p=>p.ev.tacklesWon],
+ ["air","Hava topu",p=>p.ev.aerialDuelsWonAttacking+p.ev.aerialDuelsWonDefending],["wfg","Zayıf ayakla gol",p=>p.ev.goalsWeakFoot],
  ["oop","Pozisyon dışı",p=>p.ev.outOfPosition,0,-1],["mom","Maçın adamı",p=>p.mom],
 ];
 function agg(name,ms){let rows=[];ms.forEach(m=>m.us.forEach(p=>{if(p.name==name)rows.push({p,m})}));

@@ -88,3 +88,15 @@ document.addEventListener("click",e=>{const b=document.getElementById("tipbox");
  if(b)b.remove();const d=document.createElement("div");d.id="tipbox";d.innerHTML=`<b>${t.textContent.trim()}</b>${t.dataset.tip}`;document.body.appendChild(d);
  const R=t.getBoundingClientRect(),w=d.offsetWidth;d.style.left=Math.max(8,Math.min(innerWidth-w-8,R.left+R.width/2-w/2))+"px";d.style.top=(R.bottom+8+d.offsetHeight>innerHeight?R.top-d.offsetHeight-8:R.bottom+8)+"px"});
 addEventListener("scroll",()=>{const b=document.getElementById("tipbox");if(b)b.remove()},{passive:true});
+Object.assign(GL,{"İleri pas isabeti":"İleriye atılan pasların yüzde kaçı arkadaşına ulaştı. Riskli pasta ne kadar iyi.","İleri pas isabeti %":"İleriye atılan pasların yüzde kaçı arkadaşına ulaştı.",
+ "Tek vuruş pas":"Topu durdurmadan, ilk dokunuşta atılan pas.","Kanat değiştirme":"Oyunu bir kanattan öbür kanada taşıyan uzun pas.","Şık pas":"Topuk, rabona gibi gösterişli pas.",
+ "Orta isabeti":"Ortaların yüzde kaçı arkadaşı buldu (duran toplar dahil).","Uzun pas":"Başarılı uzun pas.",
+ "Doğru karar":"Oyunun geri bildirimine göre en iyi ya da iyi seçeneği seçtiği pas kararlarının oranı.","Doğru karar %":"Oyunun geri bildirimine göre en iyi ya da iyi seçeneği seçtiği pas kararlarının oranı.",
+ "En iyi seçenek":"Oyun 'en iyi seçenek' dedi.","İyi seçenek":"Oyun 'iyi seçenek' dedi.","Başka yere pas vermeliydi":"Oyun 'başka yere pas vermeliydin' dedi. Az olması iyi.",
+ "Topu kullan uyarısı":"Oyun 'topu kullan' dedi: topu fazla tuttu. Az olması iyi.","İyi seçenek yoktu":"Topu aldığında iyi pas seçeneği yoktu. Çoğu zaman takım arkadaşlarının koşusuna bağlı.",
+ "Ceza sahası içi isabet":"Ceza sahası içinden atılan şutların yüzde kaçı kaleyi buldu.","Ceza sahası dışı isabet":"Ceza sahası dışından atılan şutların yüzde kaçı kaleyi buldu.",
+ "Kaleciye takılan şut":"İsabetli şutların yüzde kaçını kaleci kurtardı. Az olması iyi.","Zayıf ayakla gol":"Zayıf ayakla atılan gol.","Tek vuruş gol":"Topu durdurmadan vurulan gol.",
+ "Direkten giren gol":"Direğe çarpıp giren gol.","Zayıf ayak gol payı":"Gollerin yüzde kaçı zayıf ayakla.","Ara pasla asist":"Ara pasla yapılan asist.",
+ "Tackle başarısı":"Girilen tackle'ların yüzde kaçı topu aldı.","Ayakta tackle":"Ayakta girip topu aldığı müdahale.","Kayarak tackle":"Kayarak girip topu aldığı müdahale.",
+ "Temiz müdahale":"Faulsüz, doğrudan topa yapılan müdahale.","Ayağından alma":"Rakibin ayağındaki topu söküp alma.","Hava topu (hücum)":"Hücumda kazanılan hava topu.",
+ "Hava topu (savunma)":"Savunmada kazanılan hava topu.","Engellenen orta":"Rakibin ortasını bloklama.","Yaptığı faul":"Rakibe yapılan faul. Az olması iyi.","Sarı kart":"Görülen sarı kart."});

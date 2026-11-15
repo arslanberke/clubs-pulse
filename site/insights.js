@@ -166,6 +166,58 @@ function ballTable(){const ms=allMatches();const L=names().map(n=>{const R=ballR
  ${L.map(({n,b})=>{const N=b.n,zt=b.z.reduce((a,x)=>a+x,0)||1;return `<tr class="click" onclick="S.player='${n}';r()"><td><b>${n}</b></td><td>${N}</td><td class="s">${fmt(b.tch/N)}</td><td>%${fmt(b.team?b.tch/b.team*100:0,0)}</td>${c(b.pas/N)}${c(b.drb/N)}${c(b.sht/N)}${c(b.car/N)}<td>${b.z.map(v=>"%"+fmt(v/zt*100,0)).join(" / ")}</td></tr>`}).join("")}</table></div>
  <p class="muted sm">Topla buluşma = pas denemesi + şut + dribbling. EA topla geçen süreyi ve tam konumu vermiyor.</p></div>`)}
 
-const _player=player;player=function(n){const h=_player(n),f=filters(),i=h.indexOf(f),bottom=ballBlock(n)+trendBlock(n)+trialBlock(n)+badgeBlock(n),top=proCard(n);return i>=0?h.slice(0,i)+top+h.slice(i)+bottom:h+top+bottom};
+const DXS=[
+ ["pas","Pas profili",[
+  ["İleri pas isabeti","pct",e=>[e.passesCompletedForward,e.passesCompletedForward+e.passesFailedForward]],
+  ["Kısa pas isabeti","pct",e=>[e.passesCompletedShort,e.passesCompletedShort+e.passesFailedShort]],
+  ["Orta mesafe pas isabeti","pct",e=>[e.passesCompletedMedium,e.passesCompletedMedium+e.passesFailedMedium]],
+  ["Uzun pas isabeti","pct",e=>[e.passesCompletedLong,e.passesCompletedLong+e.passesFailedLong]],
+  ["Orta isabeti","pct",e=>[e.passesCompletedCross,e.passesCompletedCross+e.passesFailedCross]],
+  ["Tek vuruş pas","n",e=>e.firstTimePasses],["Uzun pas","n",e=>e.passesCompletedLong],["Kanat değiştirme","n",e=>e.switchesOfPlay],
+  ["Şık pas","n",e=>e.flairPasses],["Ofsayta düşen pas","n",e=>e.offsidePasses,-1]],
+  B=>[["Pas yönü (başarılı)",[["İleri",B.fw,"#3ecf8e"],["Yana",B.sw,"#f2c94c"],["Geri",B.bw,"#5b9cf2"]]],["Pas mesafesi (başarılı)",[["Kısa",B.sh,"#f2c94c"],["Orta mesafe",B.md,"#3ecf8e"],["Uzun",B.lg,"#5b9cf2"],["Orta",B.cr,"#f26b6b"]]]]],
+ ["karar","Karar kalitesi",[
+  ["Doğru karar","pct",e=>[e.feedbackBestOptionTaken+e.feedbackGoodOptionTaken,e.feedbackBestOptionTaken+e.feedbackGoodOptionTaken+e.feedbackShouldHavePassedElsewhere]],
+  ["En iyi seçenek","n",e=>e.feedbackBestOptionTaken],["İyi seçenek","n",e=>e.feedbackGoodOptionTaken],
+  ["Başka yere pas vermeliydi","n",e=>e.feedbackShouldHavePassedElsewhere,-1],["Topu kullan uyarısı","n",e=>e.feedbackUseTheBall,-1],
+  ["İyi seçenek yoktu","n",e=>e.feedbackNoGoodOption,0]],
+  B=>[["Kararlar",[["En iyi seçenek",B.best,"#3ecf8e"],["İyi seçenek",B.good,"#f2c94c"],["Başka yere vermeliydi",B.bad,"#f26b6b"]]]]],
+ ["bit","Bitiricilik",[
+  ["Ceza sahası içi isabet","pct",e=>[e.shotsOnTargetInsideBox,e.shotsOnTargetInsideBox+e.shotsOffTargetInsideBox]],
+  ["Ceza sahası dışı isabet","pct",e=>[e.shotsOnTargetOutsideBox,e.shotsOnTargetOutsideBox+e.shotsOffTargetOutsideBox]],
+  ["Kaleciye takılan şut","pct",e=>[e.shotsSaved,e.shotsOnTarget],-1],
+  ["Zayıf ayakla gol","t",e=>e.goalsWeakFoot],["Tek vuruş gol","t",e=>e.goalsFirstTime],["Direkten giren gol","t",e=>e.goalsOffPost],
+  ["Zayıf ayak gol payı","pct",(e,p)=>[e.goalsWeakFoot,p.goals],0],["Ara pasla asist","t",e=>e.throughBallAssists]],
+  B=>[["Goller",[["Zayıf ayak",B.wf,"#f2c94c"],["Güçlü ayak / kafa",Math.max(0,B.g-B.wf),"#3ecf8e"]]]]],
+ ["sav","Savunma detayı",[
+  ["Tackle başarısı","pct",e=>[e.tacklesWon,e.tacklesWon+e.tacklesLost]],
+  ["Ayakta tackle","n",e=>e.standingTacklesWon],["Kayarak tackle","n",e=>e.slidingTacklesWon],["Temiz müdahale","n",e=>e.cleanTackles],
+  ["Tehlikeli müdahale","n",e=>e.dangerousTackles,-1],["Interception","n",e=>e.interceptions],["Ayağından alma","n",e=>e.opponentsDispossessed],
+  ["Hava topu (hücum)","n",e=>e.aerialDuelsWonAttacking],["Hava topu (savunma)","n",e=>e.aerialDuelsWonDefending],
+  ["Engellenen orta","n",e=>e.crossesBlocked],["Yaptığı faul","n",e=>e.foulsConceded,-1],["Sarı kart","n",e=>e.yellowCards,-1]],
+  B=>[["Kazanılan tackle",[["Ayakta",B.st,"#f2c94c"],["Kayarak",B.sl,"#5b9cf2"]]],["Hava topu",[["Hücumda",B.aa,"#3ecf8e"],["Savunmada",B.ad,"#f2c94c"]]]]]];
+function dxCalc(L,items){const n=L.length||1;return items.map(([l,k,f,dir=1])=>{
+  if(k=="pct"){let a=0,b=0;L.forEach(({p})=>{const[x,y]=f(p.ev,p);a+=x;b+=y});return {l,k,dir,v:b?a/b*100:null,d:b}}
+  const t=L.reduce((s,{p})=>s+(f(p.ev,p)||0),0);return {l,k,dir,v:k=="t"?t:t/n,t}})}
+function dxBars(L){const s=f=>L.reduce((t,{p})=>t+(f(p.ev,p)||0),0);
+ return {fw:s(e=>e.passesCompletedForward),sw:s(e=>e.passesCompletedSideways),bw:s(e=>e.passesCompletedBackward),sh:s(e=>e.passesCompletedShort),md:s(e=>e.passesCompletedMedium),lg:s(e=>e.passesCompletedLong),cr:s(e=>e.passesCompletedCross),
+  best:s(e=>e.feedbackBestOptionTaken),good:s(e=>e.feedbackGoodOptionTaken),bad:s(e=>e.feedbackShouldHavePassedElsewhere),wf:s(e=>e.goalsWeakFoot),g:s((e,p)=>p.goals),
+  st:s(e=>e.standingTacklesWon),sl:s(e=>e.slidingTacklesWon),aa:s(e=>e.aerialDuelsWonAttacking),ad:s(e=>e.aerialDuelsWonDefending)}}
+const dxSec=()=>DXS.find(d=>d[0]==S.dx)||DXS[0];
+const dxShow=o=>o.v==null?"–":o.k=="pct"?"%"+fmt(o.v,0):o.k=="t"?o.v:fmt(o.v);
+function teamRows(){const all=[];matches().forEach(m=>m.us.forEach(p=>all.push({p,m})));return all}
+function detailBlock(n){const R=ballRows(n,allMatches());if(!R.length)return "";const [key,title,items,bars]=dxSec(),me=dxCalc(R,items),T=teamRows(),tm=dxCalc(T,items),nP=new Set(T.map(o=>o.p.name)).size||1;
+ const row=(o,j)=>{const t=tm[j],tv=o.k=="t"?t.v/nP:t.v,c=o.v==null||tv==null||!o.dir?"":(o.v-tv)*o.dir>=0?"cW":"cO";
+  return `<tr><td>${o.l}</td><td class="${c}"><b>${dxShow(o)}</b></td><td class="muted">${o.k=="t"?fmt(tv):dxShow(t)}</td></tr>`};
+ return `<div class="card" id="dx"><div class="ch"><h3>${title}</h3><span class="muted sm">son ${R.length} maç</span></div>${seg(DXS.map(d=>[d[0],d[1]]),key,"dx")}
+ <div class="g2" style="margin-top:12px"><div class="tw"><table class="tbl dxtbl"><tr><th>İstatistik</th><th>${esc(n)}</th><th>Takım ort.</th></tr>${me.map(row).join("")}</table></div>
+ <div>${bars(dxBars(R)).map(([h,parts])=>`<h4 class="sub">${h}</h4>${parts.reduce((a,x)=>a+x[1],0)?sbar(parts):'<p class="muted sm">Veri yok.</p>'}`).join("")}</div></div>
+ <p class="muted sm">Sayılar maç başı, yüzdeler toplamdan. Gol türleri (zayıf ayak, tek vuruş, direkten) toplam; takım ortalaması oyuncu başına. Yeşil: takım ortalamasından iyi.${key=="karar"?" Karar verisi oyunun maç içi geri bildiriminden geliyor (\"en iyi seçenek\", \"başka yere pas vermeliydin\" gibi).":""}</p></div>`}
+function detailTable(){const ms=allMatches(),[key,title,items]=dxSec();
+ const L=names().map(n=>{const R=ballRows(n,ms);return R.length?{n,N:R.length,v:dxCalc(R,items)}:null}).filter(Boolean).sort((x,y)=>(y.v[0].v||0)-(x.v[0].v||0));if(!L.length)return "";
+ return fold("Detaylı istatistik tablosu",`<div id="dxt" class="${SIMPLE()?"":"card"}"><div class="ch"><h3>Detaylı istatistik</h3><span class="muted sm">sayılar maç başı · gol türleri toplam</span></div>${seg(DXS.map(d=>[d[0],d[1]]),key,"dx")}
+ <div class="tw" style="margin-top:10px"><table class="tbl"><tr><th>Oyuncu</th><th>Maç</th>${items.map(i=>`<th>${i[0]}</th>`).join("")}</tr>
+ ${L.map(({n,N,v})=>`<tr class="click" onclick="S.player='${n}';r()"><td><b>${n}</b></td><td>${N}</td>${v.map((o,j)=>{const col=L.map(z=>z.v[j].v).filter(x=>x!=null),best=o.dir?Math.max(...col.map(x=>x*o.dir)):null;return `<td class="${o.v!=null&&o.dir&&o.v*o.dir==best&&col.length>1?"s":""}">${dxShow(o)}</td>`}).join("")}</tr>`).join("")}</table></div></div>`)}
+const _player=player;player=function(n){const h=_player(n),f=filters(),i=h.indexOf(f),bottom=ballBlock(n)+detailBlock(n)+trendBlock(n)+trialBlock(n)+badgeBlock(n),top=proCard(n);return i>=0?h.slice(0,i)+top+h.slice(i)+bottom:h+top+bottom};
 const _fun=fun;fun=function(){return _fun()+recordBlock(matches())};
-const _players=players;players=function(){return _players()+ballTable()};
+const _players=players;players=function(){return _players()+ballTable()+detailTable()};
