@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1794789836,
- "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
+ "updated": 1794793601,
+ "aiError": null,
  "players": {
   "Clandestinoooo": {
    "summary": "Henüz 7 maçlık kısıtlı bir örneklem olsa da Disruptor rolünde görev yerini çok terk ediyor ve %67 pas isabetiyle oynuyorsun.",
@@ -131,29 +131,30 @@
    "updated": 1794759428
   },
   "rljer": {
-   "summary": "En büyük eksiğin pozisyon dışı: Target'ların 3.4 katı.",
+   "summary": "Hedef forvet gibi oynamak yerine kanat gibi çalıma girip pozisyonunu kaybediyorsun ama servis kaliten gayet iyi.",
    "dont": [
-    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 5.5, Target ortalaması 1.6)",
-    "İlk gördüğün arkadaşa pas verme. ('Başka yere pas vermeliydin': maç başı 3.8, Target ortalaması 1.9)"
+    "Maç başına 5.5 kez pozisyon dışına çıkıp forvet hattını ve ceza sahasını boş bırakma.",
+    "Target forvet olduğunu unutup maçta 14.6 dribbling deneyerek topu gereksiz ayağında tutma.",
+    "Pas tercihlerinde acele edip maç başı 3.8 kez 'başka yere pas vermeliydin' uyarısı alma."
    ],
    "do": [
-    "Mevkinde kal, rakip top kaybedince boşlukta hazır ol.",
-    "Pas öncesi sahayı tara, daha iyi pozisyondaki oyuncuyu ara.",
-    "Topun düşeceği yere erken git, gövdeyle pozisyon al."
+    "Hava toplarında 1.8 ortalamada kalmışsın, ceza sahasında kalıp boy avantajını ve kafa toplarını daha çok kullan.",
+    "Şut sayını 2.4 seviyesinden yukarı çekerek kaleyi daha sık yokla.",
+    "Son 5 maçlık dar örneklemde asistin 1.4'e çıksa da asıl görevin olan gol vuruşlarına odaklan."
    ],
    "keep": [
-    "Dribbling güçlü yanın (Target'lardan %37 iyi), böyle devam.",
-    "Top kaybı güçlü yanın (Target'lardan %23 iyi), böyle devam."
+    "Genel ortalamada 2.8 olan düşük top kaybı disiplinini sürdür.",
+    "Hücumda arkadaşlarına pozisyon hazırlama ve maç başına 0.7 asist katkını koru."
    ],
-   "night": "17 maçta ortalama 8.0 puan (normalde 7.5), 8 gol 15 asist. 'Başka yere pas vermeliydin' normalinden kötüydü (7.8, normalde 3.0).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 8.0 reyting ve 15 asistle harika bir takım oyuncusu performansı sergiledin ama 8.3 pozisyon dışı kalma sayısı bir tık fazlaydı.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "bddaefcfceb7",
    "n": 106,
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1794677571,
-   "updated": 1794789836
+   "updated": 1794793601
   }
  }
 }
