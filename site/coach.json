@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1795483143,
- "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
+ "updated": 1795486960,
+ "aiError": null,
  "players": {
   "Clandestinoooo": {
    "summary": "Henüz 7 maçlık kısıtlı bir örneklem olsa da Disruptor rolünde görev yerini çok terk ediyor ve %67 pas isabetiyle oynuyorsun.",
@@ -102,54 +102,56 @@
    "updated": 1795483143
   },
   "nycelia": {
-   "summary": "En büyük eksiğin kaybedilen tackle: Magician'lara göre %49 geride.",
+   "summary": "Orta sahada hücum gücün ve bitiriciliğin parıldıyor fakat savunmadaki gereksiz müdahalelerin ile pas kayıpların dengeni bozuyor.",
    "dont": [
-    "Her topa dalarak girme. (Kaybedilen tackle: maç başı 5.3, Magician ortalaması 3.6)",
-    "Topu ayağında bekletme. ('Topu kullan' uyarısı: maç başı 2.1, Magician ortalaması 1.6)"
+    "Maç başı 5.3 kaybedilen tackle ortalamasıyla savunmada zamansız hamle yapıp adamını kaçırma.",
+    "Topu ayağında fazla tutup maç başı 2.1 kez 'topu kullan' uyarısı alacak kadar oyunu yavaşlatma.",
+    "Pas isabetini %69 seviyesinde tutan maç başı 4.8 hatalı ileri pas denemesinden kaçın."
    ],
    "do": [
-    "Önünü kapat, rakip topu açınca müdahale et.",
-    "Topu alınca hemen karar ver: pas, şut ya da boş alana sür.",
-    "İleri pas kapalıysa yana ya da geriye ver, oyunu yeniden kur."
+    "Savunmada topa atlamak yerine rakibin önünde kalarak pas kanallarını kapat.",
+    "Ceza sahası çevresinde yakaladığın anlarda %79 şut isabetine güvenip kaleyi denemekten çekinme.",
+    "Hücuma çıkarken sıkıştığın anlarda zorlamak yerine en yakındaki garanti pas opsiyonunu kullan."
    ],
    "keep": [
-    "Gol güçlü yanın (Magician'lardan %87 iyi), böyle devam.",
-    "2. asist güçlü yanın (Magician'lardan %51 iyi), böyle devam."
+    "Maç başı 0.8 gol ve %79 şut isabetiyle orta sahaya göre olağanüstü bir skor katkısı veriyorsun.",
+    "Kendi yarı sahanda maç başı yalnızca 0.2 top kaybı yaparak geride takımı hiç riske atmıyorsun."
    ],
-   "night": "10 maçta ortalama 8.4 puan (normalde 7.8), 16 gol 6 asist. Ara pas normalinden kötüydü (4.4, normalde 7.6).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 10 maçta 16 gol ve 8.4 ortalama puanla oynayarak hücumda adeta tek başına resital sunmuşsun.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "fb7f47219f21",
    "n": 93,
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1795458025,
-   "updated": 1795483143
+   "updated": 1795486956
   },
   "rljer": {
-   "summary": "En büyük eksiğin pozisyon dışı: Target'ların 2.9 katı.",
+   "summary": "Target forvet olarak oynamak yerine kanat gibi topla fazla oynayıp ceza sahasını boş bırakıyorsun, bu da seni asıl işinden uzaklaştırıyor.",
    "dont": [
-    "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 5.5, Target ortalaması 1.9)",
-    "İlk gördüğün arkadaşa pas verme. ('Başka yere pas vermeliydin': maç başı 4, Target ortalaması 2.0)"
+    "Maç başına 15.0 dribbling deneyip topu ayağında fazla tutarak Target kimliğini unutma.",
+    "Maç başı 5.5 kez pozisyonunu kaybedip kanatlara veya geriye gereksiz deplase olma.",
+    "Zorlama paslar atıp 'başka yere pas vermeliydin' uyarısını maç başı 4.0 ortalamalara çıkarma."
    ],
    "do": [
-    "Mevkinde kal, rakip top kaybedince boşlukta hazır ol.",
-    "Pas öncesi sahayı tara, daha iyi pozisyondaki oyuncuyu ara.",
-    "Topun düşeceği yere erken git, gövdeyle pozisyon al."
+    "Ceza sahası merkezinde kal ve maç başı 1.7 olan hava topu mücadeleni arketipinin gerektirdiği gibi artır.",
+    "Maç başına 2.3 olan şut sayını ceza sahasında topla daha erken buluşarak yukarı çek.",
+    "Topu aldığında dribblingi azaltıp daha basit ve garanti paslarla oyna."
    ],
    "keep": [
-    "Dribbling güçlü yanın (Target'lardan %37 iyi), böyle devam.",
-    "Top kaybı güçlü yanın (Target'lardan %24 iyi), böyle devam."
+    "Az ama öz vuruyorsun, %67 seviyesindeki genel şut isabetini koru.",
+    "Top saklama becerin iyi, maç başına sadece 2.7 top kaybı yapıyorsun."
    ],
-   "night": "10 maçta ortalama 7.8 puan (normalde 7.6), 7 gol 8 asist. 'Başka yere pas vermeliydin' normalinden kötüydü (7.1, normalde 3.8).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 10 maçta 7 gol ve 8 asistle 7.8 puan ortalaması yakalayıp hücumda parladın ama pas tercihlerin can sıktı.",
+   "source": "ai",
+   "model": "gemini-flash-latest",
    "hash": "3da601d51c9e",
    "n": 116,
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1795458025,
-   "updated": 1795483143
+   "updated": 1795486960
   }
  }
 }
