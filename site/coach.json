@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1795819639,
+ "updated": 1795820392,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
  "players": {
   "Clandestinoooo": {
@@ -38,15 +38,15 @@
     "Top kaybı güçlü yanın (Magician'lardan %34 iyi), böyle devam.",
     "'Topu kullan' uyarısı güçlü yanın (Magician'lardan %34 iyi), böyle devam."
    ],
-   "night": "13 maçta ortalama 7.4 puan (normalde 7.8), 3 gol 6 asist. Gol normalinden kötüydü (0.2, normalde 1.0).",
+   "night": "14 maçta ortalama 7.3 puan (normalde 7.8), 3 gol 6 asist. Gol normalinden kötüydü (0.2, normalde 1.0).",
    "source": "rules",
    "model": null,
-   "hash": "327072be3e8b",
-   "n": 121,
+   "hash": "8ae13c308c6d",
+   "n": 122,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1795803129,
-   "updated": 1795819639
+   "updated": 1795820392
   },
   "Qatadria": {
    "summary": "En büyük eksiğin gol: Disruptor'lara göre %100 geride.",
@@ -61,17 +61,17 @@
    ],
    "keep": [
     "Ofsayta düşen pas güçlü yanın (Disruptor'lardan %100 iyi), böyle devam.",
-    "'Topu kullan' uyarısı güçlü yanın (Disruptor'lardan %91 iyi), böyle devam."
+    "'Topu kullan' uyarısı güçlü yanın (Disruptor'lardan %92 iyi), böyle devam."
    ],
-   "night": "12 maçta ortalama 6.6 puan, 0 gol 0 asist.",
+   "night": "13 maçta ortalama 6.6 puan, 0 gol 0 asist.",
    "source": "rules",
    "model": null,
-   "hash": "2737a0e87c69",
-   "n": 12,
+   "hash": "4d9865d86b2e",
+   "n": 13,
    "arch": "Disruptor",
    "pos": "Orta saha",
    "nightStart": 1795803129,
-   "updated": 1795819639
+   "updated": 1795820392
   },
   "TandemFelixx": {
    "summary": "Creator rolüne göre hücumda fazla garantici kalsan da top kaybetmeme becerin ve son maçlardaki skor katkınla gelişim gösteriyorsun.",
@@ -112,18 +112,18 @@
     "Hava topu güçlü yanın (Magician'lardan %40 iyi), böyle devam.",
     "Pozisyon dışı güçlü yanın (Magician'lardan %18 iyi), böyle devam."
    ],
-   "night": "6 maçta ortalama 6.8 puan (normalde 7.4), 5 gol 1 asist. 2. asist normalinden kötüydü (0.0, normalde 0.3).",
+   "night": "7 maçta ortalama 6.7 puan (normalde 7.4), 5 gol 1 asist. 2. asist normalinden kötüydü (0.0, normalde 0.3).",
    "source": "rules",
    "model": null,
-   "hash": "37d8f46e8798",
-   "n": 98,
+   "hash": "5646b9102dcd",
+   "n": 99,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1795803129,
-   "updated": 1795819639
+   "updated": 1795820392
   },
   "nycelia": {
-   "summary": "En büyük eksiğin kaybedilen tackle: Magician'lara göre %48 geride.",
+   "summary": "En büyük eksiğin kaybedilen tackle: Magician'lara göre %47 geride.",
    "dont": [
     "Her topa dalarak girme. (Kaybedilen tackle: maç başı 5.1, Magician ortalaması 3.5)",
     "Topu ayağında bekletme. ('Topu kullan' uyarısı: maç başı 2.1, Magician ortalaması 1.5)"
@@ -134,21 +134,21 @@
     "İleri pas kapalıysa yana ya da geriye ver, oyunu yeniden kur."
    ],
    "keep": [
-    "Gol güçlü yanın (Magician'lardan %92 iyi), böyle devam.",
-    "2. asist güçlü yanın (Magician'lardan %51 iyi), böyle devam."
+    "Gol güçlü yanın (Magician'lardan %90 iyi), böyle devam.",
+    "2. asist güçlü yanın (Magician'lardan %50 iyi), böyle devam."
    ],
-   "night": "13 maçta ortalama 7.6 puan (normalde 7.8), 11 gol 6 asist. Asist normalinden kötüydü (0.5, normalde 0.8).",
+   "night": "14 maçta ortalama 7.5 puan (normalde 7.8), 11 gol 6 asist. Asist normalinden kötüydü (0.4, normalde 0.8).",
    "source": "rules",
    "model": null,
-   "hash": "b3e451c6dc68",
-   "n": 106,
+   "hash": "e100ab09e911",
+   "n": 107,
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1795803129,
-   "updated": 1795819639
+   "updated": 1795820392
   },
   "rljer": {
-   "summary": "En büyük eksiğin pozisyon dışı: Target'ların 3.4 katı.",
+   "summary": "En büyük eksiğin pozisyon dışı: Target'ların 3.5 katı.",
    "dont": [
     "Topsuzken yerini bırakıp topun peşine koşma. (Pozisyon dışı: maç başı 5.9, Target ortalaması 1.7)",
     "İlk gördüğün arkadaşa pas verme. ('Başka yere pas vermeliydin': maç başı 4.1, Target ortalaması 1.9)"
@@ -159,18 +159,18 @@
     "Topun düşeceği yere erken git, gövdeyle pozisyon al."
    ],
    "keep": [
-    "Dribbling güçlü yanın (Target'lardan %43 iyi), böyle devam.",
-    "Top kaybı güçlü yanın (Target'lardan %21 iyi), böyle devam."
+    "Dribbling güçlü yanın (Target'lardan %44 iyi), böyle devam.",
+    "Top kaybı güçlü yanın (Target'lardan %20 iyi), böyle devam."
    ],
-   "night": "13 maçta ortalama 7.5 puan (normalde 7.6), 6 gol 8 asist. Pozisyon dışı normalinden kötüydü (8.8, normalde 5.5).",
+   "night": "14 maçta ortalama 7.3 puan (normalde 7.6), 6 gol 8 asist. Pozisyon dışı normalinden kötüydü (8.9, normalde 5.5).",
    "source": "rules",
    "model": null,
-   "hash": "d16b5811c408",
-   "n": 129,
+   "hash": "9bc004da6b80",
+   "n": 130,
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1795803129,
-   "updated": 1795819639
+   "updated": 1795820392
   }
  }
 }
