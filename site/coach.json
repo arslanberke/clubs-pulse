@@ -1,7 +1,7 @@
 {
  "v": 2,
- "updated": 1795847286,
- "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
+ "updated": 1795860914,
+ "aiError": "RuntimeError: gemini-3.8-flash HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
  "players": {
   "Clandestinoooo": {
    "summary": "Disruptor olmana rağmen savunma yerine hücuma ağırlık vermişsin; yaratıcılığın harika ama orta sahada pozisyonunu çok sık kaybediyorsun.",
@@ -29,24 +29,28 @@
    "updated": 1795819639
   },
   "Eghnzvrl": {
-   "summary": "Magician olarak ortalamanın altında kaldığın belirgin bir alan yok.",
-   "dont": [],
+   "summary": "Top saklama ve bitiricilikte arketipinin açık ara önündesin fakat son maçlarda skor denemek yerine biraz fazla gölgede kalmışsın.",
+   "dont": [
+    "Şut sayın son 5 maçta maç başı 2.3'ten 1.2'ye kadar geriledi, son 5 maçlık örneklem az olsa da kaleyi gördüğün anlarda fazla tereddüt etme.",
+    "Maç başına 4.2 kez hatalı tercih uyarısı alıyorsun, hücum bölgesinde zorlama pas açılarını denemekten kaçın."
+   ],
    "do": [
-    "Oynadığın gibi devam et, maç biriktikçe öneriler netleşecek."
+    "Yüksek şut isabetini (%79) değerlendirmek için ceza sahası yayında topla buluştuğunda kaleyi daha sık yokla.",
+    "Son maçlarda pozisyon dışı kalmayı 6.2 seviyesine çekerek yakaladığın doğru yer tutma alışkanlığını ceza sahası içine de taşı."
    ],
    "keep": [
-    "Top kaybı güçlü yanın (Magician'lardan %34 iyi), böyle devam.",
-    "'Topu kullan' uyarısı güçlü yanın (Magician'lardan %33 iyi), böyle devam."
+    "Maç başına 2.8 top kaybı ile mevkiindaşlarının 4.2 ortalamasına göre topu ayağında mükemmel saklıyorsun.",
+    "Normalindeki 0.9 gol ve 0.7 asistlik genel hücum katkın bir forvet için oldukça dengeli ve üst düzey."
    ],
-   "night": "17 maçta ortalama 7.4 puan (normalde 7.8), 7 gol 6 asist. Gol normalinden kötüydü (0.4, normalde 1.0).",
-   "source": "rules",
-   "model": null,
+   "night": "Son gece 17 maçta golün 0.4'e düşüp notun 7.4'e inse de maç başı 0.7 ikinci asistle gizli oyun kurucu gibi oynamışsın.",
+   "source": "ai",
+   "model": "gemini-3.8-flash",
    "hash": "a28602043dfb",
    "n": 125,
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1795803129,
-   "updated": 1795847286
+   "updated": 1795860639
   },
   "Qatadria": {
    "summary": "En büyük eksiğin gol: Disruptor'lara göre %100 geride.",
@@ -71,7 +75,7 @@
    "arch": "Disruptor",
    "pos": "Orta saha",
    "nightStart": 1795803129,
-   "updated": 1795847286
+   "updated": 1795860914
   },
   "TandemFelixx": {
    "summary": "Creator rolüne göre hücumda fazla garantici kalsan da top kaybetmeme becerin ve son maçlardaki skor katkınla gelişim gösteriyorsun.",
@@ -120,7 +124,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1795803129,
-   "updated": 1795847286
+   "updated": 1795860914
   },
   "nycelia": {
    "summary": "En büyük eksiğin kaybedilen tackle: Magician'lara göre %48 geride.",
@@ -145,7 +149,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1795803129,
-   "updated": 1795847286
+   "updated": 1795860914
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Target'ların 3.2 katı.",
@@ -170,7 +174,7 @@
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1795803129,
-   "updated": 1795847286
+   "updated": 1795860914
   }
  }
 }
