@@ -1,6 +1,6 @@
 {
  "v": 2,
- "updated": 1795867663,
+ "updated": 1795871279,
  "aiError": "RuntimeError: gemini-flash-latest HTTP 429: You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://aistudio.google.com/docs/rate-",
  "players": {
   "Clandestinoooo": {
@@ -75,7 +75,7 @@
    "arch": "Disruptor",
    "pos": "Orta saha",
    "nightStart": 1795803129,
-   "updated": 1795867663
+   "updated": 1795871279
   },
   "TandemFelixx": {
    "summary": "Creator rolüne göre hücumda fazla garantici kalsan da top kaybetmeme becerin ve son maçlardaki skor katkınla gelişim gösteriyorsun.",
@@ -124,7 +124,7 @@
    "arch": "Magician",
    "pos": "Forvet",
    "nightStart": 1795803129,
-   "updated": 1795867663
+   "updated": 1795871279
   },
   "nycelia": {
    "summary": "En büyük eksiğin kaybedilen tackle: Magician'lara göre %48 geride.",
@@ -149,7 +149,7 @@
    "arch": "Magician",
    "pos": "Orta saha",
    "nightStart": 1795803129,
-   "updated": 1795867663
+   "updated": 1795871279
   },
   "rljer": {
    "summary": "En büyük eksiğin pozisyon dışı: Target'ların 3.2 katı.",
@@ -174,7 +174,7 @@
    "arch": "Target",
    "pos": "Forvet",
    "nightStart": 1795803129,
-   "updated": 1795867663
+   "updated": 1795871279
   }
  }
 }
